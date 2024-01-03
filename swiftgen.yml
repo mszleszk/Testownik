@@ -1,0 +1,29 @@
+
+input_dir: Testownik
+output_dir: Testownik/Generated
+
+
+strings:
+   inputs:
+     - Assets
+   outputs:
+     - templateName: structured-swift5
+       output: Strings+Generated.swift
+
+
+xcassets:
+   inputs:
+     - Assets/Assets.xcassets
+   outputs:
+     - templateName: swift5
+       params:
+         forceProvidesNamespaces: true
+       output: XCAssets+Generated.swift
+
+
+#fonts:
+#  inputs: Assets/Fonts
+#  outputs:
+#    templateName: swift5
+#    output: Fonts.swift
+
