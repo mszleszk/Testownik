@@ -19,6 +19,7 @@
 		319978022B45828C001FF59E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FD2B45828C001FF59E /* HomeInteractor.swift */; };
 		319978042B4582DE001FF59E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978032B4582DE001FF59E /* HomeView.swift */; };
 		319978082B458366001FF59E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978072B458366001FF59E /* BaseView.swift */; };
+		3199780B2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199780A2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		319977FD2B45828C001FF59E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		319978032B4582DE001FF59E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		319978072B458366001FF59E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		3199780A2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyObject+ScopeFunctions.swift"; sourceTree = "<group>"; };
 		E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Testownik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.release.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 		319977DF2B457AC4001FF59E /* Testownik */ = {
 			isa = PBXGroup;
 			children = (
+				319978092B4585DC001FF59E /* Extensions */,
 				319978052B4582F3001FF59E /* Base */,
 				319977F72B458234001FF59E /* Screens */,
 				319977E02B457AC4001FF59E /* AppDelegate.swift */,
@@ -110,6 +113,14 @@
 				319978072B458366001FF59E /* BaseView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		319978092B4585DC001FF59E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3199780A2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A3EFD1DEC1626CBFB1D57FF3 /* Pods */ = {
@@ -232,6 +243,7 @@
 			files = (
 				319978012B45828C001FF59E /* HomeBuilder.swift in Sources */,
 				319978002B45828C001FF59E /* HomeViewController.swift in Sources */,
+				3199780B2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift in Sources */,
 				319977FE2B45828C001FF59E /* HomePresenter.swift in Sources */,
 				319977FF2B45828C001FF59E /* HomeRouter.swift in Sources */,
 				319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */,
