@@ -10,9 +10,15 @@
 		1094C65F232E6F43ACA23162 /* Pods_Testownik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */; };
 		319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E02B457AC4001FF59E /* AppDelegate.swift */; };
 		319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E22B457AC4001FF59E /* SceneDelegate.swift */; };
-		319977E52B457AC4001FF59E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E42B457AC4001FF59E /* ViewController.swift */; };
 		319977EA2B457AC5001FF59E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319977E92B457AC5001FF59E /* Assets.xcassets */; };
 		319977F62B457FBF001FF59E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 319977F52B457FBF001FF59E /* SnapKit */; };
+		319977FE2B45828C001FF59E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977F92B45828C001FF59E /* HomePresenter.swift */; };
+		319977FF2B45828C001FF59E /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FA2B45828C001FF59E /* HomeRouter.swift */; };
+		319978002B45828C001FF59E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FB2B45828C001FF59E /* HomeViewController.swift */; };
+		319978012B45828C001FF59E /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FC2B45828C001FF59E /* HomeBuilder.swift */; };
+		319978022B45828C001FF59E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FD2B45828C001FF59E /* HomeInteractor.swift */; };
+		319978042B4582DE001FF59E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978032B4582DE001FF59E /* HomeView.swift */; };
+		319978082B458366001FF59E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978072B458366001FF59E /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,9 +26,15 @@
 		319977DD2B457AC4001FF59E /* Testownik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testownik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319977E02B457AC4001FF59E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319977E22B457AC4001FF59E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		319977E42B457AC4001FF59E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		319977E92B457AC5001FF59E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		319977EE2B457AC5001FF59E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		319977F92B45828C001FF59E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		319977FA2B45828C001FF59E /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		319977FB2B45828C001FF59E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		319977FC2B45828C001FF59E /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		319977FD2B45828C001FF59E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		319978032B4582DE001FF59E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		319978072B458366001FF59E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Testownik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.release.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,13 +73,43 @@
 		319977DF2B457AC4001FF59E /* Testownik */ = {
 			isa = PBXGroup;
 			children = (
+				319978052B4582F3001FF59E /* Base */,
+				319977F72B458234001FF59E /* Screens */,
 				319977E02B457AC4001FF59E /* AppDelegate.swift */,
 				319977E22B457AC4001FF59E /* SceneDelegate.swift */,
-				319977E42B457AC4001FF59E /* ViewController.swift */,
 				319977E92B457AC5001FF59E /* Assets.xcassets */,
 				319977EE2B457AC5001FF59E /* Info.plist */,
 			);
 			path = Testownik;
+			sourceTree = "<group>";
+		};
+		319977F72B458234001FF59E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				319977F82B458276001FF59E /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		319977F82B458276001FF59E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				319977F92B45828C001FF59E /* HomePresenter.swift */,
+				319977FA2B45828C001FF59E /* HomeRouter.swift */,
+				319977FB2B45828C001FF59E /* HomeViewController.swift */,
+				319977FC2B45828C001FF59E /* HomeBuilder.swift */,
+				319977FD2B45828C001FF59E /* HomeInteractor.swift */,
+				319978032B4582DE001FF59E /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		319978052B4582F3001FF59E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				319978072B458366001FF59E /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		A3EFD1DEC1626CBFB1D57FF3 /* Pods */ = {
@@ -76,7 +118,6 @@
 				1AF1FC14C09A66722DE8D6B3 /* Pods-Testownik.debug.xcconfig */,
 				E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -137,7 +178,7 @@
 			);
 			mainGroup = 319977D42B457AC4001FF59E;
 			packageReferences = (
-				319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+				319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 319977DE2B457AC4001FF59E /* Products */;
 			projectDirPath = "";
@@ -189,9 +230,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				319977E52B457AC4001FF59E /* ViewController.swift in Sources */,
+				319978012B45828C001FF59E /* HomeBuilder.swift in Sources */,
+				319978002B45828C001FF59E /* HomeViewController.swift in Sources */,
+				319977FE2B45828C001FF59E /* HomePresenter.swift in Sources */,
+				319977FF2B45828C001FF59E /* HomeRouter.swift in Sources */,
 				319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */,
+				319978042B4582DE001FF59E /* HomeView.swift in Sources */,
+				319978082B458366001FF59E /* BaseView.swift in Sources */,
 				319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */,
+				319978022B45828C001FF59E /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +435,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
+		319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -401,7 +448,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		319977F52B457FBF001FF59E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit.git" */;
+			package = 319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
