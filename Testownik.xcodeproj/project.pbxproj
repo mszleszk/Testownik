@@ -7,19 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1094C65F232E6F43ACA23162 /* Pods_Testownik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */; };
 		319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E02B457AC4001FF59E /* AppDelegate.swift */; };
 		319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E22B457AC4001FF59E /* SceneDelegate.swift */; };
 		319977E52B457AC4001FF59E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E42B457AC4001FF59E /* ViewController.swift */; };
 		319977EA2B457AC5001FF59E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319977E92B457AC5001FF59E /* Assets.xcassets */; };
+		319977F62B457FBF001FF59E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 319977F52B457FBF001FF59E /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AF1FC14C09A66722DE8D6B3 /* Pods-Testownik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.debug.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.debug.xcconfig"; sourceTree = "<group>"; };
 		319977DD2B457AC4001FF59E /* Testownik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testownik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319977E02B457AC4001FF59E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319977E22B457AC4001FF59E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		319977E42B457AC4001FF59E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		319977E92B457AC5001FF59E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		319977EE2B457AC5001FF59E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Testownik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.release.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319977F62B457FBF001FF59E /* SnapKit in Frameworks */,
+				1094C65F232E6F43ACA23162 /* Pods_Testownik.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +45,8 @@
 			children = (
 				319977DF2B457AC4001FF59E /* Testownik */,
 				319977DE2B457AC4001FF59E /* Products */,
+				A3EFD1DEC1626CBFB1D57FF3 /* Pods */,
+				B59BDB6B002D00D936FD20F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +70,24 @@
 			path = Testownik;
 			sourceTree = "<group>";
 		};
+		A3EFD1DEC1626CBFB1D57FF3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1AF1FC14C09A66722DE8D6B3 /* Pods-Testownik.debug.xcconfig */,
+				E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B59BDB6B002D00D936FD20F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 319977F12B457AC5001FF59E /* Build configuration list for PBXNativeTarget "Testownik" */;
 			buildPhases = (
+				9E929138A0D340498AEED6B6 /* [CP] Check Pods Manifest.lock */,
 				319977D92B457AC4001FF59E /* Sources */,
 				319977DA2B457AC4001FF59E /* Frameworks */,
 				319977DB2B457AC4001FF59E /* Resources */,
@@ -77,6 +105,9 @@
 			dependencies = (
 			);
 			name = Testownik;
+			packageProductDependencies = (
+				319977F52B457FBF001FF59E /* SnapKit */,
+			);
 			productName = Testownik;
 			productReference = 319977DD2B457AC4001FF59E /* Testownik.app */;
 			productType = "com.apple.product-type.application";
@@ -105,6 +136,9 @@
 				Base,
 			);
 			mainGroup = 319977D42B457AC4001FF59E;
+			packageReferences = (
+				319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+			);
 			productRefGroup = 319977DE2B457AC4001FF59E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -124,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E929138A0D340498AEED6B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Testownik-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		319977D92B457AC4001FF59E /* Sources */ = {
@@ -255,6 +314,7 @@
 		};
 		319977F22B457AC5001FF59E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AF1FC14C09A66722DE8D6B3 /* Pods-Testownik.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -280,6 +340,7 @@
 		};
 		319977F32B457AC5001FF59E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		319977F52B457FBF001FF59E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit.git" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 319977D52B457AC4001FF59E /* Project object */;
 }
