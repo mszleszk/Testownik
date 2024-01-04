@@ -1,21 +1,21 @@
 import UIKit
 
 protocol HomeInteractorLogic {
-    func getDataSource() -> CoursesCollectionViewDataSource
+    func getDataSource() -> TestsCollectionViewDataSource
 }
 
 final class HomeInteractor {
     private let presenter: HomePresenterLogic
-    private let dataSource: CoursesCollectionViewDataSource
+    private let dataSource: TestsCollectionViewDataSource
     
-    init(presenter: HomePresenterLogic, dataSource: CoursesCollectionViewDataSource) {
+    init(presenter: HomePresenterLogic, dataSource: TestsCollectionViewDataSource) {
         self.presenter = presenter
         self.dataSource = dataSource
     }
 }
 
 extension HomeInteractor: HomeInteractorLogic {
-    func getDataSource() -> CoursesCollectionViewDataSource {
+    func getDataSource() -> TestsCollectionViewDataSource {
         return dataSource
     }
 }

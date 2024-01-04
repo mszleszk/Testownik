@@ -1,5 +1,5 @@
 //
-//  CoursesCollectionViewCell.swift
+//  TestsCollectionViewCell.swift
 //  Testownik
 //
 //  Created by Michał Szleszkowski on 03/01/2024.
@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 
-final class CoursesCollectionViewCell: UICollectionViewCell {
-    static let reuseIdentifier = String(describing: CoursesCollectionViewCell.self)
+final class TestsCollectionViewCell: UICollectionViewCell {
+    static let reuseIdentifier = String(describing: TestsCollectionViewCell.self)
     
-    private let verticalStackView = CoursesCollectionViewCell.makeVerticalStackView()
+    private let verticalStackView = TestsCollectionViewCell.makeVerticalStackView()
     private let emojiLabel = UILabel(fontSize: 300, color: Asset.Colors.primaryText.color, shouldAdjustFontToWidth: true)
     private let nameLabel = UILabel(fontSize: 20, weight: .bold, color: Asset.Colors.primaryText.color)
     private let numberOfQuestionsLabel = UILabel(fontSize: 15, color: Asset.Colors.primaryText.color)
@@ -67,9 +67,9 @@ final class CoursesCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 10
     }
     
-    func setupAppearance(emoji: String, courseName: String, numberOfQuestions: Int? = nil) {
+    func setupAppearance(emoji: String, testName: String, numberOfQuestions: Int? = nil) {
         emojiLabel.text = emoji
-        nameLabel.text = courseName
+        nameLabel.text = testName
         
         guard let numberOfQuestions = numberOfQuestions else { return }
         
@@ -78,7 +78,7 @@ final class CoursesCollectionViewCell: UICollectionViewCell {
 }
 
 // MARK: - Builder
-private extension CoursesCollectionViewCell {
+private extension TestsCollectionViewCell {
     static func makeVerticalStackView() -> UIStackView {
         return UIStackView(axis: .vertical, spacing: 5).also {
             $0.alignment = .leading

@@ -5,7 +5,7 @@ final class HomeView: BaseView {
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 20)
     private let appNameLabel = HomeView.makeAppNameLabel()
     
-    let collectionView = CoursesCollectionView()
+    let collectionView = TestsCollectionView()
     
     override func buildHierarchy() {
         addSubviews([

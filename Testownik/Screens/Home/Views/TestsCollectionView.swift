@@ -1,5 +1,5 @@
 //
-//  CoursesCollectionView.swift
+//  TestsCollectionView.swift
 //  Testownik
 //
 //  Created by Michał Szleszkowski on 03/01/2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CoursesCollectionView: UICollectionView {
+final class TestsCollectionView: UICollectionView {
     private let layout = {
         let inset = 5.0
         let cellFractionalWidth: CGFloat = UIScreen.main.bounds.width > 500 ? 1/3 : 1/2
@@ -28,7 +28,7 @@ final class CoursesCollectionView: UICollectionView {
     init() {
         super.init(frame: .zero, collectionViewLayout: layout)
         
-        register(CoursesCollectionViewCell.self, forCellWithReuseIdentifier: CoursesCollectionViewCell.reuseIdentifier)
+        register(TestsCollectionViewCell.self, forCellWithReuseIdentifier: TestsCollectionViewCell.reuseIdentifier)
         
         backgroundColor = .clear
     }
