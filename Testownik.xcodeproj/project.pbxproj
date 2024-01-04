@@ -20,6 +20,15 @@
 		319978042B4582DE001FF59E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978032B4582DE001FF59E /* HomeView.swift */; };
 		319978082B458366001FF59E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978072B458366001FF59E /* BaseView.swift */; };
 		3199780B2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199780A2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift */; };
+		3199780E2B458A26001FF59E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3199780D2B458A26001FF59E /* Localizable.strings */; };
+		319978132B458D37001FF59E /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978112B458D37001FF59E /* Strings+Generated.swift */; };
+		319978142B458D37001FF59E /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978122B458D37001FF59E /* XCAssets+Generated.swift */; };
+		319978162B458FA1001FF59E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978152B458FA1001FF59E /* UIView+Extensions.swift */; };
+		319978182B458FC3001FF59E /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978172B458FC3001FF59E /* UIStackView+Extensions.swift */; };
+		3199781B2B45BB0E001FF59E /* CoursesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199781A2B45BB0E001FF59E /* CoursesCollectionView.swift */; };
+		3199781D2B45C57B001FF59E /* CoursesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199781C2B45C57B001FF59E /* CoursesCollectionViewCell.swift */; };
+		3199781F2B45D18C001FF59E /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199781E2B45D18C001FF59E /* UILabel+Extensions.swift */; };
+		319978232B45DFBF001FF59E /* CoursesCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978222B45DFBF001FF59E /* CoursesCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +37,7 @@
 		319977E02B457AC4001FF59E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319977E22B457AC4001FF59E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		319977E92B457AC5001FF59E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		319977EE2B457AC5001FF59E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		319977EE2B457AC5001FF59E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Testownik/Core/Info.plist; sourceTree = SOURCE_ROOT; };
 		319977F92B45828C001FF59E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		319977FA2B45828C001FF59E /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		319977FB2B45828C001FF59E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +46,15 @@
 		319978032B4582DE001FF59E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		319978072B458366001FF59E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3199780A2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyObject+ScopeFunctions.swift"; sourceTree = "<group>"; };
+		3199780D2B458A26001FF59E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		319978112B458D37001FF59E /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		319978122B458D37001FF59E /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		319978152B458FA1001FF59E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		319978172B458FC3001FF59E /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		3199781A2B45BB0E001FF59E /* CoursesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCollectionView.swift; sourceTree = "<group>"; };
+		3199781C2B45C57B001FF59E /* CoursesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCollectionViewCell.swift; sourceTree = "<group>"; };
+		3199781E2B45D18C001FF59E /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		319978222B45DFBF001FF59E /* CoursesCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Testownik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.release.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,13 +93,13 @@
 		319977DF2B457AC4001FF59E /* Testownik */ = {
 			isa = PBXGroup;
 			children = (
+				319978202B45DBA2001FF59E /* Core */,
+				319978192B4595B6001FF59E /* Views */,
+				319978102B458D11001FF59E /* Generated */,
+				3199780C2B45895A001FF59E /* Assets */,
 				319978092B4585DC001FF59E /* Extensions */,
 				319978052B4582F3001FF59E /* Base */,
 				319977F72B458234001FF59E /* Screens */,
-				319977E02B457AC4001FF59E /* AppDelegate.swift */,
-				319977E22B457AC4001FF59E /* SceneDelegate.swift */,
-				319977E92B457AC5001FF59E /* Assets.xcassets */,
-				319977EE2B457AC5001FF59E /* Info.plist */,
 			);
 			path = Testownik;
 			sourceTree = "<group>";
@@ -97,12 +115,13 @@
 		319977F82B458276001FF59E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				319978212B45DF9F001FF59E /* Views */,
 				319977F92B45828C001FF59E /* HomePresenter.swift */,
 				319977FA2B45828C001FF59E /* HomeRouter.swift */,
 				319977FB2B45828C001FF59E /* HomeViewController.swift */,
 				319977FC2B45828C001FF59E /* HomeBuilder.swift */,
 				319977FD2B45828C001FF59E /* HomeInteractor.swift */,
-				319978032B4582DE001FF59E /* HomeView.swift */,
+				319978222B45DFBF001FF59E /* CoursesCollectionViewDataSource.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -119,8 +138,56 @@
 			isa = PBXGroup;
 			children = (
 				3199780A2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift */,
+				319978152B458FA1001FF59E /* UIView+Extensions.swift */,
+				319978172B458FC3001FF59E /* UIStackView+Extensions.swift */,
+				3199781E2B45D18C001FF59E /* UILabel+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3199780C2B45895A001FF59E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				319977E92B457AC5001FF59E /* Assets.xcassets */,
+				3199780D2B458A26001FF59E /* Localizable.strings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		319978102B458D11001FF59E /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				319978112B458D37001FF59E /* Strings+Generated.swift */,
+				319978122B458D37001FF59E /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		319978192B4595B6001FF59E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		319978202B45DBA2001FF59E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				319977E02B457AC4001FF59E /* AppDelegate.swift */,
+				319977E22B457AC4001FF59E /* SceneDelegate.swift */,
+				319977EE2B457AC5001FF59E /* Info.plist */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		319978212B45DF9F001FF59E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3199781A2B45BB0E001FF59E /* CoursesCollectionView.swift */,
+				3199781C2B45C57B001FF59E /* CoursesCollectionViewCell.swift */,
+				319978032B4582DE001FF59E /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A3EFD1DEC1626CBFB1D57FF3 /* Pods */ = {
@@ -148,6 +215,7 @@
 			buildConfigurationList = 319977F12B457AC5001FF59E /* Build configuration list for PBXNativeTarget "Testownik" */;
 			buildPhases = (
 				9E929138A0D340498AEED6B6 /* [CP] Check Pods Manifest.lock */,
+				3199780F2B458B25001FF59E /* Swiftgen */,
 				319977D92B457AC4001FF59E /* Sources */,
 				319977DA2B457AC4001FF59E /* Frameworks */,
 				319977DB2B457AC4001FF59E /* Resources */,
@@ -206,12 +274,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				319977EA2B457AC5001FF59E /* Assets.xcassets in Resources */,
+				3199780E2B458A26001FF59E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3199780F2B458B25001FF59E /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
 		9E929138A0D340498AEED6B6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -242,15 +329,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				319978012B45828C001FF59E /* HomeBuilder.swift in Sources */,
+				319978232B45DFBF001FF59E /* CoursesCollectionViewDataSource.swift in Sources */,
 				319978002B45828C001FF59E /* HomeViewController.swift in Sources */,
 				3199780B2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift in Sources */,
+				3199781F2B45D18C001FF59E /* UILabel+Extensions.swift in Sources */,
+				319978142B458D37001FF59E /* XCAssets+Generated.swift in Sources */,
 				319977FE2B45828C001FF59E /* HomePresenter.swift in Sources */,
+				3199781D2B45C57B001FF59E /* CoursesCollectionViewCell.swift in Sources */,
+				319978162B458FA1001FF59E /* UIView+Extensions.swift in Sources */,
+				3199781B2B45BB0E001FF59E /* CoursesCollectionView.swift in Sources */,
 				319977FF2B45828C001FF59E /* HomeRouter.swift in Sources */,
 				319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */,
 				319978042B4582DE001FF59E /* HomeView.swift in Sources */,
 				319978082B458366001FF59E /* BaseView.swift in Sources */,
 				319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */,
+				319978182B458FC3001FF59E /* UIStackView+Extensions.swift in Sources */,
 				319978022B45828C001FF59E /* HomeInteractor.swift in Sources */,
+				319978132B458D37001FF59E /* Strings+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Testownik/Info.plist;
+				INFOPLIST_FILE = Testownik/Core/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -406,7 +501,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Testownik/Info.plist;
+				INFOPLIST_FILE = Testownik/Core/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

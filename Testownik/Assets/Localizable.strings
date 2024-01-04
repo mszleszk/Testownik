@@ -7,3 +7,5 @@
 */
 
 "general.appname" = "testownik";
+"home.chooseCourse" = "Wybierz kurs";
+"home.number of questions" = "%d pytań";

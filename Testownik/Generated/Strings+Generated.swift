@@ -17,6 +17,14 @@ internal enum L10n {
     ///   Created by Michał Szleszkowski on 03/01/2024.
     internal static let appname = L10n.tr("Localizable", "general.appname", fallback: "testownik")
   }
+  internal enum Home {
+    /// Wybierz kurs
+    internal static let chooseCourse = L10n.tr("Localizable", "home.chooseCourse", fallback: "Wybierz kurs")
+    /// %d pytań
+    internal static func numberOfQuestions(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "home.number of questions", p1, fallback: "%d pytań")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
