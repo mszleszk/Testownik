@@ -12,7 +12,7 @@ final class CoursesCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = String(describing: CoursesCollectionViewCell.self)
     
     private let verticalStackView = CoursesCollectionViewCell.makeVerticalStackView()
-    private let emojiLabel = UILabel(fontSize: 100, color: Asset.Colors.primaryText.color)
+    private let emojiLabel = UILabel(fontSize: 300, color: Asset.Colors.primaryText.color, shouldAdjustFontToWidth: true)
     private let nameLabel = UILabel(fontSize: 20, weight: .bold, color: Asset.Colors.primaryText.color)
     private let numberOfQuestionsLabel = UILabel(fontSize: 15, color: Asset.Colors.primaryText.color)
     
@@ -44,14 +44,21 @@ final class CoursesCollectionViewCell: UICollectionViewCell {
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
         }
         
-        [emojiLabel,
-         nameLabel,
-         numberOfQuestionsLabel
-        ].forEach { view in
-            view.snp.makeConstraints { make in
-                make.left.equalToSuperview()
-                make.right.equalToSuperview()
-            }
+        emojiLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.width.equalTo(emojiLabel.snp.height)
+        }
+        
+        nameLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(20)
+        }
+        
+        numberOfQuestionsLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(15)
         }
     }
     
