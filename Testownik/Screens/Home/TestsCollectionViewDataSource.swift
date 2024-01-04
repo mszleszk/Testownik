@@ -8,16 +8,26 @@
 import UIKit
 
 final class TestsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
+    private var tests: [Test] = [Test(name: "Podstawy Telekomunikacji", emoji: "📻", questions: [])]
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        tests.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TestsCollectionViewCell.reuseIdentifier, for: indexPath) as? TestsCollectionViewCell else {
-            return UICollectionViewCell()
-        }
+        let cell: UICollectionViewCell
         
-        cell.setupAppearance(emoji: "🔊", testName: "PPS", numberOfQuestions: 5)
+        if indexPath.row == 0 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: TestsCollectionViewAdditionCell.reuseIdentifier, for: indexPath)
+        } else {
+            guard let testCell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: TestsCollectionViewCell.reuseIdentifier,
+                for: indexPath) as? TestsCollectionViewCell else { return UICollectionViewCell() }
+            
+            let test = tests[indexPath.row - 1]
+            testCell.setupAppearance(emoji: test.emoji, testName: test.name, numberOfQuestions: test.questions.count)
+            cell = testCell
+        }
         
         return cell
     }

@@ -29,6 +29,7 @@ final class TestsCollectionView: UICollectionView {
         super.init(frame: .zero, collectionViewLayout: layout)
         
         register(TestsCollectionViewCell.self, forCellWithReuseIdentifier: TestsCollectionViewCell.reuseIdentifier)
+        register(TestsCollectionViewAdditionCell.self, forCellWithReuseIdentifier: TestsCollectionViewAdditionCell.reuseIdentifier)
         
         backgroundColor = .clear
     }

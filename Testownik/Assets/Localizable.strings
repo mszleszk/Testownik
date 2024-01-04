@@ -8,3 +8,4 @@
 
 "general.appname" = "testownik";
 "home.number of questions" = "%d pytań";
+"home.addTest" = "Dodaj test";

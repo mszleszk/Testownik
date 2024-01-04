@@ -18,6 +18,8 @@ internal enum L10n {
     internal static let appname = L10n.tr("Localizable", "general.appname", fallback: "testownik")
   }
   internal enum Home {
+    /// Dodaj test
+    internal static let addTest = L10n.tr("Localizable", "home.addTest", fallback: "Dodaj test")
     /// %d pytań
     internal static func numberOfQuestions(_ p1: Int) -> String {
       return L10n.tr("Localizable", "home.number of questions", p1, fallback: "%d pytań")
