@@ -32,6 +32,8 @@ final class TestsCollectionView: UICollectionView {
         register(TestsCollectionViewAdditionCell.self, forCellWithReuseIdentifier: TestsCollectionViewAdditionCell.reuseIdentifier)
         
         backgroundColor = .clear
+        
+        delaysContentTouches = false
     }
     
     required init?(coder: NSCoder) {
