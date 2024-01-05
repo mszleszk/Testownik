@@ -9,17 +9,22 @@ final class HomeViewController: UIViewController {
     var router: HomeRouterProtocol?
     
     private let homeView = HomeView()
+    private let dataSource = TestsCollectionViewDataSource()
     
     override func loadView() {
         self.view = homeView
     }
     
     override func viewDidLoad() {
-        homeView.collectionView.dataSource = interactor?.getDataSource()
-        homeView.collectionView.delegate = interactor?.getDataSource()
+        homeView.collectionView.dataSource = dataSource
+        homeView.collectionView.delegate = self
     }
 }
 
 extension HomeViewController: HomeViewControllerLogic {
+    
+}
+
+extension HomeViewController: UICollectionViewDelegate {
     
 }

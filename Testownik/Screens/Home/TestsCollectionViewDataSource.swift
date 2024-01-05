@@ -8,10 +8,10 @@
 import UIKit
 
 final class TestsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
-    private var tests: [Test] = [Test(name: "Podstawy Telekomunikacji", emoji: "📻", questions: [])]
+    var tests: [Test] = [Test(name: "", emoji: "", questions: []), Test(name: "Podstawy Telekomunikacji", emoji: "📻", questions: [])]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        tests.count + 1
+        tests.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -24,7 +24,7 @@ final class TestsCollectionViewDataSource: NSObject, UICollectionViewDataSource,
                 withReuseIdentifier: TestsCollectionViewCell.reuseIdentifier,
                 for: indexPath) as? TestsCollectionViewCell else { return UICollectionViewCell() }
             
-            let test = tests[indexPath.row - 1]
+            let test = tests[indexPath.row]
             testCell.setupAppearance(emoji: test.emoji, testName: test.name, numberOfQuestions: test.questions.count)
             cell = testCell
         }

@@ -54,12 +54,9 @@ final class TestsCollectionViewCell: BaseCell {
         self.layer.cornerRadius = 15
     }
     
-    func setupAppearance(emoji: String, testName: String, numberOfQuestions: Int? = nil) {
+    func setupAppearance(emoji: String, testName: String, numberOfQuestions: Int) {
         emojiLabel.text = emoji
         nameLabel.text = testName
-        
-        guard let numberOfQuestions = numberOfQuestions else { return }
-        
         numberOfQuestionsLabel.text = L10n.Home.numberOfQuestions(numberOfQuestions)
     }
 }

@@ -8,10 +8,8 @@ class HomeBuilder: HomeBuilderProtocol {
     func build() -> UIViewController {
         let viewController = HomeViewController()
         
-        let testsCollectionViewDataSource = TestsCollectionViewDataSource()
-        
         let presenter = HomePresenter(viewController: viewController)
-        let interactor = HomeInteractor(presenter: presenter, dataSource: testsCollectionViewDataSource)
+        let interactor = HomeInteractor(presenter: presenter)
         let router = HomeRouter(viewController: viewController)
 
         viewController.interactor = interactor
