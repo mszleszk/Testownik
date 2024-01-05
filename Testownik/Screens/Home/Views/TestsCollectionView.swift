@@ -9,7 +9,7 @@ import UIKit
 
 final class TestsCollectionView: UICollectionView {
     private let layout = {
-        let inset = 5.0
+        let inset = K.TestCell.outerInset
         let cellFractionalWidth: CGFloat = UIScreen.main.bounds.width > 500 ? 1/3 : 1/2
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(cellFractionalWidth), heightDimension: .fractionalHeight(1))

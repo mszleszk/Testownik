@@ -26,5 +26,11 @@ extension HomeViewController: HomeViewControllerLogic {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            router?.showAddTestScreen()
+        } else {
+            
+        }
+    }
 }

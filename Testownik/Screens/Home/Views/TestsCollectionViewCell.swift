@@ -11,8 +11,8 @@ import SnapKit
 final class TestsCollectionViewCell: BaseCell {
     private let verticalStackView = TestsCollectionViewCell.makeVerticalStackView()
     private let emojiLabel = UILabel(fontSize: 300, color: Asset.Colors.primaryText.color, shouldAdjustFontToWidth: true)
-    private let nameLabel = UILabel(fontSize: 20, weight: .bold, color: Asset.Colors.primaryText.color)
-    private let numberOfQuestionsLabel = UILabel(fontSize: 15, color: Asset.Colors.primaryText.color)
+    private let nameLabel = UILabel(fontSize: K.Text.primaryTextSize, weight: .bold, color: Asset.Colors.primaryText.color)
+    private let numberOfQuestionsLabel = UILabel(fontSize: K.Text.secondaryTextSize, color: Asset.Colors.primaryText.color)
     
     override func buildHierarchy() {
         addSubviews([
@@ -28,7 +28,7 @@ final class TestsCollectionViewCell: BaseCell {
     
     override func setupConstraints() {
         verticalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: K.TestCell.innerInset, left: K.TestCell.innerInset, bottom: K.TestCell.innerInset, right: K.TestCell.innerInset))
         }
         
         emojiLabel.snp.makeConstraints { make in
@@ -39,19 +39,19 @@ final class TestsCollectionViewCell: BaseCell {
         nameLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.height.equalTo(20)
+            make.height.equalTo(K.Text.primaryTextSize)
         }
         
         numberOfQuestionsLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.height.equalTo(15)
+            make.height.equalTo(K.Text.secondaryTextSize)
         }
     }
     
     override func setupProperties() {
         self.backgroundColor = Asset.Colors.primary.color
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = K.TestCell.cornerRadius
     }
     
     func setupAppearance(emoji: String, testName: String, numberOfQuestions: Int) {

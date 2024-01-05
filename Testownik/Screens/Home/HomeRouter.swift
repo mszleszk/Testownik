@@ -1,7 +1,7 @@
 import UIKit
 
 protocol HomeRouterProtocol {
-    
+    func showAddTestScreen()
 }
 
 final class HomeRouter {
@@ -15,5 +15,7 @@ final class HomeRouter {
 }
 
 extension HomeRouter: HomeRouterProtocol {
-   
+    func showAddTestScreen() {
+        viewController?.show(AddTestViewController(), sender: viewController)
+    }
 }
