@@ -15,7 +15,7 @@ final class TestsCollectionViewCell: BaseCell {
     private let numberOfQuestionsLabel = UILabel(fontSize: K.Text.secondaryTextSize, color: Asset.Colors.primaryText.color)
     
     override func buildHierarchy() {
-        addSubviews([
+        contentView.addSubviews([
             verticalStackView
         ])
         
@@ -50,8 +50,8 @@ final class TestsCollectionViewCell: BaseCell {
     }
     
     override func setupProperties() {
-        self.backgroundColor = Asset.Colors.primary.color
-        self.layer.cornerRadius = K.TestCell.cornerRadius
+        contentView.backgroundColor = Asset.Colors.primary.color
+        contentView.layer.cornerRadius = K.TestCell.cornerRadius
     }
     
     func setupAppearance(emoji: String, testName: String, numberOfQuestions: Int) {

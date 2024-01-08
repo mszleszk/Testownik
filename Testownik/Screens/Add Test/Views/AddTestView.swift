@@ -1,8 +1,11 @@
 import UIKit
+import SnapKit
 
 final class AddTestView: BaseView {
-    private let verticalStackView = UIStackView(axis: .vertical, spacing: 10)
+    private let verticalStackView = UIStackView(axis: .vertical, spacing: 15, alignment: .center)
     private let addEmojiButton = AddTestView.makeAddEmojiButton()
+    private let nameTextField = AddTestView.makeNameTextField()
+    private let addFileButton = AddTestView.makeAddFileButton()
     
     override func buildHierarchy() {
         addSubviews([
@@ -10,22 +13,52 @@ final class AddTestView: BaseView {
         ])
         
         verticalStackView.addArrangedSubviews([
-            addEmojiButton
+            addEmojiButton,
+            nameTextField,
+            addFileButton
         ])
     }
     
     override func setupConstraints() {
         verticalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+            make.left.equalToSuperview().inset(K.View.inset)
+            make.right.equalToSuperview().inset(K.View.inset)
+            make.top.equalToSuperview().inset(K.View.largeInset)
         }
         
         addEmojiButton.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.equalToSuperview().inset(K.View.largeInset)
+            make.right.equalToSuperview().inset(K.View.largeInset)
+            make.height.equalTo(addEmojiButton.snp.width)
+        }
+        
+        nameTextField.snp.makeConstraints { make in
+            make.height.equalTo(K.Text.largeTextSize * 1.2)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+        
+        addFileButton.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(150)
         }
     }
     
     override func setupProperties() {
         backgroundColor = Asset.Colors.background.color
+        verticalStackView.setCustomSpacing(50, after: nameTextField)
+    }
+    
+    override func layoutSubviews() {
+        let dashBorder = CAShapeLayer()
+        dashBorder.lineWidth = 3
+        dashBorder.strokeColor = Asset.Colors.systemGray.color.cgColor
+        dashBorder.lineDashPattern = [6, 3] as [NSNumber]
+        dashBorder.frame = addFileButton.bounds
+        dashBorder.fillColor = nil
+        dashBorder.path = UIBezierPath(roundedRect: addFileButton.bounds, cornerRadius: 20).cgPath
+        addFileButton.layer.addSublayer(dashBorder)
     }
 }
 
@@ -33,13 +66,42 @@ final class AddTestView: BaseView {
 private extension AddTestView {
     static func makeAddEmojiButton() -> UIButton {
         return UIButton().also {
-            let config = UIImage.SymbolConfiguration(paletteColors: [Asset.Colors.systemLightGray.color, Asset.Colors.systemGray.color])
-            let image = UIImage(systemName: "plus.circle.fill")?.applyingSymbolConfiguration(config)
+            let config = UIImage.SymbolConfiguration(paletteColors: [Asset.Colors.systemBlue.color, Asset.Colors.systemBlue.color.withAlphaComponent(0.5)])
+            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: config)
             $0.setBackgroundImage(image, for: .normal)
             $0.layoutIfNeeded()
             let backgroundImageView = $0.subviews.first
             backgroundImageView?.contentMode = .scaleAspectFit
-            backgroundImageView?.tintColor = Asset.Colors.systemGray.color
+        }
+    }
+    
+    static func makeNameTextField() -> UITextField {
+        return UITextField().also {
+            $0.textColor = Asset.Colors.primaryText.color
+            $0.font = UIFont.systemFont(ofSize: K.Text.largeTextSize, weight: .bold)
+            $0.textAlignment = .center
+            let placeholderText = NSAttributedString(string: L10n.AddTest.inputName, attributes: [NSAttributedString.Key.foregroundColor: Asset.Colors.systemGray.color])
+            $0.attributedPlaceholder = placeholderText
+        }
+    }
+    
+    static func makeAddFileButton() -> UIButton {
+        return UIButton().also {
+            let config = UIImage.SymbolConfiguration(paletteColors: [Asset.Colors.primaryText.color, Asset.Colors.systemBlue.color])
+            var buttonConfiguration = UIButton.Configuration.plain()
+            buttonConfiguration.image = UIImage(systemName: "plus.circle.fill", withConfiguration: config)
+            buttonConfiguration.imagePadding = 10
+            var attributedTitle = AttributedString(L10n.AddTest.addFiles)
+            attributedTitle.foregroundColor = Asset.Colors.primaryText.color
+            attributedTitle.font = UIFont.systemFont(ofSize: K.Text.primaryTextSize, weight: .bold)
+            buttonConfiguration.attributedTitle = attributedTitle
+            $0.configuration = buttonConfiguration
+            
+            $0.configurationUpdateHandler = { button in
+                var config = button.configuration
+                config?.attributedTitle?.foregroundColor = button.isHighlighted ? Asset.Colors.primaryText.color.withAlphaComponent(0.5) : Asset.Colors.primaryText.color
+                button.configuration = config
+            }
         }
     }
 }

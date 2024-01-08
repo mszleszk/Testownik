@@ -13,7 +13,7 @@ final class TestsCollectionViewAdditionCell: BaseCell {
     private let addLabel = UILabel(text: L10n.Home.addTest, fontSize: K.Text.primaryTextSize, weight: .bold, color: Asset.Colors.systemBlue.color, alignment: .center)
     
     override func buildHierarchy() {
-        addSubviews([
+        contentView.addSubviews([
             verticalStackView
         ])
         
@@ -30,8 +30,8 @@ final class TestsCollectionViewAdditionCell: BaseCell {
     }
     
     override func setupProperties() {
-        backgroundColor = Asset.Colors.systemBlue.color.withAlphaComponent(0.2)
-        self.layer.cornerRadius = K.TestCell.cornerRadius
+        contentView.backgroundColor = Asset.Colors.systemBlue.color.withAlphaComponent(0.2)
+        contentView.layer.cornerRadius = K.TestCell.cornerRadius
     }
 }
 

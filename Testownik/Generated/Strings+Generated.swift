@@ -10,6 +10,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  internal enum AddTest {
+    /// Dodaj pliki
+    internal static let addFiles = L10n.tr("Localizable", "addTest.addFiles", fallback: "Dodaj pliki")
+    /// Wpisz nazwę
+    internal static let inputName = L10n.tr("Localizable", "addTest.inputName", fallback: "Wpisz nazwę")
+  }
   internal enum General {
     /// Localizable.strings
     ///   Testownik

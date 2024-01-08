@@ -9,6 +9,7 @@ import Foundation
 
 enum K {
     struct Text {
+        static let largeTextSize = 50.0
         static let primaryTextSize = 20.0
         static let secondaryTextSize = 15.0
     }
@@ -21,5 +22,6 @@ enum K {
     
     struct View {
         static let inset = 20.0
+        static let largeInset = 50.0
     }
 }
