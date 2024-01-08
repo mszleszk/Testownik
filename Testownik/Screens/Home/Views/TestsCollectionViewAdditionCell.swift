@@ -41,7 +41,7 @@ private extension TestsCollectionViewAdditionCell {
         return UIImageView().also {
             $0.image = UIImage(systemName: "plus.circle.fill")
             $0.contentMode = .scaleAspectFit
-            $0.tintColor = UIColor.systemBlue
+            $0.tintColor = Asset.Colors.systemBlue.color
         }
     }
 }
