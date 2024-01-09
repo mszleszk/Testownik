@@ -2,8 +2,9 @@ import UIKit
 import SnapKit
 
 final class AddTestView: BaseView {
+    internal let addEmojiButton = AddTestView.makeAddEmojiButton()
+    
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 15, alignment: .center)
-    private let addEmojiButton = AddTestView.makeAddEmojiButton()
     private let nameTextField = AddTestView.makeNameTextField()
     private let addFileButton = AddTestView.makeAddFileButton()
     private let doneButton = SystemButton(text: L10n.General.done)
@@ -66,6 +67,14 @@ final class AddTestView: BaseView {
     
     override func layoutSubviews() {
         setupAddFileButtonBorder()
+        setEmojiSize()
+    }
+    
+    internal func setEmoji(_ emoji: String) {
+        let config = UIImage.SymbolConfiguration(hierarchicalColor: Asset.Colors.systemGray.color)
+        let image = UIImage(systemName: "circle.fill", withConfiguration: config)
+        addEmojiButton.setBackgroundImage(image, for: .normal)
+        addEmojiButton.setTitle(emoji, for: .normal)
     }
     
     private func setupAddFileButtonBorder() {
@@ -77,6 +86,11 @@ final class AddTestView: BaseView {
         dashBorder.fillColor = nil
         dashBorder.path = UIBezierPath(roundedRect: addFileButton.bounds, cornerRadius: 20).cgPath
         addFileButton.layer.addSublayer(dashBorder)
+    }
+    
+    private func setEmojiSize() {
+        let emojiSize = addEmojiButton.bounds.height * 0.5
+        addEmojiButton.titleLabel?.font = UIFont.systemFont(ofSize: emojiSize)
     }
 }
 
