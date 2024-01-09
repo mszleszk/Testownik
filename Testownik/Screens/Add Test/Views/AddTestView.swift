@@ -6,10 +6,14 @@ final class AddTestView: BaseView {
     private let addEmojiButton = AddTestView.makeAddEmojiButton()
     private let nameTextField = AddTestView.makeNameTextField()
     private let addFileButton = AddTestView.makeAddFileButton()
+    private let doneButton = SystemButton(text: L10n.General.done)
+    private let cancelButton =  SystemButton(text: L10n.General.cancel)
     
     override func buildHierarchy() {
         addSubviews([
-            verticalStackView
+            verticalStackView,
+            doneButton,
+            cancelButton
         ])
         
         verticalStackView.addArrangedSubviews([
@@ -23,7 +27,7 @@ final class AddTestView: BaseView {
         verticalStackView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(K.View.inset)
             make.right.equalToSuperview().inset(K.View.inset)
-            make.top.equalToSuperview().inset(K.View.largeInset)
+            make.centerY.equalTo(safeAreaLayoutGuide.snp.centerY)
         }
         
         addEmojiButton.snp.makeConstraints { make in
@@ -43,6 +47,16 @@ final class AddTestView: BaseView {
             make.right.equalToSuperview().inset(K.View.inset)
             make.height.equalTo(150)
         }
+        
+        doneButton.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(K.View.inset)
+            make.top.equalToSuperview().inset(K.View.inset)
+        }
+        
+        cancelButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(K.View.inset)
+            make.top.equalToSuperview().inset(K.View.inset)
+        }
     }
     
     override func setupProperties() {
@@ -51,6 +65,10 @@ final class AddTestView: BaseView {
     }
     
     override func layoutSubviews() {
+        setupAddFileButtonBorder()
+    }
+    
+    private func setupAddFileButtonBorder() {
         let dashBorder = CAShapeLayer()
         dashBorder.lineWidth = 3
         dashBorder.strokeColor = Asset.Colors.systemGray.color.cgColor

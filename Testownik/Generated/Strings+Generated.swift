@@ -22,6 +22,10 @@ internal enum L10n {
     /// 
     ///   Created by Michał Szleszkowski on 03/01/2024.
     internal static let appname = L10n.tr("Localizable", "general.appname", fallback: "testownik")
+    /// Anuluj
+    internal static let cancel = L10n.tr("Localizable", "general.cancel", fallback: "Anuluj")
+    /// Gotowe
+    internal static let done = L10n.tr("Localizable", "general.done", fallback: "Gotowe")
   }
   internal enum Home {
     /// Dodaj test

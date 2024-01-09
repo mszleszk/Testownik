@@ -43,6 +43,7 @@
 		319978462B482298001FF59E /* AddTestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978412B482298001FF59E /* AddTestInteractor.swift */; };
 		319978492B4822B9001FF59E /* AddTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978482B4822B9001FF59E /* AddTestView.swift */; };
 		3199784B2B482DD2001FF59E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199784A2B482DD2001FF59E /* Constants.swift */; };
+		3199784F2B4DB18B001FF59E /* SystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199784E2B4DB18B001FF59E /* SystemButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		319978412B482298001FF59E /* AddTestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTestInteractor.swift; sourceTree = "<group>"; };
 		319978482B4822B9001FF59E /* AddTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTestView.swift; sourceTree = "<group>"; };
 		3199784A2B482DD2001FF59E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3199784E2B4DB18B001FF59E /* SystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemButton.swift; sourceTree = "<group>"; };
 		E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Testownik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.release.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +201,7 @@
 		319978192B4595B6001FF59E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3199784E2B4DB18B001FF59E /* SystemButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */,
 				319978182B458FC3001FF59E /* UIStackView+Extensions.swift in Sources */,
 				319978372B471089001FF59E /* TestsCollectionViewAdditionCell.swift in Sources */,
+				3199784F2B4DB18B001FF59E /* SystemButton.swift in Sources */,
 				319978022B45828C001FF59E /* HomeInteractor.swift in Sources */,
 				319978352B470F32001FF59E /* BaseCell.swift in Sources */,
 				319978132B458D37001FF59E /* Strings+Generated.swift in Sources */,
