@@ -33,14 +33,14 @@ final class AddTestView: BaseView {
         }
         
         nameTextField.snp.makeConstraints { make in
-            make.height.equalTo(K.Text.largeTextSize * 1.2)
+            make.height.equalTo(K.Text.largeTextSize)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
         
         addFileButton.snp.makeConstraints { make in
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.left.equalToSuperview().inset(K.View.inset)
+            make.right.equalToSuperview().inset(K.View.inset)
             make.height.equalTo(150)
         }
     }
