@@ -16,6 +16,7 @@ final class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         homeView.collectionView.dataSource = dataSource
         homeView.collectionView.delegate = self
     }

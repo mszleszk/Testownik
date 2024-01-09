@@ -66,6 +66,7 @@ final class AddTestView: BaseView {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         setupAddFileButtonBorder()
         setEmojiSize()
     }

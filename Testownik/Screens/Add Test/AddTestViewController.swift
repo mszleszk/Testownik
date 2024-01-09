@@ -16,6 +16,7 @@ final class AddTestViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         setupEmojiButton()
     }
     
