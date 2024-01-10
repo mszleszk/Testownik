@@ -18,6 +18,7 @@ final class AddTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupEmojiButton()
+        dismissKeyboardOnTouchOutside()
     }
     
     private func setupEmojiButton() {
