@@ -19,6 +19,8 @@ final class AddTestViewController: UIViewController {
         super.viewDidLoad()
         setupEmojiButton()
         dismissKeyboardOnTouchOutside()
+        
+        addTestView.nameTextField.delegate = self
     }
     
     private func setupEmojiButton() {
@@ -39,5 +41,15 @@ extension AddTestViewController: AddTestViewControllerLogic {
 extension AddTestViewController: MCEmojiPickerDelegate {
     func didGetEmoji(emoji: String) {
         addTestView.setEmoji(emoji)
+    }
+}
+
+extension AddTestViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        view.gestureRecognizers?.first?.delaysTouchesBegan = true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        view.gestureRecognizers?.first?.delaysTouchesBegan = false
     }
 }
