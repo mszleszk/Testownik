@@ -21,6 +21,7 @@ final class AddTestViewController: UIViewController {
         dismissKeyboardOnTouchOutside()
         
         addTestView.nameTextField.delegate = self
+        isModalInPresentation = UIDevice.current.userInterfaceIdiom == .pad
     }
     
     private func setupEmojiButton() {
