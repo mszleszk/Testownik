@@ -26,10 +26,8 @@ final class AddTestViewController: UIViewController {
     
     private func setupEmojiButton() {
         let action = UIAction { [weak self] action in
-            let emojiController = MCEmojiPickerViewController()
-            emojiController.delegate = self
-            emojiController.sourceView = action.sender as? UIButton
-            self?.present(emojiController, animated: true)
+            guard let sender = action.sender as? UIButton else { return }
+            self?.router?.presentEmojiController(toSourceView: sender)
         }
         addTestView.addEmojiButton.addAction(action, for: .touchUpInside)
     }

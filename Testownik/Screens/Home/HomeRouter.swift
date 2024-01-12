@@ -16,6 +16,6 @@ final class HomeRouter {
 
 extension HomeRouter: HomeRouterProtocol {
     func showAddTestScreen() {
-        viewController?.show(AddTestViewController(), sender: viewController)
+        viewController?.show(AddTestBuilder().build(), sender: viewController)
     }
 }

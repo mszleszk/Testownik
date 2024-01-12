@@ -1,7 +1,8 @@
 import UIKit
+import MCEmojiPicker
 
 protocol AddTestRouterProtocol {
-    
+    func presentEmojiController(toSourceView sourceView: UIView)
 }
 
 final class AddTestRouter {
@@ -15,5 +16,10 @@ final class AddTestRouter {
 }
 
 extension AddTestRouter: AddTestRouterProtocol {
-   
+    func presentEmojiController(toSourceView sourceView: UIView) {
+        let emojiController = MCEmojiPickerViewController()
+        emojiController.delegate = viewController
+        emojiController.sourceView = sourceView
+        viewController?.present(emojiController, animated: true)
+    }
 }
