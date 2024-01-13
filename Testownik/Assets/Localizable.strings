@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Testownik
+
+  Created by Michał Szleszkowski on 03/01/2024.
+  
+*/
+
+"general.appname" = "testownik";
+"general.done" = "Gotowe";
+"general.cancel" = "Anuluj";
+"home.number of questions" = "%d pytań";
+"home.addTest" = "Dodaj test";
+"addTest.inputName" = "Wpisz nazwę";
+"addTest.addFiles" =  "Dodaj pliki";
