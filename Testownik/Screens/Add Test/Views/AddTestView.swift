@@ -5,10 +5,10 @@ final class AddTestView: BaseView {
     let addEmojiButton = AddTestView.makeAddEmojiButton()
     let nameTextField = AddTestView.makeNameTextField()
     let addFileButton = AddFileButton()
+    let doneButton = SystemButton(text: L10n.General.done)
+    let cancelButton =  SystemButton(text: L10n.General.cancel)
     
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 15, alignment: .center)
-    private let doneButton = SystemButton(text: L10n.General.done)
-    private let cancelButton =  SystemButton(text: L10n.General.cancel)
     
     override func buildHierarchy() {
         addSubviews([

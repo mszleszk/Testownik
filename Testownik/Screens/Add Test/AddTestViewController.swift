@@ -17,8 +17,14 @@ final class AddTestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    private func setup() {
         setupEmojiButton()
         setupAddFileButton()
+        setupCancelButton()
+        setupDoneButton()
         dismissKeyboardOnTouchOutside()
         
         addTestView.nameTextField.delegate = self
@@ -38,6 +44,20 @@ final class AddTestViewController: UIViewController {
             self?.router?.presentDocumentPicker()
         }
         addTestView.addFileButton.addAction(action, for: .touchUpInside)
+    }
+    
+    private func setupCancelButton() {
+        let action = UIAction { [weak self] action in
+            self?.dismiss(animated: true)
+        }
+        addTestView.cancelButton.addAction(action, for: .touchUpInside)
+    }
+    
+    private func setupDoneButton() {
+        let action = UIAction { [weak self] action in
+            
+        }
+        addTestView.doneButton.addAction(action, for: .touchUpInside)
     }
 }
 
