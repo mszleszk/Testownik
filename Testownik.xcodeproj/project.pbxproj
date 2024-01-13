@@ -47,6 +47,7 @@
 		319978582B4DE880001FF59E /* MCEmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 319978572B4DE880001FF59E /* MCEmojiPicker */; };
 		3199785F2B4F4237001FF59E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199785E2B4F4237001FF59E /* UIViewController+Extensions.swift */; };
 		319978612B52AF53001FF59E /* AddFileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978602B52AF53001FF59E /* AddFileButton.swift */; };
+		319978642B52EA48001FF59E /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 319978632B52EA48001FF59E /* SPIndicator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 				319977F62B457FBF001FF59E /* SnapKit in Frameworks */,
 				1094C65F232E6F43ACA23162 /* Pods_Testownik.framework in Frameworks */,
 				319978582B4DE880001FF59E /* MCEmojiPicker in Frameworks */,
+				319978642B52EA48001FF59E /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +315,7 @@
 			packageProductDependencies = (
 				319977F52B457FBF001FF59E /* SnapKit */,
 				319978572B4DE880001FF59E /* MCEmojiPicker */,
+				319978632B52EA48001FF59E /* SPIndicator */,
 			);
 			productName = Testownik;
 			productReference = 319977DD2B457AC4001FF59E /* Testownik.app */;
@@ -345,6 +348,7 @@
 			packageReferences = (
 				319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				319978562B4DE880001FF59E /* XCRemoteSwiftPackageReference "MCEmojiPicker" */,
+				319978622B52EA48001FF59E /* XCRemoteSwiftPackageReference "SPIndicator" */,
 			);
 			productRefGroup = 319977DE2B457AC4001FF59E /* Products */;
 			projectDirPath = "";
@@ -662,6 +666,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		319978622B52EA48001FF59E /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -674,6 +686,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 319978562B4DE880001FF59E /* XCRemoteSwiftPackageReference "MCEmojiPicker" */;
 			productName = MCEmojiPicker;
+		};
+		319978632B52EA48001FF59E /* SPIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 319978622B52EA48001FF59E /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			productName = SPIndicator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
