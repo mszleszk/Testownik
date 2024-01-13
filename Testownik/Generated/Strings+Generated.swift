@@ -11,8 +11,8 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
   internal enum AddTest {
-    /// Dodaj pliki
-    internal static let addFiles = L10n.tr("Localizable", "addTest.addFiles", fallback: "Dodaj pliki")
+    /// Dodaj folder
+    internal static let addFolder = L10n.tr("Localizable", "addTest.addFolder", fallback: "Dodaj folder")
     /// Wpisz nazwę
     internal static let inputName = L10n.tr("Localizable", "addTest.inputName", fallback: "Wpisz nazwę")
   }

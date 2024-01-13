@@ -1,5 +1,5 @@
 //
-//  AddFileButton.swift
+//  AddFolderButton.swift
 //  Testownik
 //
 //  Created by Michał Szleszkowski on 13/01/2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AddFileButton: UIButton {
+final class AddFolderButton: UIButton {
     private let cornerRadius: CGFloat = 20
     
     init() {
@@ -24,12 +24,12 @@ final class AddFileButton: UIButton {
         drawBorder()
     }
     
-    func setAsFileAdded(withFileName filename: String) {
-        configuration = makeFileAddedConfiguration(withTitle: filename)
+    func setAsFolderAdded(withFolderName folderName: String) {
+        configuration = makeFolderAddedConfiguration(withTitle: folderName)
     }
     
     private func setup() {
-        configuration = makeAddFileConfiguration()
+        configuration = makeAddFolderConfiguration()
         
         configurationUpdateHandler = { button in
             var config = button.configuration
@@ -38,10 +38,10 @@ final class AddFileButton: UIButton {
         }
     }
     
-    private func makeFileAddedConfiguration(withTitle title: String) -> UIButton.Configuration {
-        guard var buttonConfig = configuration else { return makeAddFileConfiguration() }
+    private func makeFolderAddedConfiguration(withTitle title: String) -> UIButton.Configuration {
+        guard var buttonConfig = configuration else { return makeAddFolderConfiguration() }
         
-        let sizeConfig = UIImage.SymbolConfiguration(pointSize: 70)
+        let sizeConfig = UIImage.SymbolConfiguration(pointSize: 50)
         let imageConfig = UIImage.SymbolConfiguration(hierarchicalColor: Asset.Colors.systemGray.color).applying(sizeConfig)
         buttonConfig.image = UIImage(systemName: "folder.fill", withConfiguration: imageConfig)
         buttonConfig.imagePlacement = .top
@@ -54,13 +54,13 @@ final class AddFileButton: UIButton {
         return buttonConfig
     }
     
-    private func makeAddFileConfiguration() -> UIButton.Configuration {
+    private func makeAddFolderConfiguration() -> UIButton.Configuration {
         var buttonConfig = UIButton.Configuration.plain()
         
         let imageConfig = UIImage.SymbolConfiguration(paletteColors: [Asset.Colors.primaryText.color, Asset.Colors.systemBlue.color])
         buttonConfig.image = UIImage(systemName: "plus.circle.fill", withConfiguration: imageConfig)
         
-        var attributedTitle = AttributedString(L10n.AddTest.addFiles)
+        var attributedTitle = AttributedString(L10n.AddTest.addFolder)
         attributedTitle.font = UIFont.systemFont(ofSize: K.Text.primaryTextSize, weight: .bold)
         attributedTitle.foregroundColor =  Asset.Colors.primaryText.color
         buttonConfig.attributedTitle = attributedTitle

@@ -2,7 +2,7 @@ import UIKit
 import MCEmojiPicker
 
 protocol AddTestViewControllerLogic: AnyObject {
-
+    func showAddedFolder(withName name: String)
 }
 
 final class AddTestViewController: UIViewController {
@@ -22,7 +22,7 @@ final class AddTestViewController: UIViewController {
     
     private func setup() {
         setupEmojiButton()
-        setupAddFileButton()
+        setupAddFolderButton()
         setupCancelButton()
         setupDoneButton()
         dismissKeyboardOnTouchOutside()
@@ -39,11 +39,11 @@ final class AddTestViewController: UIViewController {
         addTestView.addEmojiButton.addAction(action, for: .touchUpInside)
     }
     
-    private func setupAddFileButton() {
+    private func setupAddFolderButton() {
         let action = UIAction { [weak self] action in
             self?.router?.presentDocumentPicker()
         }
-        addTestView.addFileButton.addAction(action, for: .touchUpInside)
+        addTestView.addFolderButton.addAction(action, for: .touchUpInside)
     }
     
     private func setupCancelButton() {
@@ -62,7 +62,9 @@ final class AddTestViewController: UIViewController {
 }
 
 extension AddTestViewController: AddTestViewControllerLogic {
-    
+    func showAddedFolder(withName name: String) {
+        addTestView.addFolderButton.setAsFolderAdded(withFolderName: name)
+    }
 }
 
 extension AddTestViewController: MCEmojiPickerDelegate {
@@ -83,6 +85,7 @@ extension AddTestViewController: UITextFieldDelegate {
 
 extension AddTestViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        addTestView.addFileButton.setAsFileAdded(withFileName: urls.first?.lastPathComponent ?? "File")
+        guard let url = urls.first else { return }
+        interactor?.addFolderUrl(url)
     }
 }

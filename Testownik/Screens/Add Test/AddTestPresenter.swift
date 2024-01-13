@@ -1,7 +1,7 @@
 import UIKit
 
 protocol AddTestPresenterLogic {
-    
+    func presentAddedFolder(withUrl url: URL)
 }
 
 final class AddTestPresenter {
@@ -15,5 +15,7 @@ final class AddTestPresenter {
 }
 
 extension AddTestPresenter: AddTestPresenterLogic {
-    
+    func presentAddedFolder(withUrl url: URL) {
+        viewController?.showAddedFolder(withName: url.lastPathComponent)
+    }
 }

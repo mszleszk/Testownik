@@ -12,4 +12,4 @@
 "home.number of questions" = "%d pytań";
 "home.addTest" = "Dodaj test";
 "addTest.inputName" = "Wpisz nazwę";
-"addTest.addFiles" =  "Dodaj pliki";
+"addTest.addFolder" =  "Dodaj folder";

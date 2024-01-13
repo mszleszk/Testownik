@@ -4,7 +4,7 @@ import SnapKit
 final class AddTestView: BaseView {
     let addEmojiButton = AddTestView.makeAddEmojiButton()
     let nameTextField = AddTestView.makeNameTextField()
-    let addFileButton = AddFileButton()
+    let addFolderButton = AddFolderButton()
     let doneButton = SystemButton(text: L10n.General.done)
     let cancelButton =  SystemButton(text: L10n.General.cancel)
     
@@ -20,7 +20,7 @@ final class AddTestView: BaseView {
         verticalStackView.addArrangedSubviews([
             addEmojiButton,
             nameTextField,
-            addFileButton
+            addFolderButton
         ])
     }
     
@@ -43,7 +43,7 @@ final class AddTestView: BaseView {
             make.right.equalToSuperview()
         }
         
-        addFileButton.snp.makeConstraints { make in
+        addFolderButton.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(K.View.inset)
             make.right.equalToSuperview().inset(K.View.inset)
             make.height.equalTo(150)
