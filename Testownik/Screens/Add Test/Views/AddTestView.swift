@@ -2,9 +2,9 @@ import UIKit
 import SnapKit
 
 final class AddTestView: BaseView {
-    internal let addEmojiButton = AddTestView.makeAddEmojiButton()
-    internal let nameTextField = AddTestView.makeNameTextField()
-    internal let addFileButton = AddTestView.makeAddFileButton()
+    let addEmojiButton = AddTestView.makeAddEmojiButton()
+    let nameTextField = AddTestView.makeNameTextField()
+    let addFileButton = AddFileButton()
     
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 15, alignment: .center)
     private let doneButton = SystemButton(text: L10n.General.done)
@@ -67,26 +67,14 @@ final class AddTestView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupAddFileButtonBorder()
         setEmojiSize()
     }
     
-    internal func setEmoji(_ emoji: String) {
+    func setEmoji(_ emoji: String) {
         let config = UIImage.SymbolConfiguration(hierarchicalColor: Asset.Colors.systemGray.color)
         let image = UIImage(systemName: "circle.fill", withConfiguration: config)
         addEmojiButton.setBackgroundImage(image, for: .normal)
         addEmojiButton.setTitle(emoji, for: .normal)
-    }
-    
-    private func setupAddFileButtonBorder() {
-        let dashBorder = CAShapeLayer()
-        dashBorder.lineWidth = 3
-        dashBorder.strokeColor = Asset.Colors.systemGray.color.cgColor
-        dashBorder.lineDashPattern = [6, 3] as [NSNumber]
-        dashBorder.frame = addFileButton.bounds
-        dashBorder.fillColor = nil
-        dashBorder.path = UIBezierPath(roundedRect: addFileButton.bounds, cornerRadius: 20).cgPath
-        addFileButton.layer.addSublayer(dashBorder)
     }
     
     private func setEmojiSize() {
@@ -115,26 +103,6 @@ private extension AddTestView {
             $0.textAlignment = .center
             let placeholderText = NSAttributedString(string: L10n.AddTest.inputName, attributes: [NSAttributedString.Key.foregroundColor: Asset.Colors.systemGray.color])
             $0.attributedPlaceholder = placeholderText
-        }
-    }
-    
-    static func makeAddFileButton() -> UIButton {
-        return UIButton().also {
-            let config = UIImage.SymbolConfiguration(paletteColors: [Asset.Colors.primaryText.color, Asset.Colors.systemBlue.color])
-            var buttonConfiguration = UIButton.Configuration.plain()
-            buttonConfiguration.image = UIImage(systemName: "plus.circle.fill", withConfiguration: config)
-            buttonConfiguration.imagePadding = 10
-            var attributedTitle = AttributedString(L10n.AddTest.addFiles)
-            attributedTitle.foregroundColor = Asset.Colors.primaryText.color
-            attributedTitle.font = UIFont.systemFont(ofSize: K.Text.primaryTextSize, weight: .bold)
-            buttonConfiguration.attributedTitle = attributedTitle
-            $0.configuration = buttonConfiguration
-            
-            $0.configurationUpdateHandler = { button in
-                var config = button.configuration
-                config?.attributedTitle?.foregroundColor = button.isHighlighted ? Asset.Colors.primaryText.color.withAlphaComponent(0.5) : Asset.Colors.primaryText.color
-                button.configuration = config
-            }
         }
     }
 }

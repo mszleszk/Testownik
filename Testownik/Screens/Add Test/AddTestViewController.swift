@@ -63,6 +63,6 @@ extension AddTestViewController: UITextFieldDelegate {
 
 extension AddTestViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        
+        addTestView.addFileButton.setAsFileAdded(withFileName: urls.first?.lastPathComponent ?? "File")
     }
 }

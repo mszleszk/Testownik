@@ -46,6 +46,7 @@
 		3199784F2B4DB18B001FF59E /* SystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199784E2B4DB18B001FF59E /* SystemButton.swift */; };
 		319978582B4DE880001FF59E /* MCEmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 319978572B4DE880001FF59E /* MCEmojiPicker */; };
 		3199785F2B4F4237001FF59E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199785E2B4F4237001FF59E /* UIViewController+Extensions.swift */; };
+		319978612B52AF53001FF59E /* AddFileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978602B52AF53001FF59E /* AddFileButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		3199784A2B482DD2001FF59E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3199784E2B4DB18B001FF59E /* SystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemButton.swift; sourceTree = "<group>"; };
 		3199785E2B4F4237001FF59E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		319978602B52AF53001FF59E /* AddFileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFileButton.swift; sourceTree = "<group>"; };
 		E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Testownik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.release.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				3199784E2B4DB18B001FF59E /* SystemButton.swift */,
+				319978602B52AF53001FF59E /* AddFileButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				3199782C2B46EE6E001FF59E /* Answer.swift in Sources */,
 				3199782E2B46EEC0001FF59E /* Task.swift in Sources */,
 				3199784B2B482DD2001FF59E /* Constants.swift in Sources */,
+				319978612B52AF53001FF59E /* AddFileButton.swift in Sources */,
 				3199780B2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift in Sources */,
 				319978282B46E902001FF59E /* Test.swift in Sources */,
 				3199782A2B46E95C001FF59E /* Question.swift in Sources */,
