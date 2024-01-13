@@ -4,9 +4,9 @@ import SnapKit
 final class AddTestView: BaseView {
     internal let addEmojiButton = AddTestView.makeAddEmojiButton()
     internal let nameTextField = AddTestView.makeNameTextField()
+    internal let addFileButton = AddTestView.makeAddFileButton()
     
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 15, alignment: .center)
-    private let addFileButton = AddTestView.makeAddFileButton()
     private let doneButton = SystemButton(text: L10n.General.done)
     private let cancelButton =  SystemButton(text: L10n.General.cancel)
     

@@ -18,6 +18,7 @@ final class AddTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupEmojiButton()
+        setupAddFileButton()
         dismissKeyboardOnTouchOutside()
         
         addTestView.nameTextField.delegate = self
@@ -30,6 +31,13 @@ final class AddTestViewController: UIViewController {
             self?.router?.presentEmojiController(toSourceView: sender)
         }
         addTestView.addEmojiButton.addAction(action, for: .touchUpInside)
+    }
+    
+    private func setupAddFileButton() {
+        let action = UIAction { [weak self] action in
+            self?.router?.presentDocumentPicker()
+        }
+        addTestView.addFileButton.addAction(action, for: .touchUpInside)
     }
 }
 
@@ -50,5 +58,11 @@ extension AddTestViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         view.gestureRecognizers?.first?.delaysTouchesBegan = false
+    }
+}
+
+extension AddTestViewController: UIDocumentPickerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        
     }
 }
