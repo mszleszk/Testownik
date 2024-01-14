@@ -1,8 +1,10 @@
 import UIKit
 import MCEmojiPicker
+import SPIndicator
 
 protocol AddTestViewControllerLogic: AnyObject {
     func showAddedFolder(withName name: String)
+    func showError(withMessage message: String?)
 }
 
 final class AddTestViewController: UIViewController {
@@ -55,7 +57,9 @@ final class AddTestViewController: UIViewController {
     
     private func setupDoneButton() {
         let action = UIAction { [weak self] action in
-            
+            self?.interactor?.addTest(
+                name: self?.addTestView.getName(),
+                emoji: self?.addTestView.getEmoji())
         }
         addTestView.doneButton.addAction(action, for: .touchUpInside)
     }
@@ -64,6 +68,14 @@ final class AddTestViewController: UIViewController {
 extension AddTestViewController: AddTestViewControllerLogic {
     func showAddedFolder(withName name: String) {
         addTestView.addFolderButton.setAsFolderAdded(withFolderName: name)
+    }
+    
+    func showError(withMessage message: String?) {
+        SPIndicator.present(
+            title: L10n.General.somethingWentWrong,
+            message: message,
+            preset: .error,
+            haptic: .error)
     }
 }
 
@@ -86,6 +98,6 @@ extension AddTestViewController: UITextFieldDelegate {
 extension AddTestViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let url = urls.first else { return }
-        interactor?.addFolderUrl(url)
+        interactor?.addFolder(withUrl: url)
     }
 }

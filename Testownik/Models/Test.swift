@@ -10,5 +10,6 @@ import Foundation
 struct Test {
     let name: String
     let emoji: String
-    let questions: [Task]
+    let questions: [Question]
+    var imagesUrl: URL?
 }

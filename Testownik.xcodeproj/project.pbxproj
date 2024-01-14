@@ -32,7 +32,6 @@
 		319978282B46E902001FF59E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978272B46E902001FF59E /* Test.swift */; };
 		3199782A2B46E95C001FF59E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978292B46E95C001FF59E /* Question.swift */; };
 		3199782C2B46EE6E001FF59E /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199782B2B46EE6E001FF59E /* Answer.swift */; };
-		3199782E2B46EEC0001FF59E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199782D2B46EEC0001FF59E /* Task.swift */; };
 		319978352B470F32001FF59E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978342B470F32001FF59E /* BaseCell.swift */; };
 		319978372B471089001FF59E /* TestsCollectionViewAdditionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978362B471089001FF59E /* TestsCollectionViewAdditionCell.swift */; };
 		319978392B475513001FF59E /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978382B475513001FF59E /* ReuseIdentifying.swift */; };
@@ -48,6 +47,8 @@
 		3199785F2B4F4237001FF59E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199785E2B4F4237001FF59E /* UIViewController+Extensions.swift */; };
 		319978612B52AF53001FF59E /* AddFolderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978602B52AF53001FF59E /* AddFolderButton.swift */; };
 		319978642B52EA48001FF59E /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 319978632B52EA48001FF59E /* SPIndicator */; };
+		319978692B532315001FF59E /* TestFilesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978682B532315001FF59E /* TestFilesWorker.swift */; };
+		3199786C2B548BEE001FF59E /* TestFilesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199786B2B548BEE001FF59E /* TestFilesError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +78,6 @@
 		319978272B46E902001FF59E /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		319978292B46E95C001FF59E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3199782B2B46EE6E001FF59E /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
-		3199782D2B46EEC0001FF59E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		319978342B470F32001FF59E /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		319978362B471089001FF59E /* TestsCollectionViewAdditionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsCollectionViewAdditionCell.swift; sourceTree = "<group>"; };
 		319978382B475513001FF59E /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
@@ -91,6 +91,8 @@
 		3199784E2B4DB18B001FF59E /* SystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemButton.swift; sourceTree = "<group>"; };
 		3199785E2B4F4237001FF59E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		319978602B52AF53001FF59E /* AddFolderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderButton.swift; sourceTree = "<group>"; };
+		319978682B532315001FF59E /* TestFilesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFilesWorker.swift; sourceTree = "<group>"; };
+		3199786B2B548BEE001FF59E /* TestFilesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFilesError.swift; sourceTree = "<group>"; };
 		E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Testownik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.release.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,8 @@
 		319977DF2B457AC4001FF59E /* Testownik */ = {
 			isa = PBXGroup;
 			children = (
+				3199786A2B548BC7001FF59E /* Errors */,
+				319978652B5322D3001FF59E /* Workers */,
 				3199782F2B46F0A6001FF59E /* Protocols */,
 				319978242B46E3A0001FF59E /* Models */,
 				319978202B45DBA2001FF59E /* Core */,
@@ -243,7 +247,6 @@
 				319978272B46E902001FF59E /* Test.swift */,
 				319978292B46E95C001FF59E /* Question.swift */,
 				3199782B2B46EE6E001FF59E /* Answer.swift */,
-				3199782D2B46EEC0001FF59E /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +278,22 @@
 				319978482B4822B9001FF59E /* AddTestView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		319978652B5322D3001FF59E /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				319978682B532315001FF59E /* TestFilesWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		3199786A2B548BC7001FF59E /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				3199786B2B548BEE001FF59E /* TestFilesError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		A3EFD1DEC1626CBFB1D57FF3 /* Pods */ = {
@@ -419,19 +438,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3199786C2B548BEE001FF59E /* TestFilesError.swift in Sources */,
 				319978012B45828C001FF59E /* HomeBuilder.swift in Sources */,
 				319978232B45DFBF001FF59E /* TestsCollectionViewDataSource.swift in Sources */,
 				319978452B482298001FF59E /* AddTestBuilder.swift in Sources */,
 				319978422B482298001FF59E /* AddTestPresenter.swift in Sources */,
 				319978002B45828C001FF59E /* HomeViewController.swift in Sources */,
 				3199782C2B46EE6E001FF59E /* Answer.swift in Sources */,
-				3199782E2B46EEC0001FF59E /* Task.swift in Sources */,
 				3199784B2B482DD2001FF59E /* Constants.swift in Sources */,
 				319978612B52AF53001FF59E /* AddFolderButton.swift in Sources */,
 				3199780B2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift in Sources */,
 				319978282B46E902001FF59E /* Test.swift in Sources */,
 				3199782A2B46E95C001FF59E /* Question.swift in Sources */,
 				3199781F2B45D18C001FF59E /* UILabel+Extensions.swift in Sources */,
+				319978692B532315001FF59E /* TestFilesWorker.swift in Sources */,
 				319978142B458D37001FF59E /* XCAssets+Generated.swift in Sources */,
 				319977FE2B45828C001FF59E /* HomePresenter.swift in Sources */,
 				3199781D2B45C57B001FF59E /* TestsCollectionViewCell.swift in Sources */,

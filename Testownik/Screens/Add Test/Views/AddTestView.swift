@@ -77,6 +77,14 @@ final class AddTestView: BaseView {
         addEmojiButton.setTitle(emoji, for: .normal)
     }
     
+    func getEmoji() -> String? {
+        return addEmojiButton.titleLabel?.text
+    }
+    
+    func getName() -> String? {
+        return nameTextField.text == "" ? nil : nameTextField.text
+    }
+    
     private func setEmojiSize() {
         let emojiSize = addEmojiButton.bounds.height * 0.5
         addEmojiButton.titleLabel?.font = UIFont.systemFont(ofSize: emojiSize)

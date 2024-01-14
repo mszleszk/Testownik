@@ -10,4 +10,5 @@ import Foundation
 struct Question {
     let text: String
     let imagePath: String?
+    let answers: [Answer]
 }

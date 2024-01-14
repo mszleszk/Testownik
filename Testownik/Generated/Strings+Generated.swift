@@ -15,6 +15,14 @@ internal enum L10n {
     internal static let addFolder = L10n.tr("Localizable", "addTest.addFolder", fallback: "Dodaj folder")
     /// Wpisz nazwę
     internal static let inputName = L10n.tr("Localizable", "addTest.inputName", fallback: "Wpisz nazwę")
+    internal enum Error {
+      /// Dodaj emoji dla testu
+      internal static let noEmoji = L10n.tr("Localizable", "addTest.error.noEmoji", fallback: "Dodaj emoji dla testu")
+      /// Dodaj folder z bazą
+      internal static let noFolder = L10n.tr("Localizable", "addTest.error.noFolder", fallback: "Dodaj folder z bazą")
+      /// Wprowadź nazwę dla testu
+      internal static let noName = L10n.tr("Localizable", "addTest.error.noName", fallback: "Wprowadź nazwę dla testu")
+    }
   }
   internal enum General {
     /// Localizable.strings
@@ -26,6 +34,8 @@ internal enum L10n {
     internal static let cancel = L10n.tr("Localizable", "general.cancel", fallback: "Anuluj")
     /// Gotowe
     internal static let done = L10n.tr("Localizable", "general.done", fallback: "Gotowe")
+    /// Coś poszło nie tak!
+    internal static let somethingWentWrong = L10n.tr("Localizable", "general.somethingWentWrong", fallback: "Coś poszło nie tak!")
   }
   internal enum Home {
     /// Dodaj test

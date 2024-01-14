@@ -9,7 +9,11 @@
 "general.appname" = "testownik";
 "general.done" = "Gotowe";
 "general.cancel" = "Anuluj";
+"general.somethingWentWrong" = "Coś poszło nie tak!";
 "home.number of questions" = "%d pytań";
 "home.addTest" = "Dodaj test";
 "addTest.inputName" = "Wpisz nazwę";
 "addTest.addFolder" =  "Dodaj folder";
+"addTest.error.noName" = "Wprowadź nazwę dla testu";
+"addTest.error.noEmoji" = "Dodaj emoji dla testu";
+"addTest.error.noFolder" = "Dodaj folder z bazą";
