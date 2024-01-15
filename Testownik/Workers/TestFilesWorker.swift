@@ -1,7 +1,7 @@
 import Foundation
 
 protocol TestFilesWorkerProtocol {
-    func saveImagesInAppFiles(from url: URL) throws -> URL
+    func saveImagesInAppFiles(from url: URL) throws -> URL?
 //    func parseQuestions(from url: URL) -> [Question]
 }
 
@@ -35,12 +35,36 @@ final class TestFilesWorker {
             file.stopAccessingSecurityScopedResource()
         }
     }
+    
+    private func containsImages(at url: URL) throws -> Bool {
+        let keys : [URLResourceKey] = [.contentTypeKey]
+        guard let files = FileManager.default.enumerator(
+            at: url,
+            includingPropertiesForKeys: keys) else { throw TestFileError.cantRetrieveEnumerator }
+        
+        for case let file as URL in files {
+            guard file.startAccessingSecurityScopedResource() else { throw TestFileError.cantAccessSecurityScoped }
+            
+            guard let resourceValues = try? file.resourceValues(forKeys: Set<URLResourceKey>(keys)),
+                    let type = resourceValues.contentType else { throw TestFileError.cantRetrieveResourceValues }
+            
+            if type == .image {
+                return true
+            }
+            
+            file.stopAccessingSecurityScopedResource()
+        }
+        
+        return false
+    }
 }
 
 extension TestFilesWorker: TestFilesWorkerProtocol {
-    func saveImagesInAppFiles(from url: URL) throws -> URL {
+    func saveImagesInAppFiles(from url: URL) throws -> URL? {
         guard url.startAccessingSecurityScopedResource() else { throw TestFileError.cantAccessSecurityScoped }
         defer { url.stopAccessingSecurityScopedResource() }
+        
+        guard try containsImages(at: url) else { return nil }
         
         let imageDirectory = try createDirectory()
 
