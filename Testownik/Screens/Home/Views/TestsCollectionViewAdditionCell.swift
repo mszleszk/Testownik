@@ -10,7 +10,7 @@ import UIKit
 final class TestsCollectionViewAdditionCell: BaseCell {
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 5)
     private let plusImageView = TestsCollectionViewAdditionCell.makePlusImageView()
-    private let addLabel = UILabel(text: L10n.Home.addTest, fontSize: K.Text.primaryTextSize, weight: .bold, color: Asset.Colors.systemBlue.color, alignment: .center)
+    private let addLabel = UILabel(text: L10n.Tests.addTest, fontSize: K.Text.primaryTextSize, weight: .bold, color: Asset.Colors.systemBlue.color, alignment: .center)
     
     override func buildHierarchy() {
         contentView.addSubviews([

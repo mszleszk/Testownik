@@ -37,12 +37,12 @@ internal enum L10n {
     /// Coś poszło nie tak!
     internal static let somethingWentWrong = L10n.tr("Localizable", "general.somethingWentWrong", fallback: "Coś poszło nie tak!")
   }
-  internal enum Home {
+  internal enum Tests {
     /// Dodaj test
-    internal static let addTest = L10n.tr("Localizable", "home.addTest", fallback: "Dodaj test")
+    internal static let addTest = L10n.tr("Localizable", "tests.addTest", fallback: "Dodaj test")
     /// %d pytań
     internal static func numberOfQuestions(_ p1: Int) -> String {
-      return L10n.tr("Localizable", "home.number of questions", p1, fallback: "%d pytań")
+      return L10n.tr("Localizable", "tests.number of questions", p1, fallback: "%d pytań")
     }
   }
 }

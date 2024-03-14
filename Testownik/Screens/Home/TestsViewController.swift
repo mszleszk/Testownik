@@ -1,33 +1,33 @@
 import UIKit
 
-protocol HomeViewControllerLogic: AnyObject {
+protocol TestsViewControllerLogic: AnyObject {
 
 }
 
 final class TestsViewController: UIViewController {
-    var interactor: HomeInteractorLogic?
-    var router: HomeRouterProtocol?
+    var interactor: TestsInteractorLogic?
+    var router: TestsRouterProtocol?
     let dataSource = TestsCollectionViewDataSource()
     
-    private let homeView = TestsView()
+    private let testsView = TestsView()
     
     override func loadView() {
-        self.view = homeView
+        self.view = testsView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeView.collectionView.dataSource = dataSource
-        homeView.collectionView.delegate = self
+        testsView.collectionView.dataSource = dataSource
+        testsView.collectionView.delegate = self
     }
     
     func addTest(_ test: Test) {
         dataSource.addTest(test)
-        homeView.collectionView.reloadData()
+        testsView.collectionView.reloadData()
     }
 }
 
-extension TestsViewController: HomeViewControllerLogic {
+extension TestsViewController: TestsViewControllerLogic {
     
 }
 

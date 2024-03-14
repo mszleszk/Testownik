@@ -1,10 +1,10 @@
 import UIKit
 
-protocol HomeBuilderProtocol {
+protocol TestsBuilderProtocol {
     func build() -> UIViewController
 }
 
-class TestsBuilder: HomeBuilderProtocol {
+class TestsBuilder: TestsBuilderProtocol {
     func build() -> UIViewController {
         let viewController = TestsViewController()
         

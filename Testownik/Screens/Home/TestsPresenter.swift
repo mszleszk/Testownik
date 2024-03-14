@@ -1,19 +1,19 @@
 import UIKit
 
-protocol HomePresenterLogic {
+protocol TestsPresenterLogic {
     
 }
 
 final class TestsPresenter {
     // MARK: - Private Properties
-    private weak var viewController: HomeViewControllerLogic?
+    private weak var viewController: TestsViewControllerLogic?
     
     // MARK: - Initializers
-    init(viewController: HomeViewControllerLogic?) {
+    init(viewController: TestsViewControllerLogic?) {
         self.viewController = viewController
     }
 }
 
-extension TestsPresenter: HomePresenterLogic {
+extension TestsPresenter: TestsPresenterLogic {
     
 }

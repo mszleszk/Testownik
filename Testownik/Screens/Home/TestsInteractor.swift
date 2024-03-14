@@ -1,17 +1,17 @@
 import UIKit
 
-protocol HomeInteractorLogic {
+protocol TestsInteractorLogic {
     
 }
 
 final class TestsInteractor {
-    private let presenter: HomePresenterLogic
+    private let presenter: TestsPresenterLogic
     
-    init(presenter: HomePresenterLogic) {
+    init(presenter: TestsPresenterLogic) {
         self.presenter = presenter
     }
 }
 
-extension TestsInteractor: HomeInteractorLogic {
+extension TestsInteractor: TestsInteractorLogic {
     
 }

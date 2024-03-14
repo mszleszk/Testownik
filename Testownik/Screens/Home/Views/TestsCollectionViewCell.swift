@@ -57,7 +57,7 @@ final class TestsCollectionViewCell: BaseCell {
     func setupAppearance(emoji: String, testName: String, numberOfQuestions: Int) {
         emojiLabel.text = emoji
         nameLabel.text = testName
-        numberOfQuestionsLabel.text = L10n.Home.numberOfQuestions(numberOfQuestions)
+        numberOfQuestionsLabel.text = L10n.Tests.numberOfQuestions(numberOfQuestions)
     }
 }
 

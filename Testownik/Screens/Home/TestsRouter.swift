@@ -1,6 +1,6 @@
 import UIKit
 
-protocol HomeRouterProtocol {
+protocol TestsRouterProtocol {
     func showAddTestScreen()
 }
 
@@ -14,7 +14,7 @@ final class TestsRouter {
     }
 }
 
-extension TestsRouter: HomeRouterProtocol {
+extension TestsRouter: TestsRouterProtocol {
     func showAddTestScreen() {
         viewController?.show(AddTestBuilder().build(), sender: viewController)
     }

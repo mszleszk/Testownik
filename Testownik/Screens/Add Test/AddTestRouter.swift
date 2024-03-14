@@ -33,11 +33,11 @@ extension AddTestRouter: AddTestRouterProtocol {
     }
     
     func dismissWithSuccess() {
-        guard let homeViewController = viewController?.presentingViewController as? TestsViewController,
+        guard let parentViewController = viewController?.presentingViewController as? TestsViewController,
               let test = dataStore?.testToAdd
         else { return }
         
-        homeViewController.addTest(test)
+        parentViewController.addTest(test)
         viewController?.dismiss(animated: true)
     }
 }
