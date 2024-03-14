@@ -49,6 +49,8 @@
 		319978642B52EA48001FF59E /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 319978632B52EA48001FF59E /* SPIndicator */; };
 		319978692B532315001FF59E /* TestFilesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978682B532315001FF59E /* TestFilesWorker.swift */; };
 		3199786C2B548BEE001FF59E /* TestFilesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199786B2B548BEE001FF59E /* TestFilesError.swift */; };
+		31C0BEDD2BA3662E002B64D9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 31C0BEDC2BA3662E002B64D9 /* Realm */; };
+		31C0BEDF2BA3662E002B64D9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 31C0BEDE2BA3662E002B64D9 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,10 +104,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31C0BEDF2BA3662E002B64D9 /* RealmSwift in Frameworks */,
 				319977F62B457FBF001FF59E /* SnapKit in Frameworks */,
 				1094C65F232E6F43ACA23162 /* Pods_Testownik.framework in Frameworks */,
 				319978582B4DE880001FF59E /* MCEmojiPicker in Frameworks */,
 				319978642B52EA48001FF59E /* SPIndicator in Frameworks */,
+				31C0BEDD2BA3662E002B64D9 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +339,8 @@
 				319977F52B457FBF001FF59E /* SnapKit */,
 				319978572B4DE880001FF59E /* MCEmojiPicker */,
 				319978632B52EA48001FF59E /* SPIndicator */,
+				31C0BEDC2BA3662E002B64D9 /* Realm */,
+				31C0BEDE2BA3662E002B64D9 /* RealmSwift */,
 			);
 			productName = Testownik;
 			productReference = 319977DD2B457AC4001FF59E /* Testownik.app */;
@@ -368,6 +374,7 @@
 				319977F42B457FBF001FF59E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				319978562B4DE880001FF59E /* XCRemoteSwiftPackageReference "MCEmojiPicker" */,
 				319978622B52EA48001FF59E /* XCRemoteSwiftPackageReference "SPIndicator" */,
+				31C0BEDB2BA3662E002B64D9 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 319977DE2B457AC4001FF59E /* Products */;
 			projectDirPath = "";
@@ -694,6 +701,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		31C0BEDB2BA3662E002B64D9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -711,6 +726,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 319978622B52EA48001FF59E /* XCRemoteSwiftPackageReference "SPIndicator" */;
 			productName = SPIndicator;
+		};
+		31C0BEDC2BA3662E002B64D9 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31C0BEDB2BA3662E002B64D9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		31C0BEDE2BA3662E002B64D9 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31C0BEDB2BA3662E002B64D9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
