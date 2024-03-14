@@ -5,9 +5,15 @@ protocol AddTestInteractorLogic {
     func addTest(name: String?, emoji: String?)
 }
 
-final class AddTestInteractor {
+protocol AddTestDataStore {
+    var testToAdd: Test? { get }
+}
+
+final class AddTestInteractor: AddTestDataStore {
+    var testToAdd: Test?
+    
     private let presenter: AddTestPresenterLogic
-    private var folderUrl: URL?
+    private var testFolderUrl: URL?
     
     init(presenter: AddTestPresenterLogic) {
         self.presenter = presenter
@@ -16,20 +22,22 @@ final class AddTestInteractor {
 
 extension AddTestInteractor: AddTestInteractorLogic {
     func addFolder(withUrl url: URL) {
-        folderUrl = url
+        testFolderUrl = url
         presenter.presentAddedFolder(withUrl: url)
     }
     
     func addTest(name: String?, emoji: String?) {
         guard let name = name else { presenter.presentMissingNameError(); return }
         guard let emoji = emoji else { presenter.presentMissingEmojiError(); return }
-        guard let folderUrl = folderUrl else { presenter.presentMissingFolderError(); return }
+        guard let folderUrl = testFolderUrl else { presenter.presentMissingFolderError(); return }
         
-        do {
-            try TestFilesWorker().saveImagesInAppFiles(from: folderUrl)
-        } catch {
-            print(error)
-            presenter.presentGeneralError()
-        }
+//        do {
+//            let imagesFolderUrl = try TestFilesWorker().saveImagesInAppFiles(from: folderUrl)
+            
+            testToAdd = Test(name: name, emoji: emoji, questions: [], imagesFolderUrl: nil)
+            presenter.presentSuccess()
+//        } catch {
+//            presenter.presentGeneralError()
+//        }
     }
 }

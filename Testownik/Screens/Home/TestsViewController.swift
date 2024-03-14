@@ -4,12 +4,12 @@ protocol HomeViewControllerLogic: AnyObject {
 
 }
 
-final class HomeViewController: UIViewController {
+final class TestsViewController: UIViewController {
     var interactor: HomeInteractorLogic?
     var router: HomeRouterProtocol?
+    let dataSource = TestsCollectionViewDataSource()
     
-    private let homeView = HomeView()
-    private let dataSource = TestsCollectionViewDataSource()
+    private let homeView = TestsView()
     
     override func loadView() {
         self.view = homeView
@@ -20,13 +20,18 @@ final class HomeViewController: UIViewController {
         homeView.collectionView.dataSource = dataSource
         homeView.collectionView.delegate = self
     }
+    
+    func addTest(_ test: Test) {
+        dataSource.addTest(test)
+        homeView.collectionView.reloadData()
+    }
 }
 
-extension HomeViewController: HomeViewControllerLogic {
+extension TestsViewController: HomeViewControllerLogic {
     
 }
 
-extension HomeViewController: UICollectionViewDelegate {
+extension TestsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             router?.showAddTestScreen()

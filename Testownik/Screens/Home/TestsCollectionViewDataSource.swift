@@ -8,7 +8,12 @@
 import UIKit
 
 final class TestsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
-    var tests: [Test] = [Test(name: "", emoji: "", questions: []), Test(name: "Podstawy Telekomunikacji", emoji: "📻", questions: [])]
+    private var tests: [Test] = [Test(name: "", emoji: "", questions: []), Test(name: "Podstawy Telekomunikacji", emoji: "📻", questions: [])]
+    
+    func addTest(_ test: Test) {
+        tests.append(test)
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         tests.count

@@ -6,6 +6,7 @@ protocol AddTestPresenterLogic {
     func presentMissingEmojiError()
     func presentMissingFolderError()
     func presentGeneralError()
+    func presentSuccess()
 }
 
 final class AddTestPresenter {
@@ -19,6 +20,10 @@ final class AddTestPresenter {
 }
 
 extension AddTestPresenter: AddTestPresenterLogic {
+    func presentSuccess() {
+        viewController?.success()
+    }
+    
     func presentAddedFolder(withUrl url: URL) {
         viewController?.showAddedFolder(withName: url.lastPathComponent)
     }

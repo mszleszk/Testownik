@@ -1,9 +1,9 @@
 import UIKit
 import SnapKit
 
-final class HomeView: BaseView {
+final class TestsView: BaseView {
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 20)
-    private let appNameLabel = HomeView.makeAppNameLabel()
+    private let appNameLabel = TestsView.makeAppNameLabel()
     
     let collectionView = TestsCollectionView()
     
@@ -39,7 +39,7 @@ final class HomeView: BaseView {
 }
 
 // MARK: - Builder
-private extension HomeView {
+private extension TestsView {
     static func makeAppNameLabel() -> UILabel {
         return UILabel(text: L10n.General.appname, fontSize: 50, weight: .bold, color: Asset.Colors.primaryText.color).also {
             $0.textAlignment = .center

@@ -5,6 +5,7 @@ import SPIndicator
 protocol AddTestViewControllerLogic: AnyObject {
     func showAddedFolder(withName name: String)
     func showError(withMessage message: String?)
+    func success()
 }
 
 final class AddTestViewController: UIViewController {
@@ -66,6 +67,10 @@ final class AddTestViewController: UIViewController {
 }
 
 extension AddTestViewController: AddTestViewControllerLogic {
+    func success() {
+        router?.dismissWithSuccess()
+    }
+    
     func showAddedFolder(withName name: String) {
         addTestView.addFolderButton.setAsFolderAdded(withFolderName: name)
     }

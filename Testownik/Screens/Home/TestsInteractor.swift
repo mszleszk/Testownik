@@ -4,7 +4,7 @@ protocol HomeInteractorLogic {
     
 }
 
-final class HomeInteractor {
+final class TestsInteractor {
     private let presenter: HomePresenterLogic
     
     init(presenter: HomePresenterLogic) {
@@ -12,6 +12,6 @@ final class HomeInteractor {
     }
 }
 
-extension HomeInteractor: HomeInteractorLogic {
+extension TestsInteractor: HomeInteractorLogic {
     
 }

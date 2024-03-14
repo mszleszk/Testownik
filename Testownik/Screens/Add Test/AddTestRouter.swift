@@ -4,11 +4,13 @@ import MCEmojiPicker
 protocol AddTestRouterProtocol {
     func presentEmojiController(toSourceView sourceView: UIView)
     func presentDocumentPicker()
+    func dismissWithSuccess()
 }
 
 final class AddTestRouter {
     // MARK: - Public Properties
     weak var viewController: AddTestViewController?
+    var dataStore: AddTestDataStore?
     
     // MARK: - Initializers
     init(viewController: AddTestViewController?) {
@@ -28,5 +30,14 @@ extension AddTestRouter: AddTestRouterProtocol {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.folder])
         documentPicker.delegate = viewController
         viewController?.present(documentPicker, animated: true)
+    }
+    
+    func dismissWithSuccess() {
+        guard let homeViewController = viewController?.presentingViewController as? TestsViewController,
+              let test = dataStore?.testToAdd
+        else { return }
+        
+        homeViewController.addTest(test)
+        viewController?.dismiss(animated: true)
     }
 }

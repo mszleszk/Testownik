@@ -12,12 +12,12 @@
 		319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E22B457AC4001FF59E /* SceneDelegate.swift */; };
 		319977EA2B457AC5001FF59E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319977E92B457AC5001FF59E /* Assets.xcassets */; };
 		319977F62B457FBF001FF59E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 319977F52B457FBF001FF59E /* SnapKit */; };
-		319977FE2B45828C001FF59E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977F92B45828C001FF59E /* HomePresenter.swift */; };
-		319977FF2B45828C001FF59E /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FA2B45828C001FF59E /* HomeRouter.swift */; };
-		319978002B45828C001FF59E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FB2B45828C001FF59E /* HomeViewController.swift */; };
-		319978012B45828C001FF59E /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FC2B45828C001FF59E /* HomeBuilder.swift */; };
-		319978022B45828C001FF59E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FD2B45828C001FF59E /* HomeInteractor.swift */; };
-		319978042B4582DE001FF59E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978032B4582DE001FF59E /* HomeView.swift */; };
+		319977FE2B45828C001FF59E /* TestsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977F92B45828C001FF59E /* TestsPresenter.swift */; };
+		319977FF2B45828C001FF59E /* TestsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FA2B45828C001FF59E /* TestsRouter.swift */; };
+		319978002B45828C001FF59E /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FB2B45828C001FF59E /* TestsViewController.swift */; };
+		319978012B45828C001FF59E /* TestsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FC2B45828C001FF59E /* TestsBuilder.swift */; };
+		319978022B45828C001FF59E /* TestsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977FD2B45828C001FF59E /* TestsInteractor.swift */; };
+		319978042B4582DE001FF59E /* TestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978032B4582DE001FF59E /* TestsView.swift */; };
 		319978082B458366001FF59E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978072B458366001FF59E /* BaseView.swift */; };
 		3199780B2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199780A2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift */; };
 		3199780E2B458A26001FF59E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3199780D2B458A26001FF59E /* Localizable.strings */; };
@@ -58,12 +58,12 @@
 		319977E22B457AC4001FF59E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		319977E92B457AC5001FF59E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		319977EE2B457AC5001FF59E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Testownik/Core/Info.plist; sourceTree = SOURCE_ROOT; };
-		319977F92B45828C001FF59E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		319977FA2B45828C001FF59E /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		319977FB2B45828C001FF59E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		319977FC2B45828C001FF59E /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
-		319977FD2B45828C001FF59E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		319978032B4582DE001FF59E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		319977F92B45828C001FF59E /* TestsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsPresenter.swift; sourceTree = "<group>"; };
+		319977FA2B45828C001FF59E /* TestsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsRouter.swift; sourceTree = "<group>"; };
+		319977FB2B45828C001FF59E /* TestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
+		319977FC2B45828C001FF59E /* TestsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsBuilder.swift; sourceTree = "<group>"; };
+		319977FD2B45828C001FF59E /* TestsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsInteractor.swift; sourceTree = "<group>"; };
+		319978032B4582DE001FF59E /* TestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsView.swift; sourceTree = "<group>"; };
 		319978072B458366001FF59E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3199780A2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyObject+ScopeFunctions.swift"; sourceTree = "<group>"; };
 		3199780D2B458A26001FF59E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -161,11 +161,11 @@
 			isa = PBXGroup;
 			children = (
 				319978212B45DF9F001FF59E /* Views */,
-				319977F92B45828C001FF59E /* HomePresenter.swift */,
-				319977FA2B45828C001FF59E /* HomeRouter.swift */,
-				319977FB2B45828C001FF59E /* HomeViewController.swift */,
-				319977FC2B45828C001FF59E /* HomeBuilder.swift */,
-				319977FD2B45828C001FF59E /* HomeInteractor.swift */,
+				319977F92B45828C001FF59E /* TestsPresenter.swift */,
+				319977FA2B45828C001FF59E /* TestsRouter.swift */,
+				319977FB2B45828C001FF59E /* TestsViewController.swift */,
+				319977FC2B45828C001FF59E /* TestsBuilder.swift */,
+				319977FD2B45828C001FF59E /* TestsInteractor.swift */,
 				319978222B45DFBF001FF59E /* TestsCollectionViewDataSource.swift */,
 			);
 			path = Home;
@@ -235,7 +235,7 @@
 			children = (
 				3199781A2B45BB0E001FF59E /* TestsCollectionView.swift */,
 				3199781C2B45C57B001FF59E /* TestsCollectionViewCell.swift */,
-				319978032B4582DE001FF59E /* HomeView.swift */,
+				319978032B4582DE001FF59E /* TestsView.swift */,
 				319978362B471089001FF59E /* TestsCollectionViewAdditionCell.swift */,
 			);
 			path = Views;
@@ -439,11 +439,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3199786C2B548BEE001FF59E /* TestFilesError.swift in Sources */,
-				319978012B45828C001FF59E /* HomeBuilder.swift in Sources */,
+				319978012B45828C001FF59E /* TestsBuilder.swift in Sources */,
 				319978232B45DFBF001FF59E /* TestsCollectionViewDataSource.swift in Sources */,
 				319978452B482298001FF59E /* AddTestBuilder.swift in Sources */,
 				319978422B482298001FF59E /* AddTestPresenter.swift in Sources */,
-				319978002B45828C001FF59E /* HomeViewController.swift in Sources */,
+				319978002B45828C001FF59E /* TestsViewController.swift in Sources */,
 				3199782C2B46EE6E001FF59E /* Answer.swift in Sources */,
 				3199784B2B482DD2001FF59E /* Constants.swift in Sources */,
 				319978612B52AF53001FF59E /* AddFolderButton.swift in Sources */,
@@ -453,24 +453,24 @@
 				3199781F2B45D18C001FF59E /* UILabel+Extensions.swift in Sources */,
 				319978692B532315001FF59E /* TestFilesWorker.swift in Sources */,
 				319978142B458D37001FF59E /* XCAssets+Generated.swift in Sources */,
-				319977FE2B45828C001FF59E /* HomePresenter.swift in Sources */,
+				319977FE2B45828C001FF59E /* TestsPresenter.swift in Sources */,
 				3199781D2B45C57B001FF59E /* TestsCollectionViewCell.swift in Sources */,
 				319978462B482298001FF59E /* AddTestInteractor.swift in Sources */,
 				319978162B458FA1001FF59E /* UIView+Extensions.swift in Sources */,
 				3199781B2B45BB0E001FF59E /* TestsCollectionView.swift in Sources */,
 				319978392B475513001FF59E /* ReuseIdentifying.swift in Sources */,
-				319977FF2B45828C001FF59E /* HomeRouter.swift in Sources */,
+				319977FF2B45828C001FF59E /* TestsRouter.swift in Sources */,
 				319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */,
 				319978492B4822B9001FF59E /* AddTestView.swift in Sources */,
 				3199785F2B4F4237001FF59E /* UIViewController+Extensions.swift in Sources */,
 				319978442B482298001FF59E /* AddTestViewController.swift in Sources */,
-				319978042B4582DE001FF59E /* HomeView.swift in Sources */,
+				319978042B4582DE001FF59E /* TestsView.swift in Sources */,
 				319978082B458366001FF59E /* BaseView.swift in Sources */,
 				319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */,
 				319978182B458FC3001FF59E /* UIStackView+Extensions.swift in Sources */,
 				319978372B471089001FF59E /* TestsCollectionViewAdditionCell.swift in Sources */,
 				3199784F2B4DB18B001FF59E /* SystemButton.swift in Sources */,
-				319978022B45828C001FF59E /* HomeInteractor.swift in Sources */,
+				319978022B45828C001FF59E /* TestsInteractor.swift in Sources */,
 				319978352B470F32001FF59E /* BaseCell.swift in Sources */,
 				319978132B458D37001FF59E /* Strings+Generated.swift in Sources */,
 				319978432B482298001FF59E /* AddTestRouter.swift in Sources */,

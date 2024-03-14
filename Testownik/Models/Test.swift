@@ -11,5 +11,5 @@ struct Test {
     let name: String
     let emoji: String
     let questions: [Question]
-    var imagesUrl: URL?
+    var imagesFolderUrl: URL?
 }

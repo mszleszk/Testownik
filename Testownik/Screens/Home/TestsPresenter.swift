@@ -4,7 +4,7 @@ protocol HomePresenterLogic {
     
 }
 
-final class HomePresenter {
+final class TestsPresenter {
     // MARK: - Private Properties
     private weak var viewController: HomeViewControllerLogic?
     
@@ -14,6 +14,6 @@ final class HomePresenter {
     }
 }
 
-extension HomePresenter: HomePresenterLogic {
+extension TestsPresenter: HomePresenterLogic {
     
 }
