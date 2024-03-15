@@ -98,6 +98,11 @@ extension AddTestViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         view.gestureRecognizers?.first?.delaysTouchesBegan = false
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 extension AddTestViewController: UIDocumentPickerDelegate {
