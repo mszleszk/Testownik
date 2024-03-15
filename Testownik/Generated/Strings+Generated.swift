@@ -32,6 +32,8 @@ internal enum L10n {
     internal static let appname = L10n.tr("Localizable", "general.appname", fallback: "testownik")
     /// Anuluj
     internal static let cancel = L10n.tr("Localizable", "general.cancel", fallback: "Anuluj")
+    /// Delete
+    internal static let delete = L10n.tr("Localizable", "general.delete", fallback: "Delete")
     /// Gotowe
     internal static let done = L10n.tr("Localizable", "general.done", fallback: "Gotowe")
     /// Coś poszło nie tak!
