@@ -14,8 +14,6 @@ class AddTestBuilder: AddTestBuilderProtocol {
 
         viewController.interactor = interactor
         viewController.router = router
-        
-        router.dataStore = interactor
 
         return viewController
     }

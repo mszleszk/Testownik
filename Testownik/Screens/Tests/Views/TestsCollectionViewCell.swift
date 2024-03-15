@@ -8,6 +8,12 @@
 import UIKit
 import SnapKit
 
+struct TestsCollectionViewCellPresentable {
+    let name: String
+    let emoji: String
+    let numberOfQuestions: Int
+}
+
 final class TestsCollectionViewCell: BaseCell {
     private let verticalStackView = TestsCollectionViewCell.makeVerticalStackView()
     private let emojiLabel = UILabel(fontSize: 300, color: Asset.Colors.primaryText.color, shouldAdjustFontToWidth: true)

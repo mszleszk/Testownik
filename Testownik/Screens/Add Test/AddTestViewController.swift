@@ -68,7 +68,7 @@ final class AddTestViewController: UIViewController {
 
 extension AddTestViewController: AddTestViewControllerLogic {
     func success() {
-        router?.dismissWithSuccess()
+        router?.dismiss()
     }
     
     func showAddedFolder(withName name: String) {

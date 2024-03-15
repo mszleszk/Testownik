@@ -1,22 +1,22 @@
-//
-//  TestsCollectionDataSource.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 03/01/2024.
-//
-
 import UIKit
+import RealmSwift
 
-final class TestsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
-    private var tests: [Test] = [Test(name: "", emoji: "", questions: []), Test(name: "Podstawy Telekomunikacji", emoji: "📻", questions: [])]
+final class TestsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
+    var presentables: [TestsCollectionViewCellPresentable] {
+        didSet {
+            presentables.insert(mockPresentable, at: 0)
+        }
+    }
     
-    func addTest(_ test: Test) {
-        tests.append(test)
-        
+    private let mockPresentable = TestsCollectionViewCellPresentable(name: "", emoji: "", numberOfQuestions: 0)
+    
+    override init() {
+        presentables = [mockPresentable]
+        super.init()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        tests.count
+        presentables.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -29,8 +29,8 @@ final class TestsCollectionViewDataSource: NSObject, UICollectionViewDataSource,
                 withReuseIdentifier: TestsCollectionViewCell.reuseIdentifier,
                 for: indexPath) as? TestsCollectionViewCell else { return UICollectionViewCell() }
             
-            let test = tests[indexPath.row]
-            testCell.setupAppearance(emoji: test.emoji, testName: test.name, numberOfQuestions: test.questions.count)
+            let presentable = presentables[indexPath.row]
+            testCell.setupAppearance(emoji: presentable.emoji, testName: presentable.name, numberOfQuestions: presentable.numberOfQuestions)
             cell = testCell
         }
         

@@ -1,14 +1,8 @@
-//
-//  Answer.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 04/01/2024.
-//
-
 import Foundation
+import RealmSwift
 
-struct Answer {
-    let text: String
-    let imagePath: String?
-    let isCorrect: Bool
+class Answer: Object{
+    @Persisted var text: String
+    @Persisted var imagePath: String?
+    @Persisted var isCorrect: Bool
 }

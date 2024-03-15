@@ -1,7 +1,7 @@
 import UIKit
 
 protocol TestsViewControllerLogic: AnyObject {
-
+    func reloadCollectionView(with presentables: [TestsCollectionViewCellPresentable])
 }
 
 final class TestsViewController: UIViewController {
@@ -19,15 +19,15 @@ final class TestsViewController: UIViewController {
         super.viewDidLoad()
         testsView.collectionView.dataSource = dataSource
         testsView.collectionView.delegate = self
-    }
-    
-    func addTest(_ test: Test) {
-        dataSource.addTest(test)
-        testsView.collectionView.reloadData()
+        interactor?.fetchTests()
     }
 }
 
 extension TestsViewController: TestsViewControllerLogic {
+    func reloadCollectionView(with presentables: [TestsCollectionViewCellPresentable]) {
+        dataSource.presentables = presentables
+        testsView.collectionView.reloadData()
+    }
     
 }
 

@@ -1,14 +1,8 @@
-//
-//  Question.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 04/01/2024.
-//
-
 import Foundation
+import RealmSwift
 
-struct Question {
-    let text: String
-    let imagePath: String?
-    let answers: [Answer]
+class Question: Object {
+    @Persisted var text: String
+    @Persisted var imagePath: String?
+    @Persisted var answers: List<Answer>
 }

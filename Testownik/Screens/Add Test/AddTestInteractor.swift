@@ -1,17 +1,12 @@
 import UIKit
+import RealmSwift
 
 protocol AddTestInteractorLogic {
     func addFolder(withUrl url: URL)
     func addTest(name: String?, emoji: String?)
 }
 
-protocol AddTestDataStore {
-    var testToAdd: Test? { get }
-}
-
-final class AddTestInteractor: AddTestDataStore {
-    var testToAdd: Test?
-    
+final class AddTestInteractor {
     private let presenter: AddTestPresenterLogic
     private var testFolderUrl: URL?
     
@@ -31,13 +26,14 @@ extension AddTestInteractor: AddTestInteractorLogic {
         guard let emoji = emoji else { presenter.presentMissingEmojiError(); return }
         guard let folderUrl = testFolderUrl else { presenter.presentMissingFolderError(); return }
         
-//        do {
+        do {
 //            let imagesFolderUrl = try TestFilesWorker().saveImagesInAppFiles(from: folderUrl)
             
-            testToAdd = Test(name: name, emoji: emoji, questions: [], imagesFolderUrl: nil)
+            let test = Test(name: name, emoji: emoji, questions: List<Question>(), imagesFolderUrl: nil)
+            try TestsDatabaseWorker().saveTest(test)
             presenter.presentSuccess()
-//        } catch {
-//            presenter.presentGeneralError()
-//        }
+        } catch {
+            presenter.presentGeneralError()
+        }
     }
 }
