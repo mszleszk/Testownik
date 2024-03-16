@@ -8,7 +8,7 @@ protocol TestsInteractorLogic {
 
 final class TestsInteractor {
     private let presenter: TestsPresenterLogic
-    private var tests: Results<Test>?
+    private var tests = TestsCollectionViewData()
     private let databaseWorker = TestsDatabaseWorker()
     private let filesWorker = TestFilesWorker()
     
@@ -20,16 +20,14 @@ final class TestsInteractor {
 extension TestsInteractor: TestsInteractorLogic {
     func fetchTests() {
         let results = databaseWorker.getTests()
-        tests = results
+        tests.set(results)
         presenter.presentCollectionView(with: Array(results))
     }
     
     func deleteTest(at index: Int) {
-        guard let tests = tests else { return }
+        guard let test = tests[index] else { return }
         
         do{
-            let test = tests[index]
-            
             if let imagesFolderName = test.imagesFolderName {
                 try filesWorker.removeFolder(withName: imagesFolderName)
             }

@@ -27,7 +27,7 @@ final class TestsViewController: UIViewController {
 extension TestsViewController: TestsViewControllerLogic {
     func deleteCollectionViewCell(atIndex index: Int) {
         dataSource.presentables.remove(at: index)
-        testsView.collectionView.deleteItems(at: [IndexPath(row: index + 1, section: 0)])
+        testsView.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
     }
     
     func reloadCollectionView(with presentables: [TestsCollectionViewCellPresentable]) {
@@ -55,7 +55,7 @@ extension TestsViewController: UICollectionViewDelegate {
                 image: UIImage(systemName: "trash"),
                 attributes: .destructive) { _ in
                     guard let index = indexPaths.first?.row else { return }
-                    self.interactor?.deleteTest(at: index - 1)
+                    self.interactor?.deleteTest(at: index)
                 }
             return UIMenu(children: [deleteAction])
         })

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1094C65F232E6F43ACA23162 /* Pods_Testownik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */; };
 		3150AE0A2BA57BC700E9A64F /* ErrorShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE092BA57BC700E9A64F /* ErrorShowing.swift */; };
+		3150AE0C2BA615FC00E9A64F /* TestsCollectionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE0B2BA615FC00E9A64F /* TestsCollectionViewData.swift */; };
+		3150AE0E2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE0D2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift */; };
 		319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E02B457AC4001FF59E /* AppDelegate.swift */; };
 		319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E22B457AC4001FF59E /* SceneDelegate.swift */; };
 		319977EA2B457AC5001FF59E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319977E92B457AC5001FF59E /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		1AF1FC14C09A66722DE8D6B3 /* Pods-Testownik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.debug.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.debug.xcconfig"; sourceTree = "<group>"; };
 		3150AE092BA57BC700E9A64F /* ErrorShowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorShowing.swift; sourceTree = "<group>"; };
+		3150AE0B2BA615FC00E9A64F /* TestsCollectionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsCollectionViewData.swift; sourceTree = "<group>"; };
+		3150AE0D2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsCollectionViewCellPresentable.swift; sourceTree = "<group>"; };
 		319977DD2B457AC4001FF59E /* Testownik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testownik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319977E02B457AC4001FF59E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319977E22B457AC4001FF59E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3150AE0F2BA6227F00E9A64F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3150AE0B2BA615FC00E9A64F /* TestsCollectionViewData.swift */,
+				3150AE0D2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		319977D42B457AC4001FF59E = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +308,7 @@
 		31C4C9A12BA4C99600A6C6AE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3150AE0F2BA6227F00E9A64F /* Models */,
 				31C4C99A2BA4C99600A6C6AE /* Views */,
 				31C4C99B2BA4C99600A6C6AE /* TestsBuilder.swift */,
 				31C4C99C2BA4C99600A6C6AE /* TestsCollectionViewDataSource.swift */,
@@ -453,6 +467,7 @@
 			files = (
 				31C4C9AA2BA4C99600A6C6AE /* TestsRouter.swift in Sources */,
 				3199786C2B548BEE001FF59E /* TestFilesError.swift in Sources */,
+				3150AE0C2BA615FC00E9A64F /* TestsCollectionViewData.swift in Sources */,
 				319978452B482298001FF59E /* AddTestBuilder.swift in Sources */,
 				319978422B482298001FF59E /* AddTestPresenter.swift in Sources */,
 				31C4C9AB2BA4C99600A6C6AE /* TestsViewController.swift in Sources */,
@@ -460,6 +475,7 @@
 				3199782C2B46EE6E001FF59E /* Answer.swift in Sources */,
 				3199784B2B482DD2001FF59E /* Constants.swift in Sources */,
 				319978612B52AF53001FF59E /* AddFolderButton.swift in Sources */,
+				3150AE0E2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift in Sources */,
 				3199780B2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift in Sources */,
 				31C4C9A62BA4C99600A6C6AE /* TestsBuilder.swift in Sources */,
 				319978282B46E902001FF59E /* Test.swift in Sources */,
