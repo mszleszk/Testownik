@@ -2,6 +2,7 @@ import Foundation
 
 protocol TestFilesWorkerProtocol {
     func saveImagesInAppFiles(from url: URL) throws -> URL?
+    func removeFolder(atPath path: String) throws
 //    func parseQuestions(from url: URL) -> [Question]
 }
 
@@ -43,7 +44,9 @@ final class TestFilesWorker {
             includingPropertiesForKeys: keys) else { throw TestFileError.cantRetrieveEnumerator }
         
         for case let file as URL in files {
-            guard file.startAccessingSecurityScopedResource() else { throw TestFileError.cantAccessSecurityScoped }
+            guard file.startAccessingSecurityScopedResource() else {
+                throw TestFileError.cantAccessSecurityScoped
+            }
             
             guard let resourceValues = try? file.resourceValues(forKeys: Set<URLResourceKey>(keys)),
                     let type = resourceValues.contentType else { throw TestFileError.cantRetrieveResourceValues }
@@ -60,6 +63,10 @@ final class TestFilesWorker {
 }
 
 extension TestFilesWorker: TestFilesWorkerProtocol {
+    func removeFolder(atPath path: String) throws {
+        try FileManager.default.removeItem(atPath: path)
+    }
+    
     func saveImagesInAppFiles(from url: URL) throws -> URL? {
         guard url.startAccessingSecurityScopedResource() else { throw TestFileError.cantAccessSecurityScoped }
         defer { url.stopAccessingSecurityScopedResource() }

@@ -27,9 +27,9 @@ extension AddTestInteractor: AddTestInteractorLogic {
         guard let folderUrl = testFolderUrl else { presenter.presentMissingFolderError(); return }
         
         do {
-//            let imagesFolderUrl = try TestFilesWorker().saveImagesInAppFiles(from: folderUrl)
-            
-            let test = Test(name: name, emoji: emoji, questions: List<Question>(), imagesFolderUrl: nil)
+            let imagesFolderPath = try TestFilesWorker().saveImagesInAppFiles(from: folderUrl)
+            print(imagesFolderPath)
+            let test = Test(name: name, emoji: emoji, questions: List<Question>(), imagesFolderPath: imagesFolderPath?.absoluteString)
             try TestsDatabaseWorker().saveTest(test)
             presenter.presentSuccess()
         } catch {
