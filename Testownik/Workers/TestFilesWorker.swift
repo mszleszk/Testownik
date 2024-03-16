@@ -1,8 +1,8 @@
 import Foundation
 
 protocol TestFilesWorkerProtocol {
-    func saveImagesInAppFiles(from url: URL) throws -> URL?
-    func removeFolder(atPath path: String) throws
+    func saveImagesInAppFiles(from url: URL) throws -> String?
+    func removeFolder(withName name: String) throws
 //    func parseQuestions(from url: URL) -> [Question]
 }
 
@@ -65,21 +65,22 @@ final class TestFilesWorker {
 }
 
 extension TestFilesWorker: TestFilesWorkerProtocol {
-    func removeFolder(atPath path: String) throws {
-        try FileManager.default.removeItem(atPath: path)
+    func removeFolder(withName name: String) throws {
+        let documents = URL.documentsDirectory
+        try FileManager.default.removeItem(at: documents.appending(path: name))
     }
     
-    func saveImagesInAppFiles(from url: URL) throws -> URL? {
+    func saveImagesInAppFiles(from url: URL) throws -> String? {
         guard url.startAccessingSecurityScopedResource() else { throw TestFileError.cantAccessSecurityScoped }
         defer { url.stopAccessingSecurityScopedResource() }
         
         guard try containsImages(at: url) else { return nil }
         
-        let imageDirectory = try createDirectory()
+        let imageDirectoryUrl = try createDirectory()
 
-        try copyImages(from: url, to: imageDirectory)
+        try copyImages(from: url, to: imageDirectoryUrl)
         
-        return imageDirectory
+        return imageDirectoryUrl.lastPathComponent
     }
     
 //    func parseQuestions(from url: URL) -> [Question] {

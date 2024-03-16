@@ -9,6 +9,7 @@ protocol AddTestInteractorLogic {
 final class AddTestInteractor {
     private let presenter: AddTestPresenterLogic
     private var testFolderUrl: URL?
+    private let filesWorker = TestFilesWorker()
     
     init(presenter: AddTestPresenterLogic) {
         self.presenter = presenter
@@ -27,9 +28,13 @@ extension AddTestInteractor: AddTestInteractorLogic {
         guard let folderUrl = testFolderUrl else { presenter.presentMissingFolderError(); return }
         
         do {
-            let imagesFolderPath = try TestFilesWorker().saveImagesInAppFiles(from: folderUrl)
+            let imagesFolderName = try filesWorker.saveImagesInAppFiles(from: folderUrl)
             
-            let test = Test(name: name, emoji: emoji, questions: List<Question>(), imagesFolderPath: imagesFolderPath?.absoluteString)
+            let test = Test(
+                name: name,
+                emoji: emoji,
+                questions: List<Question>(),
+                imagesFolderName: imagesFolderName)
             try TestsDatabaseWorker().saveTest(test)
             presenter.presentSuccess()
         } catch {

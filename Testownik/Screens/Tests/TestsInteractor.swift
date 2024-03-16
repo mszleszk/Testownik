@@ -28,8 +28,8 @@ extension TestsInteractor: TestsInteractorLogic {
         guard let test = tests?[index] else { return }
         
         do{
-            if let imagesFolderPath = test.imagesFolderPath {
-                try filesWorker.removeFolder(atPath: imagesFolderPath)
+            if let imagesFolderName = test.imagesFolderName {
+                try filesWorker.removeFolder(withName: imagesFolderName)
             }
             
             try databaseWorker.deleteTest(test: test)
