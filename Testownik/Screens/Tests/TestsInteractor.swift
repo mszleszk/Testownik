@@ -25,18 +25,20 @@ extension TestsInteractor: TestsInteractorLogic {
     }
     
     func deleteTest(at index: Int) {
-        guard let test = tests?[index] else { return }
+        guard let tests = tests else { return }
         
         do{
+            let test = tests[index]
+            
             if let imagesFolderName = test.imagesFolderName {
                 try filesWorker.removeFolder(withName: imagesFolderName)
             }
             
             try databaseWorker.deleteTest(test: test)
+            
+            presenter.presentCollectionViewDeletion(atIndex: index)
         } catch {
             presenter.presentGeneralError()
         }
-        
-        fetchTests()
     }
 }

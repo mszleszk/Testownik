@@ -2,6 +2,7 @@ import UIKit
 
 protocol TestsViewControllerLogic: AnyObject, ErrorShowing {
     func reloadCollectionView(with presentables: [TestsCollectionViewCellPresentable])
+    func deleteCollectionViewCell(atIndex index: Int)
 }
 
 final class TestsViewController: UIViewController {
@@ -24,6 +25,11 @@ final class TestsViewController: UIViewController {
 }
 
 extension TestsViewController: TestsViewControllerLogic {
+    func deleteCollectionViewCell(atIndex index: Int) {
+        dataSource.presentables.remove(at: index)
+        testsView.collectionView.deleteItems(at: [IndexPath(row: index + 1, section: 0)])
+    }
+    
     func reloadCollectionView(with presentables: [TestsCollectionViewCellPresentable]) {
         dataSource.presentables = presentables
         testsView.collectionView.reloadData()
