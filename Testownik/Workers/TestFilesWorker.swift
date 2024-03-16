@@ -23,13 +23,15 @@ final class TestFilesWorker {
             includingPropertiesForKeys: keys) else { throw TestFileError.cantRetrieveEnumerator }
         
         for case let file as URL in files {
-            guard file.startAccessingSecurityScopedResource() else { throw TestFileError.cantAccessSecurityScoped }
+            guard file.startAccessingSecurityScopedResource() else {
+                throw TestFileError.cantAccessSecurityScoped
+            }
             
-            guard let resourceValues = try? file.resourceValues(forKeys: Set<URLResourceKey>(keys)),
+            guard let resourceValues = try? file.resourceValues(forKeys: Set(keys)),
                     let name = resourceValues.name,
                     let type = resourceValues.contentType else { throw TestFileError.cantRetrieveResourceValues }
             
-            if type == .image {
+            if type == .image || type == .jpeg || type == .png {
                 try FileManager.default.copyItem(at: file, to: destinationUrl.appending(path: name))
             }
             
@@ -48,10 +50,10 @@ final class TestFilesWorker {
                 throw TestFileError.cantAccessSecurityScoped
             }
             
-            guard let resourceValues = try? file.resourceValues(forKeys: Set<URLResourceKey>(keys)),
+            guard let resourceValues = try? file.resourceValues(forKeys: Set(keys)),
                     let type = resourceValues.contentType else { throw TestFileError.cantRetrieveResourceValues }
             
-            if type == .image {
+            if type == .image || type == .jpeg || type == .png {
                 return true
             }
             

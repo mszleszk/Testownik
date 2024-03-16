@@ -28,7 +28,7 @@ extension AddTestInteractor: AddTestInteractorLogic {
         
         do {
             let imagesFolderPath = try TestFilesWorker().saveImagesInAppFiles(from: folderUrl)
-            print(imagesFolderPath)
+            
             let test = Test(name: name, emoji: emoji, questions: List<Question>(), imagesFolderPath: imagesFolderPath?.absoluteString)
             try TestsDatabaseWorker().saveTest(test)
             presenter.presentSuccess()
