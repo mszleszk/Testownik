@@ -1,10 +1,8 @@
 import UIKit
 import MCEmojiPicker
-import SPIndicator
 
-protocol AddTestViewControllerLogic: AnyObject {
+protocol AddTestViewControllerLogic: AnyObject, ErrorShowing {
     func showAddedFolder(withName name: String)
-    func showError(withMessage message: String?)
     func success()
 }
 
@@ -73,14 +71,6 @@ extension AddTestViewController: AddTestViewControllerLogic {
     
     func showAddedFolder(withName name: String) {
         addTestView.addFolderButton.setAsFolderAdded(withFolderName: name)
-    }
-    
-    func showError(withMessage message: String?) {
-        SPIndicator.present(
-            title: L10n.General.somethingWentWrong,
-            message: message,
-            preset: .error,
-            haptic: .error)
     }
 }
 

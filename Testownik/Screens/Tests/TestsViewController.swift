@@ -1,6 +1,6 @@
 import UIKit
 
-protocol TestsViewControllerLogic: AnyObject {
+protocol TestsViewControllerLogic: AnyObject, ErrorShowing {
     func reloadCollectionView(with presentables: [TestsCollectionViewCellPresentable])
 }
 

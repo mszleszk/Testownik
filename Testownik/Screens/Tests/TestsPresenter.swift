@@ -2,6 +2,7 @@ import UIKit
 
 protocol TestsPresenterLogic {
     func presentCollectionView(with tests: [Test])
+    func presentGeneralError()
 }
 
 final class TestsPresenter {
@@ -22,5 +23,9 @@ extension TestsPresenter: TestsPresenterLogic {
                 emoji: test.emoji,
                 numberOfQuestions: test.questions.count)
         }))
+    }
+    
+    func presentGeneralError() {
+        viewController?.showError(withMessage: nil)
     }
 }

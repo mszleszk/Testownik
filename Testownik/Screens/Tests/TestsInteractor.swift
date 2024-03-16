@@ -28,7 +28,7 @@ extension TestsInteractor: TestsInteractorLogic {
             guard let tests = tests else { return }
             try databaseWorker.deleteTest(test: tests[index])
         } catch {
-            print(error)
+            presenter.presentGeneralError()
         }
         
         fetchTests()
