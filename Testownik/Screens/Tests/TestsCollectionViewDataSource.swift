@@ -2,10 +2,10 @@ import UIKit
 import RealmSwift
 
 final class TestsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
-    var presentables: [TestsCollectionViewCellPresentable] = []
+    var presentables = TestsPresentables()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        presentables.count + 1
+        presentables.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -18,7 +18,7 @@ final class TestsCollectionViewDataSource: NSObject, UICollectionViewDataSource 
                 withReuseIdentifier: TestsCollectionViewCell.reuseIdentifier,
                 for: indexPath) as? TestsCollectionViewCell else { return UICollectionViewCell() }
             
-            let presentable = presentables[indexPath.row - 1]
+            let presentable = presentables[indexPath.row]
             testCell.setupAppearance(emoji: presentable.emoji, testName: presentable.name, numberOfQuestions: presentable.numberOfQuestions)
             cell = testCell
         }

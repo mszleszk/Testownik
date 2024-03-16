@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class TestsCollectionViewData {
+struct TestsResults {
     private var tests: Results<Test>?
     
     subscript(index: Int) -> Test? {
@@ -14,7 +14,7 @@ class TestsCollectionViewData {
         }
     }
     
-    func set(_ results: Results<Test>) {
+    mutating func set(_ results: Results<Test>) {
         self.tests = results
     }
 }

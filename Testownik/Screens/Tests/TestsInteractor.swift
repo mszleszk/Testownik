@@ -8,7 +8,7 @@ protocol TestsInteractorLogic {
 
 final class TestsInteractor {
     private let presenter: TestsPresenterLogic
-    private var tests = TestsCollectionViewData()
+    private var tests = TestsResults()
     private let databaseWorker = TestsDatabaseWorker()
     private let filesWorker = TestFilesWorker()
     
