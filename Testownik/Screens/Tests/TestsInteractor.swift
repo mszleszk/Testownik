@@ -10,7 +10,7 @@ final class TestsInteractor {
     private let presenter: TestsPresenterLogic
     private var tests = TestsResults()
     private let databaseWorker = TestsDatabaseWorker()
-    private let filesWorker = TestFilesWorker()
+    private let filesWorker = ImageFilesWorker()
     
     init(presenter: TestsPresenterLogic) {
         self.presenter = presenter

@@ -27,8 +27,7 @@ final class TestsViewController: UIViewController {
 extension TestsViewController: TestsViewControllerLogic {
     func deleteCollectionViewCell(atIndex index: Int) {
         dataSource.presentables.remove(at: index)
-//        testsView.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
-        testsView.collectionView.reloadData()
+        testsView.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
     }
     
     func reloadCollectionView(with presentables: [TestsCollectionViewCellPresentable]) {

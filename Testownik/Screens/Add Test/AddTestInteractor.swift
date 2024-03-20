@@ -9,7 +9,7 @@ protocol AddTestInteractorLogic {
 final class AddTestInteractor {
     private let presenter: AddTestPresenterLogic
     private var testFolderUrl: URL?
-    private let filesWorker = TestFilesWorker()
+    private let filesWorker = ImageFilesWorker()
     
     init(presenter: AddTestPresenterLogic) {
         self.presenter = presenter
@@ -29,7 +29,7 @@ extension AddTestInteractor: AddTestInteractorLogic {
         
         do {
             let imagesFolderName = try filesWorker.saveImagesInAppFiles(from: folderUrl)
-            
+            try filesWorker.fetchQuestions(from: folderUrl)
             let test = Test(
                 name: name,
                 emoji: emoji,

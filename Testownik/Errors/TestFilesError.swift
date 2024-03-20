@@ -1,7 +1,8 @@
 import Foundation
 
-enum TestFileError: Error {
+enum FileError: Error {
     case cantAccessSecurityScoped
     case cantRetrieveEnumerator
     case cantRetrieveResourceValues
+    case cantReadFileContents
 }

@@ -3,10 +3,9 @@ import Foundation
 protocol TestFilesWorkerProtocol {
     func saveImagesInAppFiles(from url: URL) throws -> String?
     func removeFolder(withName name: String) throws
-//    func parseQuestions(from url: URL) -> [Question]
 }
 
-final class TestFilesWorker {
+final class ImageFilesWorker {
     private func createDirectory() throws -> URL {
         let uniqueFolderName = UUID().uuidString
         let directory = URL.documentsDirectory.appending(path: uniqueFolderName)
@@ -20,16 +19,16 @@ final class TestFilesWorker {
         let keys : [URLResourceKey] = [.nameKey, .contentTypeKey]
         guard let files = FileManager.default.enumerator(
             at: sourceUrl,
-            includingPropertiesForKeys: keys) else { throw TestFileError.cantRetrieveEnumerator }
+            includingPropertiesForKeys: keys) else { throw FileError.cantRetrieveEnumerator }
         
         for case let file as URL in files {
             guard file.startAccessingSecurityScopedResource() else {
-                throw TestFileError.cantAccessSecurityScoped
+                throw FileError.cantAccessSecurityScoped
             }
             
             guard let resourceValues = try? file.resourceValues(forKeys: Set(keys)),
                     let name = resourceValues.name,
-                    let type = resourceValues.contentType else { throw TestFileError.cantRetrieveResourceValues }
+                    let type = resourceValues.contentType else { throw FileError.cantRetrieveResourceValues }
             
             if type == .image || type == .jpeg || type == .png {
                 try FileManager.default.copyItem(at: file, to: destinationUrl.appending(path: name))
@@ -43,15 +42,15 @@ final class TestFilesWorker {
         let keys : [URLResourceKey] = [.contentTypeKey]
         guard let files = FileManager.default.enumerator(
             at: url,
-            includingPropertiesForKeys: keys) else { throw TestFileError.cantRetrieveEnumerator }
+            includingPropertiesForKeys: keys) else { throw FileError.cantRetrieveEnumerator }
         
         for case let file as URL in files {
             guard file.startAccessingSecurityScopedResource() else {
-                throw TestFileError.cantAccessSecurityScoped
+                throw FileError.cantAccessSecurityScoped
             }
             
             guard let resourceValues = try? file.resourceValues(forKeys: Set(keys)),
-                    let type = resourceValues.contentType else { throw TestFileError.cantRetrieveResourceValues }
+                    let type = resourceValues.contentType else { throw FileError.cantRetrieveResourceValues }
             
             if type == .image || type == .jpeg || type == .png {
                 return true
@@ -64,14 +63,14 @@ final class TestFilesWorker {
     }
 }
 
-extension TestFilesWorker: TestFilesWorkerProtocol {
+extension ImageFilesWorker: TestFilesWorkerProtocol {
     func removeFolder(withName name: String) throws {
         let documents = URL.documentsDirectory
         try FileManager.default.removeItem(at: documents.appending(path: name))
     }
     
     func saveImagesInAppFiles(from url: URL) throws -> String? {
-        guard url.startAccessingSecurityScopedResource() else { throw TestFileError.cantAccessSecurityScoped }
+        guard url.startAccessingSecurityScopedResource() else { throw FileError.cantAccessSecurityScoped }
         defer { url.stopAccessingSecurityScopedResource() }
         
         guard try containsImages(at: url) else { return nil }
@@ -82,8 +81,4 @@ extension TestFilesWorker: TestFilesWorkerProtocol {
         
         return imageDirectoryUrl.lastPathComponent
     }
-    
-//    func parseQuestions(from url: URL) -> [Question] {
-//
-//    }
 }
