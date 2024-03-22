@@ -14,6 +14,7 @@
 		3150AE132BA664A600E9A64F /* TestsPresentables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE122BA664A600E9A64F /* TestsPresentables.swift */; };
 		3150AE1A2BA7C13100E9A64F /* QuestionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE192BA7C13100E9A64F /* QuestionParser.swift */; };
 		3150AE342BAB902E00E9A64F /* QuestionFilesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE332BAB902E00E9A64F /* QuestionFilesWorker.swift */; };
+		3150AE3C2BAC993300E9A64F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE3B2BAC993300E9A64F /* String+Extensions.swift */; };
 		319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E02B457AC4001FF59E /* AppDelegate.swift */; };
 		319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E22B457AC4001FF59E /* SceneDelegate.swift */; };
 		319977EA2B457AC5001FF59E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319977E92B457AC5001FF59E /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		3150AE122BA664A600E9A64F /* TestsPresentables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsPresentables.swift; sourceTree = "<group>"; };
 		3150AE192BA7C13100E9A64F /* QuestionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionParser.swift; sourceTree = "<group>"; };
 		3150AE332BAB902E00E9A64F /* QuestionFilesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFilesWorker.swift; sourceTree = "<group>"; };
+		3150AE3B2BAC993300E9A64F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		319977DD2B457AC4001FF59E /* Testownik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testownik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319977E02B457AC4001FF59E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319977E22B457AC4001FF59E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,18 +171,18 @@
 		319977DF2B457AC4001FF59E /* Testownik */ = {
 			isa = PBXGroup;
 			children = (
-				3150AE182BA7C11000E9A64F /* Utils */,
-				3199786A2B548BC7001FF59E /* Errors */,
-				319978652B5322D3001FF59E /* Workers */,
-				3199782F2B46F0A6001FF59E /* Protocols */,
-				319978242B46E3A0001FF59E /* Models */,
-				319978202B45DBA2001FF59E /* Core */,
-				319978192B4595B6001FF59E /* Views */,
-				319978102B458D11001FF59E /* Generated */,
 				3199780C2B45895A001FF59E /* Assets */,
-				319978092B4585DC001FF59E /* Extensions */,
 				319978052B4582F3001FF59E /* Base */,
+				319978202B45DBA2001FF59E /* Core */,
+				3199786A2B548BC7001FF59E /* Errors */,
+				319978092B4585DC001FF59E /* Extensions */,
+				319978102B458D11001FF59E /* Generated */,
+				319978242B46E3A0001FF59E /* Models */,
+				3199782F2B46F0A6001FF59E /* Protocols */,
 				319977F72B458234001FF59E /* Screens */,
+				3150AE182BA7C11000E9A64F /* Utils */,
+				319978192B4595B6001FF59E /* Views */,
+				319978652B5322D3001FF59E /* Workers */,
 			);
 			path = Testownik;
 			sourceTree = "<group>";
@@ -211,6 +213,7 @@
 				319978172B458FC3001FF59E /* UIStackView+Extensions.swift */,
 				3199781E2B45D18C001FF59E /* UILabel+Extensions.swift */,
 				3199785E2B4F4237001FF59E /* UIViewController+Extensions.swift */,
+				3150AE3B2BAC993300E9A64F /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				3150AE132BA664A600E9A64F /* TestsPresentables.swift in Sources */,
 				319978612B52AF53001FF59E /* AddFolderButton.swift in Sources */,
 				3150AE0E2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift in Sources */,
+				3150AE3C2BAC993300E9A64F /* String+Extensions.swift in Sources */,
 				3199780B2B4585EC001FF59E /* AnyObject+ScopeFunctions.swift in Sources */,
 				31C4C9A62BA4C99600A6C6AE /* TestsBuilder.swift in Sources */,
 				319978282B46E902001FF59E /* Test.swift in Sources */,

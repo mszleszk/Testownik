@@ -13,9 +13,9 @@ final class TestsDatabaseWorker {
 
 extension TestsDatabaseWorker: TestsDatabaseWorkerProtocol {
     func saveTest(_ test: Test) throws {
-        try realm.write({
+        try realm.write {
             realm.add(test)
-        })
+        }
     }
     
     func getTests() -> Results<Test> {

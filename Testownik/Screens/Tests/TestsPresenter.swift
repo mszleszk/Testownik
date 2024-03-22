@@ -22,12 +22,14 @@ extension TestsPresenter: TestsPresenterLogic {
     }
     
     func presentCollectionView(with tests: [Test]) {
-        viewController?.reloadCollectionView(with: tests.map({ test in
+        let testPresentables = tests.map { test in
             TestsCollectionViewCellPresentable(
                 name: test.name,
                 emoji: test.emoji,
                 numberOfQuestions: test.questions.count)
-        }))
+        }
+        
+        viewController?.reloadCollectionView(with: testPresentables)
     }
     
     func presentGeneralError() {

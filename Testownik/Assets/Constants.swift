@@ -25,4 +25,9 @@ enum K {
         static let inset = 20.0
         static let largeInset = 50.0
     }
+    
+    struct Tags {
+        static let imageBegin = "[img]"
+        static let imageEnd = "[/img]"
+    }
 }
