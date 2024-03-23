@@ -1,17 +1,17 @@
-//
-//  SystemButton.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 09/01/2024.
-//
-
 import UIKit
 
 final class SystemButton: UIButton {
     
     init(text: String) {
         super.init(frame: .zero)
-        
+        setup(with: text)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup(with text: String) {
         var config = UIButton.Configuration.plain()
         var attributedTitle = AttributedString(text)
         attributedTitle.foregroundColor = Asset.Colors.primaryText.color
@@ -24,9 +24,5 @@ final class SystemButton: UIButton {
             config?.attributedTitle?.foregroundColor = button.isHighlighted ? Asset.Colors.primaryText.color.withAlphaComponent(0.5) : Asset.Colors.primaryText.color
             button.configuration = config
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

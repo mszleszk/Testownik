@@ -21,6 +21,7 @@
 		3150AE522BAECE3800E9A64F /* TestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE4D2BAECE3800E9A64F /* TestBuilder.swift */; };
 		3150AE532BAECE3800E9A64F /* TestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE4E2BAECE3800E9A64F /* TestInteractor.swift */; };
 		3150AE562BAED70900E9A64F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE552BAED70900E9A64F /* TestView.swift */; };
+		3150AE5A2BAEF02700E9A64F /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE592BAEF02700E9A64F /* ProgressView.swift */; };
 		319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E02B457AC4001FF59E /* AppDelegate.swift */; };
 		319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E22B457AC4001FF59E /* SceneDelegate.swift */; };
 		319977EA2B457AC5001FF59E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319977E92B457AC5001FF59E /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		3150AE4D2BAECE3800E9A64F /* TestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBuilder.swift; sourceTree = "<group>"; };
 		3150AE4E2BAECE3800E9A64F /* TestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInteractor.swift; sourceTree = "<group>"; };
 		3150AE552BAED70900E9A64F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		3150AE592BAEF02700E9A64F /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		319977DD2B457AC4001FF59E /* Testownik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testownik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319977E02B457AC4001FF59E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319977E22B457AC4001FF59E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				3199784E2B4DB18B001FF59E /* SystemButton.swift */,
 				319978602B52AF53001FF59E /* AddFolderButton.swift */,
+				3150AE592BAEF02700E9A64F /* ProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				3150AE502BAECE3800E9A64F /* TestRouter.swift in Sources */,
 				3150AE512BAECE3800E9A64F /* TestViewController.swift in Sources */,
 				3150AE522BAECE3800E9A64F /* TestBuilder.swift in Sources */,
+				3150AE5A2BAEF02700E9A64F /* ProgressView.swift in Sources */,
 				3150AE532BAECE3800E9A64F /* TestInteractor.swift in Sources */,
 				3150AE1A2BA7C13100E9A64F /* QuestionParser.swift in Sources */,
 				31C4C9A92BA4C99600A6C6AE /* TestsPresenter.swift in Sources */,
