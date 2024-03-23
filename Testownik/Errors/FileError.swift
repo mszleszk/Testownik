@@ -5,4 +5,5 @@ enum FileError: Error {
     case cantRetrieveEnumerator
     case cantRetrieveResourceValues
     case cantReadFileContents
+    case incorrectFileFormat
 }

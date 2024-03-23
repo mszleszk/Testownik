@@ -1,7 +1,8 @@
 import Foundation
+import RealmSwift
 
 protocol QuestionFilesWorkerProtocol {
-    func fetchQuestions(from url: URL) throws /*-> [Question]*/
+    func fetchQuestions(from url: URL) throws -> List<Question>
 }
 
 final class QuestionFilesWorker {
@@ -20,11 +21,13 @@ final class QuestionFilesWorker {
 }
 
 extension QuestionFilesWorker: QuestionFilesWorkerProtocol {
-    func fetchQuestions(from url: URL) throws /*-> [Question]*/ {
+    func fetchQuestions(from url: URL) throws -> List<Question> {
         let keys: [URLResourceKey] = [.contentTypeKey]
         guard let files = FileManager.default.enumerator(
             at: url,
             includingPropertiesForKeys: keys) else { throw FileError.cantRetrieveEnumerator }
+        
+        var questions = List<Question>()
         
         for case let file as URL in files {
             guard file.startAccessingSecurityScopedResource() else { throw FileError.cantAccessSecurityScoped }
@@ -34,9 +37,14 @@ extension QuestionFilesWorker: QuestionFilesWorkerProtocol {
             
             if type == .plainText {
                 let fileContents = try getFileContents(file)
+                if let question = QuestionParser().parse(fileContents) {
+                    questions.append(question)
+                }
             }
             
             file.stopAccessingSecurityScopedResource()
         }
+        
+        return questions
     }
 }

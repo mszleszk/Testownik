@@ -45,7 +45,7 @@
 		319978612B52AF53001FF59E /* AddFolderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978602B52AF53001FF59E /* AddFolderButton.swift */; };
 		319978642B52EA48001FF59E /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 319978632B52EA48001FF59E /* SPIndicator */; };
 		319978692B532315001FF59E /* ImageFilesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319978682B532315001FF59E /* ImageFilesWorker.swift */; };
-		3199786C2B548BEE001FF59E /* TestFilesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199786B2B548BEE001FF59E /* TestFilesError.swift */; };
+		3199786C2B548BEE001FF59E /* FileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199786B2B548BEE001FF59E /* FileError.swift */; };
 		31C0BEDD2BA3662E002B64D9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 31C0BEDC2BA3662E002B64D9 /* Realm */; };
 		31C0BEDF2BA3662E002B64D9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 31C0BEDE2BA3662E002B64D9 /* RealmSwift */; };
 		31C0BEE12BA3862A002B64D9 /* TestsDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0BEE02BA3862A002B64D9 /* TestsDatabaseWorker.swift */; };
@@ -99,7 +99,7 @@
 		3199785E2B4F4237001FF59E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		319978602B52AF53001FF59E /* AddFolderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderButton.swift; sourceTree = "<group>"; };
 		319978682B532315001FF59E /* ImageFilesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilesWorker.swift; sourceTree = "<group>"; };
-		3199786B2B548BEE001FF59E /* TestFilesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFilesError.swift; sourceTree = "<group>"; };
+		3199786B2B548BEE001FF59E /* FileError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileError.swift; sourceTree = "<group>"; };
 		31C0BEE02BA3862A002B64D9 /* TestsDatabaseWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsDatabaseWorker.swift; sourceTree = "<group>"; };
 		31C4C9962BA4C99600A6C6AE /* TestsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsCollectionView.swift; sourceTree = "<group>"; };
 		31C4C9972BA4C99600A6C6AE /* TestsCollectionViewAdditionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsCollectionViewAdditionCell.swift; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 		3199786A2B548BC7001FF59E /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				3199786B2B548BEE001FF59E /* TestFilesError.swift */,
+				3199786B2B548BEE001FF59E /* FileError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -486,7 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C4C9AA2BA4C99600A6C6AE /* TestsRouter.swift in Sources */,
-				3199786C2B548BEE001FF59E /* TestFilesError.swift in Sources */,
+				3199786C2B548BEE001FF59E /* FileError.swift in Sources */,
 				3150AE0C2BA615FC00E9A64F /* TestsResults.swift in Sources */,
 				319978452B482298001FF59E /* AddTestBuilder.swift in Sources */,
 				319978422B482298001FF59E /* AddTestPresenter.swift in Sources */,

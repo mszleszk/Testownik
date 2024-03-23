@@ -30,11 +30,11 @@ extension AddTestInteractor: AddTestInteractorLogic {
         
         do {
             let imagesFolderName = try imagesWorker.saveImagesInAppFiles(from: folderUrl)
-            try questionsWorker.fetchQuestions(from: folderUrl)
+            let questions = try questionsWorker.fetchQuestions(from: folderUrl)
             let test = Test(
                 name: name,
                 emoji: emoji,
-                questions: List<Question>(),
+                questions: questions,
                 imagesFolderName: imagesFolderName)
             try TestsDatabaseWorker().saveTest(test)
             presenter.presentSuccess()
