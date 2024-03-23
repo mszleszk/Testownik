@@ -27,7 +27,7 @@ extension QuestionFilesWorker: QuestionFilesWorkerProtocol {
             at: url,
             includingPropertiesForKeys: keys) else { throw FileError.cantRetrieveEnumerator }
         
-        var questions = List<Question>()
+        let questions = List<Question>()
         
         for case let file as URL in files {
             guard file.startAccessingSecurityScopedResource() else { throw FileError.cantAccessSecurityScoped }
