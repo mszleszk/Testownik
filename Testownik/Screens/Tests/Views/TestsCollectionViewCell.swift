@@ -44,7 +44,7 @@ final class TestsCollectionViewCell: BaseCell {
     
     override func setupProperties() {
         contentView.backgroundColor = Asset.Colors.primary.color
-        contentView.layer.cornerRadius = K.TestCell.cornerRadius
+        contentView.layer.cornerRadius = K.View.cornerRadius
     }
     
     func setupAppearance(emoji: String, testName: String, numberOfQuestions: Int) {

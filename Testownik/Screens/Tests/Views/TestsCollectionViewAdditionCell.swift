@@ -31,7 +31,7 @@ final class TestsCollectionViewAdditionCell: BaseCell {
     
     override func setupProperties() {
         contentView.backgroundColor = Asset.Colors.systemBlue.color.withAlphaComponent(0.2)
-        contentView.layer.cornerRadius = K.TestCell.cornerRadius
+        contentView.layer.cornerRadius = K.View.cornerRadius
     }
 }
 
