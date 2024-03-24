@@ -1,20 +1,13 @@
-//
-//  TestsCollectionView.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 03/01/2024.
-//
-
 import UIKit
 
-final class TestsCollectionView: UICollectionView {
+final class AnswersCollectionView: UICollectionView {
     private let layout = {
         let inset = K.TestCell.outerInset
-        let cellFractionalWidth: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 1/3 : 1/2
+        let cellFractionalWidth: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 1/2 : 1
         
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(cellFractionalWidth),
-            heightDimension: .fractionalHeight(1))
+            heightDimension: .estimated(44))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(
             top: inset,
@@ -24,7 +17,7 @@ final class TestsCollectionView: UICollectionView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalWidth(cellFractionalWidth * 1.1))
+            heightDimension: .estimated(44))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
@@ -40,8 +33,7 @@ final class TestsCollectionView: UICollectionView {
     init() {
         super.init(frame: .zero, collectionViewLayout: layout)
         
-        register(TestsCollectionViewCell.self, forCellWithReuseIdentifier: TestsCollectionViewCell.reuseIdentifier)
-        register(TestsCollectionViewAdditionCell.self, forCellWithReuseIdentifier: TestsCollectionViewAdditionCell.reuseIdentifier)
+        
         
         backgroundColor = .clear
         

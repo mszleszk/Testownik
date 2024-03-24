@@ -5,8 +5,8 @@ final class AddTestView: UIView {
     let addEmojiButton = AddTestView.makeAddEmojiButton()
     let nameTextField = AddTestView.makeNameTextField()
     let addFolderButton = AddFolderButton()
-    let doneButton = SystemButton(text: L10n.General.done)
-    let cancelButton =  SystemButton(text: L10n.General.cancel)
+    let doneButton = BarButton(text: L10n.General.done)
+    let cancelButton =  BarButton(text: L10n.General.cancel)
     
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 15, alignment: .center)
     

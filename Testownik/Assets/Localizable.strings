@@ -18,3 +18,5 @@
 "addTest.error.noName" = "Wprowadź nazwę dla testu";
 "addTest.error.noEmoji" = "Dodaj emoji dla testu";
 "addTest.error.noFolder" = "Dodaj folder z bazą";
+"test.next" = "Następne";
+"test.confirm" = "Zatwierdź";

@@ -1,6 +1,6 @@
 import UIKit
 
-final class SystemButton: UIButton {
+final class BarButton: UIButton {
     
     init(text: String) {
         super.init(frame: .zero)

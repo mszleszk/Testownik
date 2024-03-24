@@ -1,16 +1,31 @@
 import UIKit
 
-final class TestView: BaseView {
-    private let contentView = UIView()
+final class TestView: UIView {
+    private let container = UIView()
     private let topBarView = UIView()
     private let closeButton = UIButton(type: .close)
     private let progressView = ProgressView()
+    private let questionView = TestContentView()
+    private let nextButton = DefaultButton()
     
-    override func buildHierarchy() {
-        addSubview(contentView)
+    init() {
+        super.init(frame: .zero)
+        applyViewCode()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension TestView: ViewCodeProtocol {
+    func buildHierarchy() {
+        addSubview(container)
         
-        contentView.addSubviews([
-            topBarView
+        container.addSubviews([
+            topBarView,
+            questionView,
+            nextButton
         ])
         
         topBarView.addSubviews([
@@ -19,8 +34,8 @@ final class TestView: BaseView {
         ])
     }
     
-    override func setupConstraints() {
-        contentView.snp.makeConstraints { make in
+    func setupConstraints() {
+        container.snp.makeConstraints { make in
             make.edges.equalTo(safeAreaLayoutGuide).inset(K.View.inset)
         }
         
@@ -39,11 +54,24 @@ final class TestView: BaseView {
         progressView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.right.equalToSuperview()
-            make.left.equalTo(closeButton.snp.right).offset(10)
+            make.left.equalTo(closeButton.snp.right).offset(K.View.inset)
+        }
+        
+        questionView.snp.makeConstraints { make in
+            make.top.equalTo(topBarView.snp.bottom).offset(K.View.inset)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(200)
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().inset(K.View.inset)
+            make.right.equalToSuperview().inset(K.View.inset)
         }
     }
     
-    override func setupProperties() {
+    func setupProperties() {
         backgroundColor = Asset.Colors.background.color
     }
 }

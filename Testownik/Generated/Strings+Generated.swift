@@ -39,6 +39,12 @@ internal enum L10n {
     /// Coś poszło nie tak!
     internal static let somethingWentWrong = L10n.tr("Localizable", "general.somethingWentWrong", fallback: "Coś poszło nie tak!")
   }
+  internal enum Test {
+    /// Zatwierdź
+    internal static let confirm = L10n.tr("Localizable", "test.confirm", fallback: "Zatwierdź")
+    /// Następne
+    internal static let next = L10n.tr("Localizable", "test.next", fallback: "Następne")
+  }
   internal enum Tests {
     /// Dodaj test
     internal static let addTest = L10n.tr("Localizable", "tests.addTest", fallback: "Dodaj test")
