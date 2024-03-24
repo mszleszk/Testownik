@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-final class AddTestView: BaseView {
+final class AddTestView: UIView {
     let addEmojiButton = AddTestView.makeAddEmojiButton()
     let nameTextField = AddTestView.makeNameTextField()
     let addFolderButton = AddFolderButton()
@@ -10,7 +10,43 @@ final class AddTestView: BaseView {
     
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 15, alignment: .center)
     
-    override func buildHierarchy() {
+    init() {
+        super.init(frame: .zero)
+        applyViewCode()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setEmojiSize()
+    }
+    
+    func setEmoji(_ emoji: String) {
+        let config = UIImage.SymbolConfiguration(hierarchicalColor: Asset.Colors.systemGray.color)
+        let image = UIImage(systemName: "circle.fill", withConfiguration: config)
+        addEmojiButton.setBackgroundImage(image, for: .normal)
+        addEmojiButton.setTitle(emoji, for: .normal)
+    }
+    
+    func getEmoji() -> String? {
+        return addEmojiButton.titleLabel?.text
+    }
+    
+    func getName() -> String? {
+        return nameTextField.text == "" ? nil : nameTextField.text
+    }
+    
+    private func setEmojiSize() {
+        let emojiSize = addEmojiButton.bounds.height * 0.5
+        addEmojiButton.titleLabel?.font = UIFont.systemFont(ofSize: emojiSize)
+    }
+}
+
+extension AddTestView: ViewCodeProtocol {
+    func buildHierarchy() {
         addSubviews([
             verticalStackView,
             doneButton,
@@ -24,7 +60,7 @@ final class AddTestView: BaseView {
         ])
     }
     
-    override func setupConstraints() {
+    func setupConstraints() {
         verticalStackView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(K.View.inset)
             make.right.equalToSuperview().inset(K.View.inset)
@@ -60,34 +96,9 @@ final class AddTestView: BaseView {
         }
     }
     
-    override func setupProperties() {
+    func setupProperties() {
         backgroundColor = Asset.Colors.background.color
         verticalStackView.setCustomSpacing(50, after: nameTextField)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setEmojiSize()
-    }
-    
-    func setEmoji(_ emoji: String) {
-        let config = UIImage.SymbolConfiguration(hierarchicalColor: Asset.Colors.systemGray.color)
-        let image = UIImage(systemName: "circle.fill", withConfiguration: config)
-        addEmojiButton.setBackgroundImage(image, for: .normal)
-        addEmojiButton.setTitle(emoji, for: .normal)
-    }
-    
-    func getEmoji() -> String? {
-        return addEmojiButton.titleLabel?.text
-    }
-    
-    func getName() -> String? {
-        return nameTextField.text == "" ? nil : nameTextField.text
-    }
-    
-    private func setEmojiSize() {
-        let emojiSize = addEmojiButton.bounds.height * 0.5
-        addEmojiButton.titleLabel?.font = UIFont.systemFont(ofSize: emojiSize)
     }
 }
 

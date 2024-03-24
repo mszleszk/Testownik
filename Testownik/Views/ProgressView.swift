@@ -1,21 +1,36 @@
 import UIKit
 
-final class ProgressView: BaseView {
+final class ProgressView: UIView {
     private let progressBar = UIProgressView()
     private let progressLabel = UILabel(
         text: "-/-",
         fontSize: K.Text.secondaryTextSize,
         color: Asset.Colors.primaryText.color)
     
+    init() {
+        super.init(frame: .zero)
+        applyViewCode()
+    }
     
-    override func buildHierarchy() {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setProgress(completed: Int, outOf total: Int) {
+        progressBar.setProgress(Float(completed) / Float(total), animated: false)
+        progressLabel.text = "\(completed)/\(total)"
+    }
+}
+
+extension ProgressView: ViewCodeProtocol {
+    func buildHierarchy() {
         addSubviews([
             progressBar,
             progressLabel
         ])
     }
     
-    override func setupConstraints() {
+    func setupConstraints() {
         progressBar.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview()
@@ -26,11 +41,6 @@ final class ProgressView: BaseView {
             make.centerY.equalToSuperview()
             make.right.equalToSuperview()
         }
-    }
-    
-    func setProgress(completed: Int, outOf total: Int) {
-        progressBar.setProgress(Float(completed) / Float(total), animated: false)
-        progressLabel.text = "\(completed)/\(total)"
     }
 }
 
