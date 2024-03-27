@@ -4,6 +4,15 @@ final class TestContentView: UIView {
     private let imageView = ZoomImageView()
     private let label = TestContentView.makeLabel()
     
+    var font: UIFont {
+        get {
+            label.font
+        }
+        set {
+            label.font = newValue
+        }
+    }
+    
     init() {
         super.init(frame: .zero)
         setup()

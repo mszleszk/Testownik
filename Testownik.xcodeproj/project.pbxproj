@@ -28,6 +28,8 @@
 		3150AE642BB01ECE00E9A64F /* TestContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE632BB01ECE00E9A64F /* TestContentView.swift */; };
 		3150AE662BB0359C00E9A64F /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE652BB0359C00E9A64F /* DefaultButton.swift */; };
 		3150AE682BB0473700E9A64F /* AnswersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE672BB0473700E9A64F /* AnswersCollectionView.swift */; };
+		3150AE6A2BB0500900E9A64F /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE692BB0500900E9A64F /* AnswerCell.swift */; };
+		3150AE6C2BB052A300E9A64F /* AnswersCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE6B2BB052A300E9A64F /* AnswersCollectionViewDataSource.swift */; };
 		319977E12B457AC4001FF59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E02B457AC4001FF59E /* AppDelegate.swift */; };
 		319977E32B457AC4001FF59E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319977E22B457AC4001FF59E /* SceneDelegate.swift */; };
 		319977EA2B457AC5001FF59E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319977E92B457AC5001FF59E /* Assets.xcassets */; };
@@ -94,6 +96,8 @@
 		3150AE632BB01ECE00E9A64F /* TestContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContentView.swift; sourceTree = "<group>"; };
 		3150AE652BB0359C00E9A64F /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		3150AE672BB0473700E9A64F /* AnswersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersCollectionView.swift; sourceTree = "<group>"; };
+		3150AE692BB0500900E9A64F /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
+		3150AE6B2BB052A300E9A64F /* AnswersCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		319977DD2B457AC4001FF59E /* Testownik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testownik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319977E02B457AC4001FF59E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319977E22B457AC4001FF59E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				3150AE4C2BAECE3800E9A64F /* TestViewController.swift */,
 				3150AE4D2BAECE3800E9A64F /* TestBuilder.swift */,
 				3150AE4E2BAECE3800E9A64F /* TestInteractor.swift */,
+				3150AE6B2BB052A300E9A64F /* AnswersCollectionViewDataSource.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			children = (
 				3150AE552BAED70900E9A64F /* TestView.swift */,
 				3150AE672BB0473700E9A64F /* AnswersCollectionView.swift */,
+				3150AE692BB0500900E9A64F /* AnswerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				3199784B2B482DD2001FF59E /* Constants.swift in Sources */,
 				3150AE682BB0473700E9A64F /* AnswersCollectionView.swift in Sources */,
 				3150AE132BA664A600E9A64F /* TestsPresentables.swift in Sources */,
+				3150AE6A2BB0500900E9A64F /* AnswerCell.swift in Sources */,
 				3150AE642BB01ECE00E9A64F /* TestContentView.swift in Sources */,
 				319978612B52AF53001FF59E /* AddFolderButton.swift in Sources */,
 				3150AE0E2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift in Sources */,
@@ -567,6 +574,7 @@
 				31C4C9A92BA4C99600A6C6AE /* TestsPresenter.swift in Sources */,
 				3150AE562BAED70900E9A64F /* TestView.swift in Sources */,
 				3150AE662BB0359C00E9A64F /* DefaultButton.swift in Sources */,
+				3150AE6C2BB052A300E9A64F /* AnswersCollectionViewDataSource.swift in Sources */,
 				319978692B532315001FF59E /* ImageFilesWorker.swift in Sources */,
 				319978142B458D37001FF59E /* XCAssets+Generated.swift in Sources */,
 				319978462B482298001FF59E /* AddTestInteractor.swift in Sources */,

@@ -8,6 +8,8 @@ final class TestView: UIView {
     private let questionView = TestContentView()
     private let nextButton = DefaultButton()
     
+    let answersCollectionView = AnswersCollectionView()
+    
     init() {
         super.init(frame: .zero)
         applyViewCode()
@@ -25,7 +27,8 @@ extension TestView: ViewCodeProtocol {
         container.addSubviews([
             topBarView,
             questionView,
-            nextButton
+            nextButton,
+            answersCollectionView
         ])
         
         topBarView.addSubviews([
@@ -69,6 +72,13 @@ extension TestView: ViewCodeProtocol {
             make.left.equalToSuperview().inset(K.View.inset)
             make.right.equalToSuperview().inset(K.View.inset)
         }
+        
+        answersCollectionView.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalTo(questionView.snp.bottom).offset(K.View.smallInset)
+            make.bottom.equalTo(nextButton.snp.top).offset(K.View.smallInset)
+        }
     }
     
     func setupProperties() {
@@ -78,5 +88,9 @@ extension TestView: ViewCodeProtocol {
 
 // MARK: - Builder
 private extension TestView {
-    
+    static func makeQuestionView() -> TestContentView {
+        return TestContentView().also {
+            $0.font = .systemFont(ofSize: K.Text.primaryTextSize, weight: .bold)
+        }
+    }
 }

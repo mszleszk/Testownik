@@ -25,7 +25,7 @@ final class TestsCollectionViewAdditionCell: BaseCell {
     
     override func setupConstraints() {
         verticalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: K.TestCell.innerInset, left: K.TestCell.innerInset, bottom: K.TestCell.innerInset, right: K.TestCell.innerInset))
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: K.Cell.innerInset, left: K.Cell.innerInset, bottom: K.Cell.innerInset, right: K.Cell.innerInset))
         }
     }
     

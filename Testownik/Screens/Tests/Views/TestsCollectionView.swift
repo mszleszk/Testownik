@@ -9,7 +9,7 @@ import UIKit
 
 final class TestsCollectionView: UICollectionView {
     private let layout = {
-        let inset = K.TestCell.outerInset
+        let inset = K.Cell.outerInset
         let cellFractionalWidth: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 1/3 : 1/2
         
         let itemSize = NSCollectionLayoutSize(

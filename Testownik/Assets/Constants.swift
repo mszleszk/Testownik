@@ -1,10 +1,3 @@
-//
-//  Constants.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 05/01/2024.
-//
-
 import Foundation
 
 enum K {
@@ -15,9 +8,13 @@ enum K {
         static let systemTextSize = 18.0
     }
     
-    enum TestCell {
+    enum Cell {
         static let outerInset = 5.0
         static let innerInset = 20.0
+    }
+    
+    enum AnswerCell {
+        static let estimatedHeight = 40.0
     }
     
     enum View {

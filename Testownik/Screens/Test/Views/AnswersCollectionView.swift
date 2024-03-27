@@ -2,23 +2,20 @@ import UIKit
 
 final class AnswersCollectionView: UICollectionView {
     private let layout = {
-        let inset = K.TestCell.outerInset
-        let cellFractionalWidth: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 1/2 : 1
+        let inset = K.Cell.outerInset
         
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(cellFractionalWidth),
-            heightDimension: .estimated(44))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(
-            top: inset,
-            leading: inset,
-            bottom: inset,
-            trailing: inset)
-        
-        let groupSize = NSCollectionLayoutSize(
+        let size = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(44))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            heightDimension: .estimated(K.AnswerCell.estimatedHeight))
+        
+        let item = NSCollectionLayoutItem(layoutSize: size)
+        item.edgeSpacing = NSCollectionLayoutEdgeSpacing(
+            leading: nil,
+            top: NSCollectionLayoutSpacing.fixed(inset),
+            trailing: nil,
+            bottom: nil)
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(
@@ -33,7 +30,7 @@ final class AnswersCollectionView: UICollectionView {
     init() {
         super.init(frame: .zero, collectionViewLayout: layout)
         
-        
+        register(AnswerCell.self, forCellWithReuseIdentifier: AnswerCell.reuseIdentifier)
         
         backgroundColor = .clear
         
