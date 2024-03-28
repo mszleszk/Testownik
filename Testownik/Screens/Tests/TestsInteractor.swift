@@ -4,6 +4,7 @@ import RealmSwift
 protocol TestsInteractorLogic {
     func fetchTests()
     func deleteTest(at index: Int)
+    func chooseTest(at index: Int)
 }
 
 final class TestsInteractor {
@@ -25,7 +26,10 @@ extension TestsInteractor: TestsInteractorLogic {
     }
     
     func deleteTest(at index: Int) {
-        guard let test = tests[index] else { return }
+        guard let test = tests[index] else {
+            presenter.presentGeneralError()
+            return
+        }
         
         do{
             if let imagesFolderName = test.imagesFolderName {
@@ -38,5 +42,14 @@ extension TestsInteractor: TestsInteractorLogic {
         } catch {
             presenter.presentGeneralError()
         }
+    }
+    
+    func chooseTest(at index: Int) {
+        guard let test = tests[index] else {
+            presenter.presentGeneralError()
+            return
+        }
+        
+        presenter.presentTest(test)
     }
 }

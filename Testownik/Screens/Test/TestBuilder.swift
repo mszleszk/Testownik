@@ -1,15 +1,15 @@
 import UIKit
 
 protocol TestBuilderProtocol {
-    func build(testId: String) -> UIViewController
+    func build(test: Test) -> UIViewController
 }
 
 class TestBuilder: TestBuilderProtocol {
-    func build(testId: String) -> UIViewController {
+    func build(test: Test) -> UIViewController {
         let viewController = TestViewController()
         
         let presenter = TestPresenter(viewController: viewController)
-        let interactor = TestInteractor(presenter: presenter, testId: testId)
+        let interactor = TestInteractor(presenter: presenter, test: test)
         let router = TestRouter(viewController: viewController)
 
         viewController.interactor = interactor

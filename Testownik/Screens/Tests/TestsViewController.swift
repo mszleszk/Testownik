@@ -3,6 +3,7 @@ import UIKit
 protocol TestsViewControllerLogic: AnyObject, ErrorPresenting {
     func reloadCollectionView(with presentables: [TestsCollectionViewCellPresentable])
     func deleteCollectionViewCell(atIndex index: Int)
+    func showTest(_ test: Test)
 }
 
 final class TestsViewController: UIViewController {
@@ -25,6 +26,10 @@ final class TestsViewController: UIViewController {
 }
 
 extension TestsViewController: TestsViewControllerLogic {
+    func showTest(_ test: Test) {
+        router?.showTest(test)
+    }
+    
     func deleteCollectionViewCell(atIndex index: Int) {
         dataSource.presentables.remove(at: index)
         testsView.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
@@ -42,8 +47,7 @@ extension TestsViewController: UICollectionViewDelegate {
         if indexPath.row == 0 {
             router?.showAddTestScreen()
         } else {
-            let testId = dataSource.presentables[indexPath.row].id
-            router?.showTest(withId: testId)
+            interactor?.chooseTest(at: indexPath.row)
         }
     }
     

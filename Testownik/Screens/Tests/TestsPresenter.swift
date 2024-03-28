@@ -4,6 +4,7 @@ protocol TestsPresenterLogic {
     func presentCollectionView(with tests: [Test])
     func presentCollectionViewDeletion(atIndex index: Int)
     func presentGeneralError()
+    func presentTest(_ test: Test)
 }
 
 final class TestsPresenter {
@@ -24,7 +25,6 @@ extension TestsPresenter: TestsPresenterLogic {
     func presentCollectionView(with tests: [Test]) {
         let testPresentables = tests.map { test in
             TestsCollectionViewCellPresentable(
-                id: test.id,
                 name: test.name,
                 emoji: test.emoji,
                 numberOfQuestions: test.questions.count)
@@ -35,5 +35,9 @@ extension TestsPresenter: TestsPresenterLogic {
     
     func presentGeneralError() {
         viewController?.showError(withMessage: nil)
+    }
+    
+    func presentTest(_ test: Test) {
+        viewController?.showTest(test)
     }
 }
