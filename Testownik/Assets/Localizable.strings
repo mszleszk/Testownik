@@ -9,7 +9,7 @@
 "general.appname" = "testownik";
 "general.done" = "Gotowe";
 "general.cancel" = "Anuluj";
-"general.somethingWentWrong" = "Coś poszło nie tak!";
+"general.error.somethingWentWrong" = "Coś poszło nie tak!";
 "general.delete" = "Delete";
 "tests.number of questions" = "%d pytań";
 "tests.addTest" = "Dodaj test";
@@ -20,3 +20,4 @@
 "addTest.error.noFolder" = "Dodaj folder z bazą";
 "test.next" = "Następne";
 "test.confirm" = "Zatwierdź";
+"test.error.cantFetchTest" = "Nie udało się wczytać testu.";

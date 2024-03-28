@@ -1,14 +1,14 @@
 import UIKit
 
-protocol TestViewControllerLogic: AnyObject {
+protocol TestViewControllerLogic: AnyObject, ErrorPresenting {
 
 }
 
 final class TestViewController: UIViewController {
     var interactor: TestInteractorLogic?
     var router: TestRouterProtocol?
-    let dataSource = AnswersCollectionViewDataSource()
     
+    private let dataSource = AnswersCollectionViewDataSource()
     private let testView = TestView()
     
     override func loadView() {

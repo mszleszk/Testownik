@@ -1,7 +1,7 @@
 import UIKit
 import MCEmojiPicker
 
-protocol AddTestViewControllerLogic: AnyObject, ErrorShowing {
+protocol AddTestViewControllerLogic: AnyObject, ErrorPresenting {
     func showAddedFolder(withName name: String)
     func success()
 }

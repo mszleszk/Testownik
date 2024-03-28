@@ -24,6 +24,7 @@ extension TestsPresenter: TestsPresenterLogic {
     func presentCollectionView(with tests: [Test]) {
         let testPresentables = tests.map { test in
             TestsCollectionViewCellPresentable(
+                id: test.id,
                 name: test.name,
                 emoji: test.emoji,
                 numberOfQuestions: test.questions.count)

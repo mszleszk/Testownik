@@ -22,6 +22,10 @@ extension TestsDatabaseWorker: TestsDatabaseWorkerProtocol {
         realm.objects(Test.self)
     }
     
+    func getTest(withId id: String) -> Test? {
+        realm.object(ofType: Test.self, forPrimaryKey: id)
+    }
+    
     func deleteTest(test: Test) throws {
         try realm.write {
             realm.delete(test)

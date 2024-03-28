@@ -36,14 +36,20 @@ internal enum L10n {
     internal static let delete = L10n.tr("Localizable", "general.delete", fallback: "Delete")
     /// Gotowe
     internal static let done = L10n.tr("Localizable", "general.done", fallback: "Gotowe")
-    /// Coś poszło nie tak!
-    internal static let somethingWentWrong = L10n.tr("Localizable", "general.somethingWentWrong", fallback: "Coś poszło nie tak!")
+    internal enum Error {
+      /// Coś poszło nie tak!
+      internal static let somethingWentWrong = L10n.tr("Localizable", "general.error.somethingWentWrong", fallback: "Coś poszło nie tak!")
+    }
   }
   internal enum Test {
     /// Zatwierdź
     internal static let confirm = L10n.tr("Localizable", "test.confirm", fallback: "Zatwierdź")
     /// Następne
     internal static let next = L10n.tr("Localizable", "test.next", fallback: "Następne")
+    internal enum Error {
+      /// Nie udało się wczytać testu.
+      internal static let cantFetchTest = L10n.tr("Localizable", "test.error.cantFetchTest", fallback: "Nie udało się wczytać testu.")
+    }
   }
   internal enum Tests {
     /// Dodaj test

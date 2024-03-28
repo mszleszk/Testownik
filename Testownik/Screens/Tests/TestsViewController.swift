@@ -1,6 +1,6 @@
 import UIKit
 
-protocol TestsViewControllerLogic: AnyObject, ErrorShowing {
+protocol TestsViewControllerLogic: AnyObject, ErrorPresenting {
     func reloadCollectionView(with presentables: [TestsCollectionViewCellPresentable])
     func deleteCollectionViewCell(atIndex index: Int)
 }
@@ -8,8 +8,8 @@ protocol TestsViewControllerLogic: AnyObject, ErrorShowing {
 final class TestsViewController: UIViewController {
     var interactor: TestsInteractorLogic?
     var router: TestsRouterProtocol?
-    let dataSource = TestsCollectionViewDataSource()
     
+    private let dataSource = TestsCollectionViewDataSource()
     private let testsView = TestsView()
     
     override func loadView() {
@@ -42,7 +42,8 @@ extension TestsViewController: UICollectionViewDelegate {
         if indexPath.row == 0 {
             router?.showAddTestScreen()
         } else {
-            
+            let testId = dataSource.presentables[indexPath.row].id
+            router?.showTest(withId: testId)
         }
     }
     

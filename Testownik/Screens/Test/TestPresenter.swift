@@ -1,19 +1,19 @@
 import UIKit
 
 protocol TestPresenterLogic {
-    
+    func presentCantFetchTestError()
 }
 
 final class TestPresenter {
-    // MARK: - Private Properties
     private weak var viewController: TestViewControllerLogic?
     
-    // MARK: - Initializers
     init(viewController: TestViewControllerLogic?) {
         self.viewController = viewController
     }
 }
 
 extension TestPresenter: TestPresenterLogic {
-    
+    func presentCantFetchTestError() {
+        viewController?.showError(withMessage: L10n.Test.Error.cantFetchTest)
+    }
 }

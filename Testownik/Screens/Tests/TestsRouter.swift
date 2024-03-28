@@ -2,6 +2,7 @@ import UIKit
 
 protocol TestsRouterProtocol {
     func showAddTestScreen()
+    func showTest(withId id: String)
 }
 
 final class TestsRouter {
@@ -17,5 +18,9 @@ final class TestsRouter {
 extension TestsRouter: TestsRouterProtocol {
     func showAddTestScreen() {
         viewController?.show(AddTestBuilder().build(), sender: viewController)
+    }
+    
+    func showTest(withId id: String) {
+        viewController?.show(TestBuilder().build(testId: id), sender: viewController)
     }
 }
