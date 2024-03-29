@@ -6,6 +6,8 @@ enum K {
         static let primaryTextSize = 20.0
         static let secondaryTextSize = 15.0
         static let systemTextSize = 18.0
+        static let questionTextSize = 18.0
+        static let answerTextSize = 17.0
     }
     
     enum Cell {

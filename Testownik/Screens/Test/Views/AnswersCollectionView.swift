@@ -2,7 +2,7 @@ import UIKit
 
 final class AnswersCollectionView: UICollectionView {
     private let layout = {
-        let inset = K.Cell.outerInset
+        let inset = K.View.smallInset
         
         let size = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
@@ -29,12 +29,10 @@ final class AnswersCollectionView: UICollectionView {
     
     init() {
         super.init(frame: .zero, collectionViewLayout: layout)
-        
         register(AnswerCell.self, forCellWithReuseIdentifier: AnswerCell.reuseIdentifier)
-        
         backgroundColor = .clear
-        
         delaysContentTouches = false
+        showsVerticalScrollIndicator = false
     }
     
     required init?(coder: NSCoder) {

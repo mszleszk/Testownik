@@ -4,7 +4,7 @@ final class TestView: UIView {
     private let container = UIView()
     private let topBarView = UIView()
     private let progressView = ProgressView()
-    private let questionView = TestContentView()
+    private let questionView = TestView.makeQuestionView()
     
     let answersCollectionView = AnswersCollectionView()
     let closeButton = UIButton(type: .close)
@@ -89,7 +89,7 @@ extension TestView: ViewCodeProtocol {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.top.equalTo(questionView.snp.bottom).offset(K.View.smallInset)
-            make.bottom.equalTo(nextButton.snp.top).offset(K.View.smallInset)
+            make.bottom.equalTo(nextButton.snp.top).inset(-K.View.smallInset)
         }
     }
     
@@ -102,7 +102,7 @@ extension TestView: ViewCodeProtocol {
 private extension TestView {
     static func makeQuestionView() -> TestContentView {
         return TestContentView().also {
-            $0.font = .systemFont(ofSize: K.Text.primaryTextSize, weight: .bold)
+            $0.font = .systemFont(ofSize: K.Text.questionTextSize, weight: .bold)
         }
     }
 }

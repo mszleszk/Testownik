@@ -71,12 +71,10 @@ final class TestContentView: UIView {
 // MARK: - Builder
 private extension TestContentView {
     static func makeLabel() -> UILabel {
-        return UILabel(
-            fontSize: K.Text.primaryTextSize,
-            color: Asset.Colors.primaryText.color,
-            alignment: .left
-        ).also {
+        return UILabel().also {
             $0.numberOfLines = 0
+            $0.textAlignment = .left
+            $0.textColor = Asset.Colors.primaryText.color
         }
     }
 }

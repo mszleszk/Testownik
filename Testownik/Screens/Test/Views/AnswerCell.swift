@@ -37,5 +37,9 @@ extension AnswerCell: ViewCodeProtocol {
 
 // MARK: - Builder
 private extension AnswerCell {
-    
+    static func makeAnswerView() -> TestContentView {
+        return TestContentView().also {
+            $0.font = .systemFont(ofSize: K.Text.answerTextSize)
+        }
+    }
 }
