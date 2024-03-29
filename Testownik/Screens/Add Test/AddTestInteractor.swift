@@ -36,7 +36,7 @@ extension AddTestInteractor: AddTestInteractorLogic {
                 emoji: emoji,
                 questions: questions,
                 imagesFolderName: imagesFolderName)
-            try TestsDatabaseWorker().saveTest(test)
+            try DatabaseWorker().saveTest(test)
             presenter.presentSuccess()
         } catch {
             presenter.presentGeneralError()

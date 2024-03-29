@@ -21,6 +21,8 @@ extension TestsRouter: TestsRouterProtocol {
     }
     
     func showTest(_ test: Test) {
-        viewController?.show(TestBuilder().build(test: test), sender: viewController)
+        let testViewController = TestBuilder().build(test: test)
+        testViewController.modalPresentationStyle = .fullScreen
+        viewController?.show(testViewController, sender: viewController)
     }
 }

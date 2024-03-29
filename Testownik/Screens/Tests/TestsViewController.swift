@@ -54,13 +54,13 @@ extension TestsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
         guard let index = indexPaths.first?.row, index != 0 && !indexPaths.isEmpty else { return nil }
         
-        return UIContextMenuConfiguration(actionProvider:  { _ in
+        return UIContextMenuConfiguration(actionProvider:  { [weak self] _ in
             let deleteAction = UIAction(
                 title: L10n.General.delete,
                 image: UIImage(systemName: "trash"),
                 attributes: .destructive) { _ in
                     guard let index = indexPaths.first?.row else { return }
-                    self.interactor?.deleteTest(at: index)
+                    self?.interactor?.deleteTest(at: index)
                 }
             return UIMenu(children: [deleteAction])
         })

@@ -11,6 +11,14 @@ final class AnswerCell: UICollectionViewCell, ReuseIdentifying {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func update(with presentable: AnswerPresentable) {
+        if let text = presentable.text {
+            answerView.setText(text)
+        } else if let image = presentable.image {
+            answerView.setImage(image)
+        }
+    }
 }
 
 extension AnswerCell: ViewCodeProtocol {
@@ -24,8 +32,6 @@ extension AnswerCell: ViewCodeProtocol {
         answerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
-        answerView.setText("fkjdshfkjhdskjfhkjdh")
     }
 }
 

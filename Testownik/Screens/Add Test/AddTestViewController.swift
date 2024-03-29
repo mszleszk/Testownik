@@ -41,21 +41,21 @@ final class AddTestViewController: UIViewController {
     }
     
     private func setupAddFolderButton() {
-        let action = UIAction { [weak self] action in
+        let action = UIAction { [weak self] _ in
             self?.router?.presentDocumentPicker()
         }
         addTestView.addFolderButton.addAction(action, for: .touchUpInside)
     }
     
     private func setupCancelButton() {
-        let action = UIAction { [weak self] action in
+        let action = UIAction { [weak self] _ in
             self?.dismiss(animated: true)
         }
         addTestView.cancelButton.addAction(action, for: .touchUpInside)
     }
     
     private func setupDoneButton() {
-        let action = UIAction { [weak self] action in
+        let action = UIAction { [weak self] _ in
             self?.interactor?.addTest(
                 name: self?.addTestView.getName(),
                 emoji: self?.addTestView.getEmoji())
@@ -66,7 +66,7 @@ final class AddTestViewController: UIViewController {
 
 extension AddTestViewController: AddTestViewControllerLogic {
     func success() {
-        router?.dismiss()
+        router?.dismissWithSuccess()
     }
     
     func showAddedFolder(withName name: String) {

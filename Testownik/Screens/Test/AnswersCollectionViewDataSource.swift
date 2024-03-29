@@ -1,12 +1,22 @@
 import UIKit
 
 final class AnswersCollectionViewDataSource: NSObject, UICollectionViewDataSource {
+    var answerPresentables = [AnswerPresentable]()
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        answerPresentables.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnswerCell.reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: AnswerCell.reuseIdentifier,
+            for: indexPath
+        ) as? AnswerCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.update(with: answerPresentables[indexPath.row])
+        
         return cell
     }
     

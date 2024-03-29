@@ -1,8 +1,9 @@
-import Foundation
+import UIKit
 
-protocol TestFilesWorkerProtocol {
+protocol ImageFilesWorkerProtocol {
     func saveImagesInAppFiles(from url: URL) throws -> String?
     func removeFolder(withName name: String) throws
+    func getImage(withName name: String, fromFolder imageFolderName: String) -> UIImage?
 }
 
 final class ImageFilesWorker {
@@ -63,7 +64,7 @@ final class ImageFilesWorker {
     }
 }
 
-extension ImageFilesWorker: TestFilesWorkerProtocol {
+extension ImageFilesWorker: ImageFilesWorkerProtocol {
     func removeFolder(withName name: String) throws {
         let documents = URL.documentsDirectory
         try FileManager.default.removeItem(at: documents.appending(path: name))
@@ -80,5 +81,11 @@ extension ImageFilesWorker: TestFilesWorkerProtocol {
         try copyImages(from: url, to: imageDirectoryUrl)
         
         return imageDirectoryUrl.lastPathComponent
+    }
+    
+    func getImage(withName name: String, fromFolder imageFolderName: String) -> UIImage? {
+        let imageUrl = URL.documentsDirectory.appending(path: imageFolderName).appending(path: name)
+        guard let imageData = try? Data(contentsOf: imageUrl) else { return nil }
+        return UIImage(data: imageData)?.withRenderingMode(.alwaysTemplate)
     }
 }

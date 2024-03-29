@@ -3,12 +3,12 @@ import UIKit
 final class TestView: UIView {
     private let container = UIView()
     private let topBarView = UIView()
-    private let closeButton = UIButton(type: .close)
     private let progressView = ProgressView()
     private let questionView = TestContentView()
-    private let nextButton = DefaultButton()
     
     let answersCollectionView = AnswersCollectionView()
+    let closeButton = UIButton(type: .close)
+    let nextButton = DefaultButton()
     
     init() {
         super.init(frame: .zero)
@@ -17,6 +17,18 @@ final class TestView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func update(with presentable: TestPresentable) {
+        progressView.setProgress(
+            completed: presentable.completedQuestions,
+            outOf: presentable.totalQuestions)
+        
+        if let text = presentable.question.text {
+            questionView.setText(text)
+        } else if let image = presentable.question.image {
+            questionView.setImage(image)
+        }
     }
 }
 
