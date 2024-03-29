@@ -1,7 +1,7 @@
 import UIKit
 
 final class ZoomImageView: UIScrollView {
-    private let imageView = ZoomImageView.makeImageView()
+    let imageView = ZoomImageView.makeImageView()
     
     init(image: UIImage? = nil) {
         super.init(frame: .zero)
@@ -13,10 +13,6 @@ final class ZoomImageView: UIScrollView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setImage(_ image: UIImage) {
-        imageView.image = image
     }
     
     @objc private func handleDoubleTap() {

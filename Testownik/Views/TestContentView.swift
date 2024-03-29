@@ -1,7 +1,7 @@
 import UIKit
 
 final class TestContentView: UIView {
-    private let imageView = ZoomImageView()
+    private let zoomImageView = ZoomImageView()
     private let label = TestContentView.makeLabel()
     
     var font: UIFont {
@@ -25,7 +25,7 @@ final class TestContentView: UIView {
     func setImage(_ image: UIImage) {
         hideText()
         showImage()
-        imageView.setImage(image)
+        zoomImageView.imageView.image = image
     }
     
     func setText(_ text: String) {
@@ -37,12 +37,14 @@ final class TestContentView: UIView {
     private func setup() {
         backgroundColor = Asset.Colors.primary.color
         layer.cornerRadius = K.View.cornerRadius
+        
+        zoomImageView.imageView.tintColor = Asset.Colors.primaryText.color
     }
     
     private func showImage() {
-        addSubview(imageView)
+        addSubview(zoomImageView)
         
-        imageView.snp.makeConstraints { make in
+        zoomImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(K.View.inset)
         }
     }
@@ -56,8 +58,8 @@ final class TestContentView: UIView {
     }
     
     private func hideImage() {
-        imageView.snp.removeConstraints()
-        imageView.removeFromSuperview()
+        zoomImageView.snp.removeConstraints()
+        zoomImageView.removeFromSuperview()
     }
     
     private func hideText() {
