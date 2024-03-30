@@ -1,7 +1,7 @@
 import UIKit
 
 final class AnswerCell: UICollectionViewCell, ReuseIdentifying {
-    private let answerView = TestContentView()
+    private let answerView = AnswerCell.makeAnswerView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,6 +40,7 @@ private extension AnswerCell {
     static func makeAnswerView() -> TestContentView {
         return TestContentView().also {
             $0.font = .systemFont(ofSize: K.Text.answerTextSize)
+            $0.shouldAllowZoom = false
         }
     }
 }

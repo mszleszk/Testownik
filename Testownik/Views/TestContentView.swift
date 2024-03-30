@@ -13,6 +13,15 @@ final class TestContentView: UIView {
         }
     }
     
+    var shouldAllowZoom: Bool {
+        get {
+            zoomImageView.isUserInteractionEnabled
+        }
+        set {
+            zoomImageView.isUserInteractionEnabled = newValue
+        }
+    }
+    
     init() {
         super.init(frame: .zero)
         setup()
