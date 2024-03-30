@@ -43,7 +43,7 @@ extension TestsViewController: TestsViewControllerLogic {
 }
 
 extension TestsViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             router?.showAddTestScreen()
         } else {
