@@ -2,6 +2,7 @@ import UIKit
 
 final class ZoomImageView: UIScrollView {
     let imageView = ZoomImageView.makeImageView()
+    let paddingView = UIView()
     
     init(image: UIImage? = nil) {
         super.init(frame: .zero)
@@ -27,15 +28,23 @@ final class ZoomImageView: UIScrollView {
 extension ZoomImageView: ViewCodeProtocol {
     func buildHierarchy() {
         addSubviews([
+            paddingView
+        ])
+        
+        paddingView.addSubviews([
             imageView
         ])
     }
     
     func setupConstraints() {
-        imageView.snp.makeConstraints { make in
+        paddingView.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalToSuperview()
             make.center.equalToSuperview()
+        }
+         
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(K.View.inset)
         }
     }
     
@@ -45,6 +54,7 @@ extension ZoomImageView: ViewCodeProtocol {
         
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
+        
         delegate = self
         
         let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
@@ -55,7 +65,7 @@ extension ZoomImageView: ViewCodeProtocol {
 
 extension ZoomImageView: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+        return paddingView
     }
 }
 

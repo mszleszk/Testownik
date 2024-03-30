@@ -25,7 +25,7 @@ final class TestContentView: UIView {
     func setImage(_ image: UIImage) {
         hideText()
         showImage()
-        zoomImageView.imageView.image = image
+        zoomImageView.imageView.image = image.withRenderingMode(.alwaysTemplate)
     }
     
     func setText(_ text: String) {
@@ -45,7 +45,7 @@ final class TestContentView: UIView {
         addSubview(zoomImageView)
         
         zoomImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(K.View.inset)
+            make.edges.equalToSuperview()
         }
     }
     

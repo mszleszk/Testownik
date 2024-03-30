@@ -86,6 +86,6 @@ extension ImageFilesWorker: ImageFilesWorkerProtocol {
     func getImage(withName name: String, fromFolder imageFolderName: String) -> UIImage? {
         let imageUrl = URL.documentsDirectory.appending(path: imageFolderName).appending(path: name)
         guard let imageData = try? Data(contentsOf: imageUrl) else { return nil }
-        return UIImage(data: imageData)?.withRenderingMode(.alwaysTemplate)
+        return UIImage(data: imageData)
     }
 }
