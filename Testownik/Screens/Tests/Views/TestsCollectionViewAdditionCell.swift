@@ -1,10 +1,3 @@
-//
-//  TestsCollectionViewAdditionCell.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 04/01/2024.
-//
-
 import UIKit
 
 final class TestsCollectionViewAdditionCell: BaseCell {
@@ -12,7 +5,18 @@ final class TestsCollectionViewAdditionCell: BaseCell {
     private let plusImageView = TestsCollectionViewAdditionCell.makePlusImageView()
     private let addLabel = UILabel(text: L10n.Tests.addTest, fontSize: K.Text.primaryTextSize, weight: .bold, color: Asset.Colors.systemBlue.color, alignment: .center)
     
-    override func buildHierarchy() {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        applyViewCode()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension TestsCollectionViewAdditionCell: ViewCodeProtocol {
+    func buildHierarchy() {
         contentView.addSubviews([
             verticalStackView
         ])
@@ -23,13 +27,13 @@ final class TestsCollectionViewAdditionCell: BaseCell {
         ])
     }
     
-    override func setupConstraints() {
+    func setupConstraints() {
         verticalStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: K.Cell.innerInset, left: K.Cell.innerInset, bottom: K.Cell.innerInset, right: K.Cell.innerInset))
         }
     }
     
-    override func setupProperties() {
+    func setupProperties() {
         contentView.backgroundColor = Asset.Colors.systemBlue.color.withAlphaComponent(0.2)
         contentView.layer.cornerRadius = K.View.cornerRadius
     }
