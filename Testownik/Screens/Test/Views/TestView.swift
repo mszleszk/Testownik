@@ -20,6 +20,8 @@ final class TestView: UIView {
     }
     
     func update(with presentable: TestPresentable) {
+        answersCollectionView.allowsMultipleSelection = presentable.question.isMultipleChoice
+        
         progressView.setProgress(
             completed: presentable.completedQuestions,
             outOf: presentable.totalQuestions)

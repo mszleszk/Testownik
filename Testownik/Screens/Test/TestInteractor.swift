@@ -30,7 +30,8 @@ final class TestInteractor {
             image: imagesWorker.getImage(
                 withName: question.imageName ?? "",
                 fromFolder: imagesFolderName ?? ""),
-            answers: presentables(for: question.answers))
+            answers: presentables(for: question.answers),
+            isMultipleChoice: isMultipleChoice(question))
     }
     
     private func presentables(for answers: List<Answer>) -> [AnswerPresentable] {
@@ -42,6 +43,10 @@ final class TestInteractor {
                     fromFolder: self.imagesFolderName ?? ""),
                 isCorrect: answer.isCorrect)
         }).shuffled()
+    }
+    
+    private func isMultipleChoice(_ question: Question) -> Bool {
+        return question.answers.count(where: { $0.isCorrect }) > 1
     }
 }
 
