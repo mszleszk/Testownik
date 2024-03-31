@@ -3,6 +3,16 @@ import UIKit
 final class AnswerCell: UICollectionViewCell, ReuseIdentifying {
     private let answerView = AnswerCell.makeAnswerView()
     
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                answerView.backgroundColor = Asset.Colors.primary.color.withAlphaComponent(0.3)
+            } else {
+                answerView.backgroundColor = Asset.Colors.primary.color.withAlphaComponent(1.0)
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         applyViewCode()
