@@ -7,13 +7,13 @@ protocol TestInteractorLogic {
 
 final class TestInteractor {
     private let presenter: TestPresenterLogic
-    private let databaseWorker = DatabaseWorker()
     private let imagesWorker = ImageFilesWorker()
     private var imagesFolderName: String?
     private let uncompletedQuestions: [Question]
     private var shuffledAnswers = Array<Answer>()
     private let totalQuestions: Int
     private var index = 0
+    private var completedQuestions = 0
 
     init(presenter: TestPresenterLogic, test: Test) {
         self.presenter = presenter
@@ -56,7 +56,7 @@ extension TestInteractor: TestInteractorLogic {
         shuffledAnswers = Array(question.answers).shuffled()
         
         let testPresentable = TestPresentable(
-            completedQuestions: index,
+            completedQuestions: completedQuestions,
             totalQuestions: totalQuestions,
             question: presentable(for: question))
         
