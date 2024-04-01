@@ -11,6 +11,7 @@ final class TestInteractor {
     private let imagesWorker = ImageFilesWorker()
     private var imagesFolderName: String?
     private let uncompletedQuestions: [Question]
+    private var shuffledAnswers = Array<Answer>()
     private let totalQuestions: Int
     private var index = 0
 
@@ -30,19 +31,18 @@ final class TestInteractor {
             image: imagesWorker.getImage(
                 withName: question.imageName ?? "",
                 fromFolder: imagesFolderName ?? ""),
-            answers: presentables(for: question.answers),
+            answers: presentables(for: shuffledAnswers),
             isMultipleChoice: isMultipleChoice(question))
     }
     
-    private func presentables(for answers: List<Answer>) -> [AnswerPresentable] {
+    private func presentables(for answers: [Answer]) -> [AnswerPresentable] {
         return answers.map({ answer in
             AnswerPresentable(
                 text: answer.text,
                 image: self.imagesWorker.getImage(
                     withName: answer.imageName ?? "",
-                    fromFolder: self.imagesFolderName ?? ""),
-                isCorrect: answer.isCorrect)
-        }).shuffled()
+                    fromFolder: self.imagesFolderName ?? ""))
+        })
     }
     
     private func isMultipleChoice(_ question: Question) -> Bool {
@@ -53,6 +53,7 @@ final class TestInteractor {
 extension TestInteractor: TestInteractorLogic {
     func getNextQuestion() {
         let question = uncompletedQuestions[index]
+        shuffledAnswers = Array(question.answers).shuffled()
         
         let testPresentable = TestPresentable(
             completedQuestions: index,

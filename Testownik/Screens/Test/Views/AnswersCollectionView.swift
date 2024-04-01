@@ -33,7 +33,6 @@ final class AnswersCollectionView: UICollectionView {
         backgroundColor = .clear
         delaysContentTouches = false
         showsVerticalScrollIndicator = false
-        allowsMultipleSelection = true
     }
     
     required init?(coder: NSCoder) {

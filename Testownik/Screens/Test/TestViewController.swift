@@ -41,10 +41,13 @@ final class TestViewController: UIViewController {
         }
         testView.closeButton.addAction(action, for: .touchUpInside)
     }
-}
-
-extension TestViewController: UICollectionViewDelegate {
     
+    private func setupNextButton() {
+        let action = UIAction { [weak self] _ in
+            
+        }
+        testView.nextButton.addAction(action, for: .touchUpInside)
+    }
 }
 
 extension TestViewController: TestViewControllerLogic {
@@ -52,4 +55,8 @@ extension TestViewController: TestViewControllerLogic {
         testView.update(with: presentable)
         dataSource.answerPresentables = presentable.question.answers
     }
+}
+
+extension TestViewController: UICollectionViewDelegate {
+    
 }
