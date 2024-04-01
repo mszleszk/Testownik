@@ -1,7 +1,8 @@
 import UIKit
 
 protocol TestViewControllerLogic: AnyObject, ErrorPresenting {
-    func updateView(with presentable: TestPresentable)
+    func updateTest(with presentable: TestPresentable)
+    func updateAnswers(with presentables: [AnswerPresentable])
 }
 
 final class TestViewController: UIViewController {
@@ -28,6 +29,7 @@ final class TestViewController: UIViewController {
     private func setup() {
         setupAnswersCollectionView()
         setupCloseButton()
+        setupNextButton()
     }
     
     private func setupAnswersCollectionView() {
@@ -44,16 +46,23 @@ final class TestViewController: UIViewController {
     
     private func setupNextButton() {
         let action = UIAction { [weak self] _ in
-            
+            self?.interactor?.checkAnswers(
+                selectedIndices: self?.testView.answersCollectionView.indexPathsForSelectedItems)
         }
         testView.nextButton.addAction(action, for: .touchUpInside)
     }
 }
 
 extension TestViewController: TestViewControllerLogic {
-    func updateView(with presentable: TestPresentable) {
+    func updateAnswers(with presentables: [AnswerPresentable]) {
+        dataSource.answerPresentables = presentables
+        testView.answersCollectionView.reloadData()
+    }
+    
+    func updateTest(with presentable: TestPresentable) {
         testView.update(with: presentable)
         dataSource.answerPresentables = presentable.question.answers
+        testView.answersCollectionView.reloadData()
     }
 }
 

@@ -23,6 +23,12 @@ final class AnswerCell: UICollectionViewCell, ReuseIdentifying {
     }
     
     func update(with presentable: AnswerPresentable) {
+        if presentable.state == .correct {
+            answerView.backgroundColor = Asset.Colors.correct.color
+        } else if presentable.state == .incorrect {
+            answerView.backgroundColor = Asset.Colors.incorrect.color
+        }
+        
         if let text = presentable.text {
             answerView.setText(text)
         } else if let image = presentable.image {

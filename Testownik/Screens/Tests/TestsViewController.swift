@@ -44,10 +44,10 @@ extension TestsViewController: TestsViewControllerLogic {
 
 extension TestsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.item == 0 {
             router?.showAddTestScreen()
         } else {
-            interactor?.chooseTest(at: indexPath.row)
+            interactor?.chooseTest(at: indexPath.item)
         }
     }
     

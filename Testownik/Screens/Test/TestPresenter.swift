@@ -2,7 +2,8 @@ import UIKit
 
 protocol TestPresenterLogic {
     func presentCantFetchTestError()
-    func presentQuestion(_ questionPresentable: TestPresentable)
+    func presentTest(_ testPresentable: TestPresentable)
+    func presentCheckedAnswers(_ answersPresentables: [AnswerPresentable])
 }
 
 final class TestPresenter {
@@ -14,8 +15,12 @@ final class TestPresenter {
 }
 
 extension TestPresenter: TestPresenterLogic {
-    func presentQuestion(_ questionPresentable: TestPresentable) {
-        viewController?.updateView(with: questionPresentable)
+    func presentCheckedAnswers(_ answersPresentables: [AnswerPresentable]) {
+        viewController?.updateAnswers(with: answersPresentables)
+    }
+    
+    func presentTest(_ testPresentable: TestPresentable) {
+        viewController?.updateTest(with: testPresentable)
     }
     
     func presentCantFetchTestError() {

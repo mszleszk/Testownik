@@ -15,7 +15,7 @@ final class AnswersCollectionViewDataSource: NSObject, UICollectionViewDataSourc
             return UICollectionViewCell()
         }
         
-        cell.update(with: answerPresentables[indexPath.row])
+        cell.update(with: answerPresentables[indexPath.item])
         
         return cell
     }
