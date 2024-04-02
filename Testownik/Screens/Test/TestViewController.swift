@@ -45,12 +45,29 @@ final class TestViewController: UIViewController {
     }
     
     private func setupNextButton() {
-        let action = UIAction { [weak self] _ in
-            self?.interactor?.checkAnswers(
-                selectedIndices: self?.testView.answersCollectionView.indexPathsForSelectedItems)
-            self?.testView.answersCollectionView.allowsSelection = false
-        }
-        testView.nextButton.addAction(action, for: .touchUpInside)
+        testView.confirmButton.addTarget(self, action: #selector(checkButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func nextButtonTapped() {
+        interactor?.getNextQuestion()
+        
+        testView.answersCollectionView.allowsSelection = true
+        
+        testView.confirmButton.removeTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        testView.confirmButton.addTarget(self, action: #selector(checkButtonTapped), for: .touchUpInside)
+        
+        testView.confirmButton.setTitle(L10n.Test.confirm)
+    }
+    
+    @objc private func checkButtonTapped() {
+        interactor?.checkAnswers(selectedIndices: testView.answersCollectionView.indexPathsForSelectedItems)
+        
+        testView.answersCollectionView.allowsSelection = false
+        
+        testView.confirmButton.removeTarget(self, action: #selector(checkButtonTapped), for: .touchUpInside)
+        testView.confirmButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        
+        testView.confirmButton.setTitle(L10n.Test.next)
     }
 }
 
@@ -62,8 +79,7 @@ extension TestViewController: TestViewControllerLogic {
     
     func updateTest(with presentable: TestPresentable) {
         testView.update(with: presentable)
-        dataSource.answerPresentables = presentable.question.answers
-        testView.answersCollectionView.reloadData()
+        updateAnswers(with: presentable.question.answers)
     }
 }
 

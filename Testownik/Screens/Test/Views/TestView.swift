@@ -8,7 +8,7 @@ final class TestView: UIView {
     
     let answersCollectionView = AnswersCollectionView()
     let closeButton = UIButton(type: .close)
-    let nextButton = DefaultButton()
+    let confirmButton = TestView.makeConfirmButton()
     
     init() {
         super.init(frame: .zero)
@@ -41,7 +41,7 @@ extension TestView: ViewCodeProtocol {
         container.addSubviews([
             topBarView,
             questionView,
-            nextButton,
+            confirmButton,
             answersCollectionView
         ])
         
@@ -81,7 +81,7 @@ extension TestView: ViewCodeProtocol {
             make.height.equalTo(200)
         }
         
-        nextButton.snp.makeConstraints { make in
+        confirmButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
             make.left.equalToSuperview().inset(K.View.inset)
             make.right.equalToSuperview().inset(K.View.inset)
@@ -91,7 +91,7 @@ extension TestView: ViewCodeProtocol {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.top.equalTo(questionView.snp.bottom).offset(K.View.smallInset)
-            make.bottom.equalTo(nextButton.snp.top).inset(-K.View.smallInset)
+            make.bottom.equalTo(confirmButton.snp.top).inset(-K.View.smallInset)
         }
     }
     
@@ -105,6 +105,12 @@ private extension TestView {
     static func makeQuestionView() -> TestContentView {
         return TestContentView().also {
             $0.font = .systemFont(ofSize: K.Text.questionTextSize, weight: .bold)
+        }
+    }
+    
+    static func makeConfirmButton() -> DefaultButton {
+        return DefaultButton().also {
+            $0.setTitle(L10n.Test.confirm)
         }
     }
 }

@@ -28,18 +28,23 @@ final class TestInteractor {
     private func isMultipleChoice(_ question: Question) -> Bool {
         return question.answers.count(where: { $0.isCorrect }) > 1
     }
-}
-
-extension TestInteractor: TestInteractorLogic {
-    func checkAnswers(selectedIndices: [IndexPath]?) {
-        let answersPresentables = shuffledAnswers.enumerated().map { index, answer in
+    
+    private func getAnswersPresentables(
+        shouldConsiderState: Bool, 
+        selectedIndices: [IndexPath]? = nil) -> [AnswerPresentable] {
+        return shuffledAnswers.enumerated().map { index, answer in
             let answerState: AnswerState
             
-            if answer.isCorrect {
-                answerState = .correct
-            } else if let selectedIndices = selectedIndices,
-                        selectedIndices.contains(where: { $0.item == index }) && !answer.isCorrect {
-                answerState = .incorrect
+            if shouldConsiderState {
+                if answer.isCorrect {
+                    answerState = .correct
+                } else if let selectedIndices = selectedIndices,
+                            selectedIndices.contains(where: { $0.item == index }),
+                            !answer.isCorrect {
+                    answerState = .incorrect
+                } else {
+                    answerState = .normal
+                }
             } else {
                 answerState = .normal
             }
@@ -51,6 +56,23 @@ extension TestInteractor: TestInteractorLogic {
                     fromFolder: self.imagesFolderName ?? ""),
                 state: answerState)
         }
+    }
+    
+    private func getQuestionPresentable(_ question: Question) -> QuestionPresentable {
+        return QuestionPresentable(
+            id: question.id,
+            text: question.text,
+            image: imagesWorker.getImage(
+                withName: question.imageName ?? "",
+                fromFolder: imagesFolderName ?? ""),
+            answers: getAnswersPresentables(shouldConsiderState: false),
+            isMultipleChoice: isMultipleChoice(question))
+    }
+}
+
+extension TestInteractor: TestInteractorLogic {
+    func checkAnswers(selectedIndices: [IndexPath]?) {
+        let answersPresentables = getAnswersPresentables(shouldConsiderState: true, selectedIndices: selectedIndices)
         
         presenter.presentCheckedAnswers(answersPresentables)
     }
@@ -59,28 +81,10 @@ extension TestInteractor: TestInteractorLogic {
         let question = uncompletedQuestions[index]
         shuffledAnswers = Array(question.answers).shuffled()
         
-        let answersPresentables = shuffledAnswers.map({ answer in
-            AnswerPresentable(
-                text: answer.text,
-                image: self.imagesWorker.getImage(
-                    withName: answer.imageName ?? "",
-                    fromFolder: self.imagesFolderName ?? ""),
-                state: .normal)
-        })
-        
-        let questionPresentable = QuestionPresentable(
-            id: question.id,
-            text: question.text,
-            image: imagesWorker.getImage(
-                withName: question.imageName ?? "",
-                fromFolder: imagesFolderName ?? ""),
-            answers: answersPresentables,
-            isMultipleChoice: isMultipleChoice(question))
-        
         let testPresentable = TestPresentable(
             completedQuestions: completedQuestions,
             totalQuestions: totalQuestions,
-            question: questionPresentable)
+            question: getQuestionPresentable(question))
         
         index += 1
         
