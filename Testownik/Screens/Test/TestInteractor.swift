@@ -68,12 +68,29 @@ final class TestInteractor {
             answers: getAnswersPresentables(shouldConsiderState: false),
             isMultipleChoice: isMultipleChoice(question))
     }
+    
+    private func isUserAnswerCorrect(selectedIndices: [IndexPath]?) -> Bool {
+        guard let selectedIndices = selectedIndices else { return false }
+        
+        var isCorrect = true
+        
+        shuffledAnswers.enumerated().forEach { index, answer in
+            if selectedIndices.contains(where: { $0.item == index }) && !answer.isCorrect {
+                isCorrect = false
+            }
+        }
+        
+        return isCorrect
+    }
 }
 
 extension TestInteractor: TestInteractorLogic {
     func checkAnswers(selectedIndices: [IndexPath]?) {
-        let answersPresentables = getAnswersPresentables(shouldConsiderState: true, selectedIndices: selectedIndices)
+        if isUserAnswerCorrect(selectedIndices: selectedIndices) {
+            completedQuestions += 1
+        }
         
+        let answersPresentables = getAnswersPresentables(shouldConsiderState: true, selectedIndices: selectedIndices)
         presenter.presentCheckedAnswers(answersPresentables)
     }
     
