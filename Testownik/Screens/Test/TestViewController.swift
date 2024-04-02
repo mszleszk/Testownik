@@ -48,6 +48,7 @@ final class TestViewController: UIViewController {
         let action = UIAction { [weak self] _ in
             self?.interactor?.checkAnswers(
                 selectedIndices: self?.testView.answersCollectionView.indexPathsForSelectedItems)
+            self?.testView.answersCollectionView.allowsSelection = false
         }
         testView.nextButton.addAction(action, for: .touchUpInside)
     }
