@@ -34,6 +34,7 @@ final class TestContentView: UIView {
     func setImage(_ image: UIImage) {
         hideText()
         showImage()
+        zoomImageView.zoomScale = 1
         zoomImageView.imageView.image = image.withRenderingMode(.alwaysTemplate)
     }
     
