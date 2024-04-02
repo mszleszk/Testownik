@@ -5,6 +5,7 @@ protocol DatabaseWorkerProtocol {
     func saveTest(_ test: Test) throws
     func getTests() -> Results<Test>
     func deleteTest(test: Test) throws
+    func setQuestionCompleted(_ question: Question) throws
 }
 
 final class DatabaseWorker {
@@ -12,6 +13,12 @@ final class DatabaseWorker {
 }
 
 extension DatabaseWorker: DatabaseWorkerProtocol {
+    func setQuestionCompleted(_ question: Question) throws {
+        try realm.write {
+            question.isCompleted = true
+        }
+    }
+    
     func saveTest(_ test: Test) throws {
         try realm.write {
             realm.add(test)

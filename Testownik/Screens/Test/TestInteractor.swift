@@ -9,20 +9,14 @@ protocol TestInteractorLogic {
 final class TestInteractor {
     private let presenter: TestPresenterLogic
     private let imagesWorker = ImageFilesWorker()
-    private var imagesFolderName: String?
-    private let uncompletedQuestions: [Question]
+    private let databaseWorker = DatabaseWorker()
+    private let test: Test
+    private var currentQuestion: Question?
     private var shuffledAnswers = Array<Answer>()
-    private let totalQuestions: Int
-    private var index = 0
-    private var completedQuestions = 0
 
     init(presenter: TestPresenterLogic, test: Test) {
         self.presenter = presenter
-        self.imagesFolderName = test.imagesFolderName
-        self.uncompletedQuestions = Array(test.questions)
-            .filter({ !$0.isCompleted })
-            .shuffled()
-        self.totalQuestions = test.questions.count
+        self.test = test
     }
     
     private func isMultipleChoice(_ question: Question) -> Bool {
@@ -53,18 +47,17 @@ final class TestInteractor {
                 text: answer.text,
                 image: self.imagesWorker.getImage(
                     withName: answer.imageName ?? "",
-                    fromFolder: self.imagesFolderName ?? ""),
+                    fromFolder: test.imagesFolderName ?? ""),
                 state: answerState)
         }
     }
     
     private func getQuestionPresentable(_ question: Question) -> QuestionPresentable {
         return QuestionPresentable(
-            id: question.id,
             text: question.text,
             image: imagesWorker.getImage(
                 withName: question.imageName ?? "",
-                fromFolder: imagesFolderName ?? ""),
+                fromFolder: test.imagesFolderName ?? ""),
             answers: getAnswersPresentables(shouldConsiderState: false),
             isMultipleChoice: isMultipleChoice(question))
     }
@@ -75,7 +68,7 @@ final class TestInteractor {
         var isCorrect = true
         
         shuffledAnswers.enumerated().forEach { index, answer in
-            if selectedIndices.contains(where: { $0.item == index }) && !answer.isCorrect {
+            if (selectedIndices.contains(where: { $0.item == index }) || selectedIndices.isEmpty), !answer.isCorrect {
                 isCorrect = false
             }
         }
@@ -87,7 +80,13 @@ final class TestInteractor {
 extension TestInteractor: TestInteractorLogic {
     func checkAnswers(selectedIndices: [IndexPath]?) {
         if isUserAnswerCorrect(selectedIndices: selectedIndices) {
-            completedQuestions += 1
+            if let currentQuestion = currentQuestion {
+                do {
+                    try databaseWorker.setQuestionCompleted(currentQuestion)
+                } catch {
+                    presenter.presentGeneralError()
+                }
+            }
         }
         
         let answersPresentables = getAnswersPresentables(shouldConsiderState: true, selectedIndices: selectedIndices)
@@ -95,15 +94,20 @@ extension TestInteractor: TestInteractorLogic {
     }
     
     func getNextQuestion() {
-        let question = uncompletedQuestions[index]
+        let uncompletedQuestions = test.questions.where({ !$0.isCompleted })
+        
+        guard let question = uncompletedQuestions.randomElement() else {
+            
+            return
+        }
+        
+        currentQuestion = question
         shuffledAnswers = Array(question.answers).shuffled()
         
         let testPresentable = TestPresentable(
-            completedQuestions: completedQuestions,
-            totalQuestions: totalQuestions,
+            completedQuestionsCount: test.questions.count - uncompletedQuestions.count,
+            totalQuestionsCount: test.questions.count,
             question: getQuestionPresentable(question))
-        
-        index += 1
         
         presenter.presentTest(testPresentable)
     }

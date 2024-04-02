@@ -1,7 +1,7 @@
 import Foundation
 
 struct TestPresentable {
-    var completedQuestions: Int
-    var totalQuestions: Int
+    var completedQuestionsCount: Int
+    var totalQuestionsCount: Int
     var question: QuestionPresentable
 }

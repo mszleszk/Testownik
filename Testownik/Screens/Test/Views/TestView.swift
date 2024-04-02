@@ -23,8 +23,8 @@ final class TestView: UIView {
         answersCollectionView.allowsMultipleSelection = presentable.question.isMultipleChoice
         
         progressView.setProgress(
-            completed: presentable.completedQuestions,
-            outOf: presentable.totalQuestions)
+            completed: presentable.completedQuestionsCount,
+            outOf: presentable.totalQuestionsCount)
         
         if let text = presentable.question.text {
             questionView.setText(text)
