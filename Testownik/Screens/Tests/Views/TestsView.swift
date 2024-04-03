@@ -1,13 +1,24 @@
 import UIKit
 import SnapKit
 
-final class HomeView: BaseView {
+final class TestsView: UIView {
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 20)
-    private let appNameLabel = HomeView.makeAppNameLabel()
+    private let appNameLabel = TestsView.makeAppNameLabel()
     
     let collectionView = TestsCollectionView()
     
-    override func buildHierarchy() {
+    init() {
+        super.init(frame: .zero)
+        applyViewCode()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension TestsView: ViewCodeProtocol {
+    func buildHierarchy() {
         addSubviews([
             verticalStackView
         ])
@@ -18,7 +29,7 @@ final class HomeView: BaseView {
         ])
     }
     
-    override func setupConstraints() {
+    func setupConstraints() {
         verticalStackView.snp.makeConstraints { make in
             make.edges.equalTo(safeAreaLayoutGuide.snp.edges).inset(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
         }
@@ -33,13 +44,13 @@ final class HomeView: BaseView {
         }
     }
     
-    override func setupProperties() {
+    func setupProperties() {
         backgroundColor = Asset.Colors.background.color
     }
 }
 
 // MARK: - Builder
-private extension HomeView {
+private extension TestsView {
     static func makeAppNameLabel() -> UILabel {
         return UILabel(text: L10n.General.appname, fontSize: 50, weight: .bold, color: Asset.Colors.primaryText.color).also {
             $0.textAlignment = .center

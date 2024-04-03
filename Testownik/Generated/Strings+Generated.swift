@@ -11,10 +11,18 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
   internal enum AddTest {
-    /// Dodaj pliki
-    internal static let addFiles = L10n.tr("Localizable", "addTest.addFiles", fallback: "Dodaj pliki")
+    /// Dodaj folder
+    internal static let addFolder = L10n.tr("Localizable", "addTest.addFolder", fallback: "Dodaj folder")
     /// Wpisz nazwę
     internal static let inputName = L10n.tr("Localizable", "addTest.inputName", fallback: "Wpisz nazwę")
+    internal enum Error {
+      /// Dodaj emoji dla testu
+      internal static let noEmoji = L10n.tr("Localizable", "addTest.error.noEmoji", fallback: "Dodaj emoji dla testu")
+      /// Dodaj folder z bazą
+      internal static let noFolder = L10n.tr("Localizable", "addTest.error.noFolder", fallback: "Dodaj folder z bazą")
+      /// Wprowadź nazwę dla testu
+      internal static let noName = L10n.tr("Localizable", "addTest.error.noName", fallback: "Wprowadź nazwę dla testu")
+    }
   }
   internal enum General {
     /// Localizable.strings
@@ -24,15 +32,31 @@ internal enum L10n {
     internal static let appname = L10n.tr("Localizable", "general.appname", fallback: "testownik")
     /// Anuluj
     internal static let cancel = L10n.tr("Localizable", "general.cancel", fallback: "Anuluj")
+    /// Delete
+    internal static let delete = L10n.tr("Localizable", "general.delete", fallback: "Delete")
     /// Gotowe
     internal static let done = L10n.tr("Localizable", "general.done", fallback: "Gotowe")
+    internal enum Error {
+      /// Coś poszło nie tak!
+      internal static let somethingWentWrong = L10n.tr("Localizable", "general.error.somethingWentWrong", fallback: "Coś poszło nie tak!")
+    }
   }
-  internal enum Home {
+  internal enum Test {
+    /// Zatwierdź
+    internal static let confirm = L10n.tr("Localizable", "test.confirm", fallback: "Zatwierdź")
+    /// Następne
+    internal static let next = L10n.tr("Localizable", "test.next", fallback: "Następne")
+    internal enum Error {
+      /// Nie udało się wczytać testu.
+      internal static let cantFetchTest = L10n.tr("Localizable", "test.error.cantFetchTest", fallback: "Nie udało się wczytać testu.")
+    }
+  }
+  internal enum Tests {
     /// Dodaj test
-    internal static let addTest = L10n.tr("Localizable", "home.addTest", fallback: "Dodaj test")
+    internal static let addTest = L10n.tr("Localizable", "tests.addTest", fallback: "Dodaj test")
     /// %d pytań
     internal static func numberOfQuestions(_ p1: Int) -> String {
-      return L10n.tr("Localizable", "home.number of questions", p1, fallback: "%d pytań")
+      return L10n.tr("Localizable", "tests.number of questions", p1, fallback: "%d pytań")
     }
   }
 }

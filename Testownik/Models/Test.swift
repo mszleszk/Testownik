@@ -1,14 +1,17 @@
-//
-//  Test.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 04/01/2024.
-//
-
 import Foundation
+import RealmSwift
 
-struct Test {
-    let name: String
-    let emoji: String
-    let questions: [Task]
+class Test: Object {
+    @Persisted var name: String
+    @Persisted var emoji: String
+    @Persisted var questions: List<Question>
+    @Persisted var imagesFolderName: String?
+    
+    convenience init(name: String, emoji: String, questions: List<Question>, imagesFolderName: String? = nil) {
+        self.init()
+        self.name = name
+        self.emoji = emoji
+        self.questions = questions
+        self.imagesFolderName = imagesFolderName
+    }
 }

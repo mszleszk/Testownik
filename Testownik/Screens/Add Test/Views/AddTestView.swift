@@ -1,16 +1,52 @@
 import UIKit
 import SnapKit
 
-final class AddTestView: BaseView {
-    internal let addEmojiButton = AddTestView.makeAddEmojiButton()
-    internal let nameTextField = AddTestView.makeNameTextField()
-    internal let addFileButton = AddTestView.makeAddFileButton()
+final class AddTestView: UIView {
+    let addEmojiButton = AddTestView.makeAddEmojiButton()
+    let nameTextField = AddTestView.makeNameTextField()
+    let addFolderButton = AddFolderButton()
+    let doneButton = BarButton(text: L10n.General.done)
+    let cancelButton =  BarButton(text: L10n.General.cancel)
     
     private let verticalStackView = UIStackView(axis: .vertical, spacing: 15, alignment: .center)
-    private let doneButton = SystemButton(text: L10n.General.done)
-    private let cancelButton =  SystemButton(text: L10n.General.cancel)
     
-    override func buildHierarchy() {
+    init() {
+        super.init(frame: .zero)
+        applyViewCode()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setEmojiSize()
+    }
+    
+    func setEmoji(_ emoji: String) {
+        let config = UIImage.SymbolConfiguration(hierarchicalColor: Asset.Colors.systemGray.color)
+        let image = UIImage(systemName: "circle.fill", withConfiguration: config)
+        addEmojiButton.setBackgroundImage(image, for: .normal)
+        addEmojiButton.setTitle(emoji, for: .normal)
+    }
+    
+    func getEmoji() -> String? {
+        return addEmojiButton.titleLabel?.text
+    }
+    
+    func getName() -> String? {
+        return nameTextField.text == "" ? nil : nameTextField.text
+    }
+    
+    private func setEmojiSize() {
+        let emojiSize = addEmojiButton.bounds.height * 0.5
+        addEmojiButton.titleLabel?.font = UIFont.systemFont(ofSize: emojiSize)
+    }
+}
+
+extension AddTestView: ViewCodeProtocol {
+    func buildHierarchy() {
         addSubviews([
             verticalStackView,
             doneButton,
@@ -20,11 +56,11 @@ final class AddTestView: BaseView {
         verticalStackView.addArrangedSubviews([
             addEmojiButton,
             nameTextField,
-            addFileButton
+            addFolderButton
         ])
     }
     
-    override func setupConstraints() {
+    func setupConstraints() {
         verticalStackView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(K.View.inset)
             make.right.equalToSuperview().inset(K.View.inset)
@@ -43,7 +79,7 @@ final class AddTestView: BaseView {
             make.right.equalToSuperview()
         }
         
-        addFileButton.snp.makeConstraints { make in
+        addFolderButton.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(K.View.inset)
             make.right.equalToSuperview().inset(K.View.inset)
             make.height.equalTo(150)
@@ -60,38 +96,9 @@ final class AddTestView: BaseView {
         }
     }
     
-    override func setupProperties() {
+    func setupProperties() {
         backgroundColor = Asset.Colors.background.color
         verticalStackView.setCustomSpacing(50, after: nameTextField)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupAddFileButtonBorder()
-        setEmojiSize()
-    }
-    
-    internal func setEmoji(_ emoji: String) {
-        let config = UIImage.SymbolConfiguration(hierarchicalColor: Asset.Colors.systemGray.color)
-        let image = UIImage(systemName: "circle.fill", withConfiguration: config)
-        addEmojiButton.setBackgroundImage(image, for: .normal)
-        addEmojiButton.setTitle(emoji, for: .normal)
-    }
-    
-    private func setupAddFileButtonBorder() {
-        let dashBorder = CAShapeLayer()
-        dashBorder.lineWidth = 3
-        dashBorder.strokeColor = Asset.Colors.systemGray.color.cgColor
-        dashBorder.lineDashPattern = [6, 3] as [NSNumber]
-        dashBorder.frame = addFileButton.bounds
-        dashBorder.fillColor = nil
-        dashBorder.path = UIBezierPath(roundedRect: addFileButton.bounds, cornerRadius: 20).cgPath
-        addFileButton.layer.addSublayer(dashBorder)
-    }
-    
-    private func setEmojiSize() {
-        let emojiSize = addEmojiButton.bounds.height * 0.5
-        addEmojiButton.titleLabel?.font = UIFont.systemFont(ofSize: emojiSize)
     }
 }
 
@@ -115,26 +122,6 @@ private extension AddTestView {
             $0.textAlignment = .center
             let placeholderText = NSAttributedString(string: L10n.AddTest.inputName, attributes: [NSAttributedString.Key.foregroundColor: Asset.Colors.systemGray.color])
             $0.attributedPlaceholder = placeholderText
-        }
-    }
-    
-    static func makeAddFileButton() -> UIButton {
-        return UIButton().also {
-            let config = UIImage.SymbolConfiguration(paletteColors: [Asset.Colors.primaryText.color, Asset.Colors.systemBlue.color])
-            var buttonConfiguration = UIButton.Configuration.plain()
-            buttonConfiguration.image = UIImage(systemName: "plus.circle.fill", withConfiguration: config)
-            buttonConfiguration.imagePadding = 10
-            var attributedTitle = AttributedString(L10n.AddTest.addFiles)
-            attributedTitle.foregroundColor = Asset.Colors.primaryText.color
-            attributedTitle.font = UIFont.systemFont(ofSize: K.Text.primaryTextSize, weight: .bold)
-            buttonConfiguration.attributedTitle = attributedTitle
-            $0.configuration = buttonConfiguration
-            
-            $0.configurationUpdateHandler = { button in
-                var config = button.configuration
-                config?.attributedTitle?.foregroundColor = button.isHighlighted ? Asset.Colors.primaryText.color.withAlphaComponent(0.5) : Asset.Colors.primaryText.color
-                button.configuration = config
-            }
         }
     }
 }

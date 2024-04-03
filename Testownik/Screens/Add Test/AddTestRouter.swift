@@ -4,6 +4,7 @@ import MCEmojiPicker
 protocol AddTestRouterProtocol {
     func presentEmojiController(toSourceView sourceView: UIView)
     func presentDocumentPicker()
+    func dismissWithSuccess()
 }
 
 final class AddTestRouter {
@@ -28,5 +29,10 @@ extension AddTestRouter: AddTestRouterProtocol {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.folder])
         documentPicker.delegate = viewController
         viewController?.present(documentPicker, animated: true)
+    }
+    
+    func dismissWithSuccess() {
+        (viewController?.presentingViewController as? TestsViewController)?.interactor?.fetchTests()
+        viewController?.dismiss(animated: true)
     }
 }

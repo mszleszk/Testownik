@@ -1,8 +1,9 @@
 import UIKit
 import MCEmojiPicker
 
-protocol AddTestViewControllerLogic: AnyObject {
-
+protocol AddTestViewControllerLogic: AnyObject, ErrorPresenting {
+    func showAddedFolder(withName name: String)
+    func success()
 }
 
 final class AddTestViewController: UIViewController {
@@ -17,8 +18,14 @@ final class AddTestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    private func setup() {
         setupEmojiButton()
-        setupAddFileButton()
+        setupAddFolderButton()
+        setupCancelButton()
+        setupDoneButton()
         dismissKeyboardOnTouchOutside()
         
         addTestView.nameTextField.delegate = self
@@ -33,16 +40,38 @@ final class AddTestViewController: UIViewController {
         addTestView.addEmojiButton.addAction(action, for: .touchUpInside)
     }
     
-    private func setupAddFileButton() {
-        let action = UIAction { [weak self] action in
+    private func setupAddFolderButton() {
+        let action = UIAction { [weak self] _ in
             self?.router?.presentDocumentPicker()
         }
-        addTestView.addFileButton.addAction(action, for: .touchUpInside)
+        addTestView.addFolderButton.addAction(action, for: .touchUpInside)
+    }
+    
+    private func setupCancelButton() {
+        let action = UIAction { [weak self] _ in
+            self?.dismiss(animated: true)
+        }
+        addTestView.cancelButton.addAction(action, for: .touchUpInside)
+    }
+    
+    private func setupDoneButton() {
+        let action = UIAction { [weak self] _ in
+            self?.interactor?.addTest(
+                name: self?.addTestView.getName(),
+                emoji: self?.addTestView.getEmoji())
+        }
+        addTestView.doneButton.addAction(action, for: .touchUpInside)
     }
 }
 
 extension AddTestViewController: AddTestViewControllerLogic {
+    func success() {
+        router?.dismissWithSuccess()
+    }
     
+    func showAddedFolder(withName name: String) {
+        addTestView.addFolderButton.setAsFolderAdded(withFolderName: name)
+    }
 }
 
 extension AddTestViewController: MCEmojiPickerDelegate {
@@ -59,10 +88,16 @@ extension AddTestViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         view.gestureRecognizers?.first?.delaysTouchesBegan = false
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 extension AddTestViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        
+        guard let url = urls.first else { return }
+        interactor?.addFolder(withUrl: url)
     }
 }

@@ -1,10 +1,3 @@
-//
-//  TestsCollectionViewCell.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 03/01/2024.
-//
-
 import UIKit
 import SnapKit
 
@@ -14,7 +7,24 @@ final class TestsCollectionViewCell: BaseCell {
     private let nameLabel = UILabel(fontSize: K.Text.primaryTextSize, weight: .bold, color: Asset.Colors.primaryText.color)
     private let numberOfQuestionsLabel = UILabel(fontSize: K.Text.secondaryTextSize, color: Asset.Colors.primaryText.color)
     
-    override func buildHierarchy() {
+    func setupAppearance(emoji: String, testName: String, numberOfQuestions: Int) {
+        emojiLabel.text = emoji
+        nameLabel.text = testName
+        numberOfQuestionsLabel.text = L10n.Tests.numberOfQuestions(numberOfQuestions)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        applyViewCode()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension TestsCollectionViewCell: ViewCodeProtocol {
+    func buildHierarchy() {
         contentView.addSubviews([
             verticalStackView
         ])
@@ -26,9 +36,9 @@ final class TestsCollectionViewCell: BaseCell {
         ])
     }
     
-    override func setupConstraints() {
+    func setupConstraints() {
         verticalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: K.TestCell.innerInset, left: K.TestCell.innerInset, bottom: K.TestCell.innerInset, right: K.TestCell.innerInset))
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: K.Cell.innerInset, left: K.Cell.innerInset, bottom: K.Cell.innerInset, right: K.Cell.innerInset))
         }
         
         emojiLabel.snp.makeConstraints { make in
@@ -49,15 +59,9 @@ final class TestsCollectionViewCell: BaseCell {
         }
     }
     
-    override func setupProperties() {
+    func setupProperties() {
         contentView.backgroundColor = Asset.Colors.primary.color
-        contentView.layer.cornerRadius = K.TestCell.cornerRadius
-    }
-    
-    func setupAppearance(emoji: String, testName: String, numberOfQuestions: Int) {
-        emojiLabel.text = emoji
-        nameLabel.text = testName
-        numberOfQuestionsLabel.text = L10n.Home.numberOfQuestions(numberOfQuestions)
+        contentView.layer.cornerRadius = K.View.cornerRadius
     }
 }
 
