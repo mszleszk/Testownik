@@ -10,7 +10,7 @@
 "general.done" = "Gotowe";
 "general.cancel" = "Anuluj";
 "general.error.somethingWentWrong" = "Coś poszło nie tak!";
-"general.delete" = "Usuń";
+"general.delete" = "Delete";
 "tests.number of questions" = "%d pytań";
 "tests.addTest" = "Dodaj test";
 "addTest.inputName" = "Wpisz nazwę";
