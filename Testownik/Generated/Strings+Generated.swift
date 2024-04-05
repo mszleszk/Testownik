@@ -25,10 +25,7 @@ internal enum L10n {
     }
   }
   internal enum General {
-    /// Localizable.strings
-    ///   Testownik
-    /// 
-    ///   Created by Michał Szleszkowski on 03/01/2024.
+    /// testownik
     internal static let appname = L10n.tr("Localizable", "general.appname", fallback: "testownik")
     /// Anuluj
     internal static let cancel = L10n.tr("Localizable", "general.cancel", fallback: "Anuluj")
