@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Testownik
+
+  Created by Michał Szleszkowski on 03/01/2024.
+  
+*/
+
+"general.appname" = "testownik";
+"general.done" = "Done";
+"general.cancel" = "Cancel";
+"general.error.somethingWentWrong" = "Something went wrong!";
+"general.delete" = "Delete";
+"tests.number of questions" = "%d questions";
+"tests.addTest" = "Add test";
+"addTest.inputName" = "Provide name";
+"addTest.addFolder" =  "Add folder";
+"addTest.error.noName" = "Provide name for the test";
+"addTest.error.noEmoji" = "Add test emoji";
+"addTest.error.noFolder" = "Add folder containing the base";
+"test.next" = "Next";
+"test.confirm" = "Confirm";
+"test.error.cantFetchTest" = "Failed to load test";
