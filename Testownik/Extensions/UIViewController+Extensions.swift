@@ -1,10 +1,3 @@
-//
-//  UIViewController+Extensions.swift
-//  Testownik
-//
-//  Created by Michał Szleszkowski on 10/01/2024.
-//
-
 import UIKit
 
 extension UIViewController {
