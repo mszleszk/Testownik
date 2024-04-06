@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1094C65F232E6F43ACA23162 /* Pods_Testownik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */; };
+		26865EE0D674C8D97D613101 /* Pods_Testownik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AA7D13F27EDD7727054BB5 /* Pods_Testownik.framework */; };
 		3150AE0A2BA57BC700E9A64F /* ErrorPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE092BA57BC700E9A64F /* ErrorPresenting.swift */; };
 		3150AE0C2BA615FC00E9A64F /* TestsResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE0B2BA615FC00E9A64F /* TestsResults.swift */; };
 		3150AE0E2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3150AE0D2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift */; };
@@ -79,7 +79,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1AF1FC14C09A66722DE8D6B3 /* Pods-Testownik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.debug.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.debug.xcconfig"; sourceTree = "<group>"; };
 		3150AE092BA57BC700E9A64F /* ErrorPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenting.swift; sourceTree = "<group>"; };
 		3150AE0B2BA615FC00E9A64F /* TestsResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsResults.swift; sourceTree = "<group>"; };
 		3150AE0D2BA6222F00E9A64F /* TestsCollectionViewCellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsCollectionViewCellPresentable.swift; sourceTree = "<group>"; };
@@ -145,8 +144,9 @@
 		31C4C99E2BA4C99600A6C6AE /* TestsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsPresenter.swift; sourceTree = "<group>"; };
 		31C4C99F2BA4C99600A6C6AE /* TestsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsRouter.swift; sourceTree = "<group>"; };
 		31C4C9A02BA4C99600A6C6AE /* TestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
-		E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Testownik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.release.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.release.xcconfig"; sourceTree = "<group>"; };
+		64A51D17C8CFC3EC2455197D /* Pods-Testownik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.release.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.release.xcconfig"; sourceTree = "<group>"; };
+		88AA7D13F27EDD7727054BB5 /* Pods_Testownik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Testownik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A2C802B5509AD30245F97A /* Pods-Testownik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Testownik.debug.xcconfig"; path = "Target Support Files/Pods-Testownik/Pods-Testownik.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,10 +156,10 @@
 			files = (
 				31C0BEDF2BA3662E002B64D9 /* RealmSwift in Frameworks */,
 				319977F62B457FBF001FF59E /* SnapKit in Frameworks */,
-				1094C65F232E6F43ACA23162 /* Pods_Testownik.framework in Frameworks */,
 				319978582B4DE880001FF59E /* MCEmojiPicker in Frameworks */,
 				319978642B52EA48001FF59E /* SPIndicator in Frameworks */,
 				31C0BEDD2BA3662E002B64D9 /* Realm in Frameworks */,
+				26865EE0D674C8D97D613101 /* Pods_Testownik.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +225,7 @@
 				319977DF2B457AC4001FF59E /* Testownik */,
 				319977DE2B457AC4001FF59E /* Products */,
 				A3EFD1DEC1626CBFB1D57FF3 /* Pods */,
-				B59BDB6B002D00D936FD20F6 /* Frameworks */,
+				F8CB07917D813CF2A6B4D469 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -418,16 +418,16 @@
 		A3EFD1DEC1626CBFB1D57FF3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1AF1FC14C09A66722DE8D6B3 /* Pods-Testownik.debug.xcconfig */,
-				E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */,
+				C2A2C802B5509AD30245F97A /* Pods-Testownik.debug.xcconfig */,
+				64A51D17C8CFC3EC2455197D /* Pods-Testownik.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B59BDB6B002D00D936FD20F6 /* Frameworks */ = {
+		F8CB07917D813CF2A6B4D469 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E54CCE1D0C26218F701EB992 /* Pods_Testownik.framework */,
+				88AA7D13F27EDD7727054BB5 /* Pods_Testownik.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -439,7 +439,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 319977F12B457AC5001FF59E /* Build configuration list for PBXNativeTarget "Testownik" */;
 			buildPhases = (
-				9E929138A0D340498AEED6B6 /* [CP] Check Pods Manifest.lock */,
+				68DE2CBC98A6C8F6B841C2BD /* [CP] Check Pods Manifest.lock */,
 				3199780F2B458B25001FF59E /* Swiftgen */,
 				319977D92B457AC4001FF59E /* Sources */,
 				319977DA2B457AC4001FF59E /* Frameworks */,
@@ -531,7 +531,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
-		9E929138A0D340498AEED6B6 /* [CP] Check Pods Manifest.lock */ = {
+		68DE2CBC98A6C8F6B841C2BD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -743,7 +743,7 @@
 		};
 		319977F22B457AC5001FF59E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AF1FC14C09A66722DE8D6B3 /* Pods-Testownik.debug.xcconfig */;
+			baseConfigurationReference = C2A2C802B5509AD30245F97A /* Pods-Testownik.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -773,7 +773,7 @@
 		};
 		319977F32B457AC5001FF59E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9C7677D76C1BA22EDA92581 /* Pods-Testownik.release.xcconfig */;
+			baseConfigurationReference = 64A51D17C8CFC3EC2455197D /* Pods-Testownik.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
