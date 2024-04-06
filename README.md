@@ -3,7 +3,7 @@
 ## Opis projektu
 Projekt ten jest mobilną wersją (przeznaczoną na system iOS) aplikacji Testownik, znanej chyba każdemu studentowi Wydziału Elektroniki Fotoniki i Mikrosystemów. 
 Aplikacja służy do wygodnego i łatwego powtarzania materiału do egzaminów i kolokwiów zaliczeniowych z wykładów. Aplikacja ma formę quizu, którego
-zawartość jest wczytywana z bazy plików o specjalnym formacie. Bazy te są tworzone przez studentów od wielu lat, zatem wystarczy je pobrać, aby w przyjemny sposób 
+zawartość jest wczytywana z bazy plików o specjalnym formacie. Bazy te są tworzone przez studentów od wielu lat, zatem wystarczy je pobrać, aby w przyjazny sposób 
 powtórzyć wiedzę przed zbliżającym się zaliczeniem. 
 
 <img width="300" alt="Zrzut ekranu 2024-04-6 o 09 53 00" src="https://github.com/mszleszk/Testownik/assets/67583894/0d6ac84c-74dd-44d4-9609-08dafdd38fad">
