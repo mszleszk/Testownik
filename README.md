@@ -8,4 +8,4 @@ powtórzyć wiedzę przed zbliżającym się zaliczeniem.
 
 ## Wskazówki do uruchomienia
 - Przed zbuildowaniem projektu pamiętaj o `pod install` w głównym folderze projektu 😉
-- Aby w pełni przetestować projekt przyda ci się baza. Możesz ją pobrać np. stąd 
+- Aby w pełni przetestować projekt przyda ci się baza. Przykładową możesz pobrać np. [stąd](https://github.com/mszleszk/baza) 
