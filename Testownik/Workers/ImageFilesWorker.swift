@@ -23,9 +23,7 @@ final class ImageFilesWorker {
             includingPropertiesForKeys: keys) else { throw FileError.cantRetrieveEnumerator }
         
         for case let file as URL in files {
-            guard file.startAccessingSecurityScopedResource() else {
-                throw FileError.cantAccessSecurityScoped
-            }
+            var successRequestingAccess = file.startAccessingSecurityScopedResource()
             
             guard let resourceValues = try? file.resourceValues(forKeys: Set(keys)),
                     let name = resourceValues.name,
@@ -35,7 +33,9 @@ final class ImageFilesWorker {
                 try FileManager.default.copyItem(at: file, to: destinationUrl.appending(path: name))
             }
             
-            file.stopAccessingSecurityScopedResource()
+            if successRequestingAccess {
+                file.stopAccessingSecurityScopedResource()
+            }
         }
     }
     
@@ -46,9 +46,7 @@ final class ImageFilesWorker {
             includingPropertiesForKeys: keys) else { throw FileError.cantRetrieveEnumerator }
         
         for case let file as URL in files {
-            guard file.startAccessingSecurityScopedResource() else {
-                throw FileError.cantAccessSecurityScoped
-            }
+            var successRequestingAccess = file.startAccessingSecurityScopedResource()
             
             guard let resourceValues = try? file.resourceValues(forKeys: Set(keys)),
                     let type = resourceValues.contentType else { throw FileError.cantRetrieveResourceValues }
@@ -57,7 +55,9 @@ final class ImageFilesWorker {
                 return true
             }
             
-            file.stopAccessingSecurityScopedResource()
+            if successRequestingAccess {
+                file.stopAccessingSecurityScopedResource()
+            }
         }
         
         return false
@@ -71,14 +71,17 @@ extension ImageFilesWorker: ImageFilesWorkerProtocol {
     }
     
     func saveImagesInAppFiles(from url: URL) throws -> String? {
-        guard url.startAccessingSecurityScopedResource() else { throw FileError.cantAccessSecurityScoped }
-        defer { url.stopAccessingSecurityScopedResource() }
+        var successRequestingAccess = url.startAccessingSecurityScopedResource()
         
         guard try containsImages(at: url) else { return nil }
         
         let imageDirectoryUrl = try createDirectory()
 
         try copyImages(from: url, to: imageDirectoryUrl)
+        
+        if successRequestingAccess {
+            url.stopAccessingSecurityScopedResource()
+        }
         
         return imageDirectoryUrl.lastPathComponent
     }
