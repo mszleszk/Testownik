@@ -30,7 +30,7 @@ extension QuestionFilesWorker: QuestionFilesWorkerProtocol {
         let questions = List<Question>()
         
         for case let file as URL in files {
-            var successRequestingAccess = file.startAccessingSecurityScopedResource()
+            let successRequestingAccess = file.startAccessingSecurityScopedResource()
             
             guard let resourceValues = try? file.resourceValues(forKeys: Set(keys)),
                   let type = resourceValues.contentType else { throw FileError.cantRetrieveResourceValues }

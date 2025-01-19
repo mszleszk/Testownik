@@ -23,7 +23,7 @@ final class ImageFilesWorker {
             includingPropertiesForKeys: keys) else { throw FileError.cantRetrieveEnumerator }
         
         for case let file as URL in files {
-            var successRequestingAccess = file.startAccessingSecurityScopedResource()
+            let successRequestingAccess = file.startAccessingSecurityScopedResource()
             
             guard let resourceValues = try? file.resourceValues(forKeys: Set(keys)),
                     let name = resourceValues.name,
@@ -46,7 +46,7 @@ final class ImageFilesWorker {
             includingPropertiesForKeys: keys) else { throw FileError.cantRetrieveEnumerator }
         
         for case let file as URL in files {
-            var successRequestingAccess = file.startAccessingSecurityScopedResource()
+            let successRequestingAccess = file.startAccessingSecurityScopedResource()
             
             guard let resourceValues = try? file.resourceValues(forKeys: Set(keys)),
                     let type = resourceValues.contentType else { throw FileError.cantRetrieveResourceValues }
@@ -71,7 +71,7 @@ extension ImageFilesWorker: ImageFilesWorkerProtocol {
     }
     
     func saveImagesInAppFiles(from url: URL) throws -> String? {
-        var successRequestingAccess = url.startAccessingSecurityScopedResource()
+        let successRequestingAccess = url.startAccessingSecurityScopedResource()
         
         guard try containsImages(at: url) else { return nil }
         
